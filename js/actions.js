@@ -4,29 +4,29 @@ var fn = {
 	},
 	init: function(){
 		// FUNCION PARA INICIO
-		window.location.href = '#login';
-		$('#BtnLogin').tap(fn.Loguear);
-		$('#BtnNueva').tap(fn.leerLpn);
+		window.location.href = '#inicio';
+		$('#btnautentificar').tap(fn.autentificar);
+		/*$('#BtnNueva').tap(fn.leerLpn);
 		$('#BtnReimpresion').tap(fn.reimprimir);
-		$('#generaReimpresion').tap(fn.generarReimpresion);
+		$('#generaReimpresion').tap(fn.generarReimpresion);*/
 	},
-	Loguear: function(){
+	autentificar: function(){
 		// FUNCION PARA LOGUEARSE
-		var nom = $('#user').val();
-		var passw = $('#pass').val();
+		var nom = $('#txtusuario').val();
+		var passw = $('#txtcontrasena').val();
 		//alert(passw);
 		if(nom != '' && passw != ''){	
 			$.mobile.loading("show",{theme: 'b'});
 			$.ajax({
 				method: 'POST',
-				url: 'http://servidoriis.laitaliana.com.mx/OV/ServicesHC/HC.asmx/login',
-				data: {usuario: nom, pass: passw},
+				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/HelloWorld',
+				data: {usuario: nom, contrasena: passw},
 				contentType: "application/json; charset=utf-8",
 				dataType: "jsonp",
 				success: function (msg){
 					$.mobile.loading("hide");
-					if (msg.valor1 == "correcto"){
-						window.location.href="#menu";
+					if (msg.valor1 == "Bien"){
+						window.location.href="#Captura";
 						//navigator.notification.alert(msg.valor1,null,"Felicidades","Aceptar");
 					}
 					else{
@@ -42,7 +42,7 @@ var fn = {
 			navigator.notification.alert("Todos Los Campos Son Requeridos",null,"Error al Ingresar","Aceptar");
 			//alert("todos los campos son requeridos");
 		}
-	},
+	/*,
 	reimprimir: function(){
 		window.location.href="#Reimpresion";
 	},
@@ -94,5 +94,5 @@ var fn = {
 		  }
 	   );
 	}
-};
+}*/;
 $(fn.ready);

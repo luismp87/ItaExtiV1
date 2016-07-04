@@ -6,40 +6,42 @@
 		<link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-   <div data-role="page">
-
-  <div data-role="header">
-    <h1>REVISION DE EXTINTORES</h1>
-  </div>
-
-  <div data-role="main" class="ui-content">
-    <table>
-    <tr>
-    	<td>Usuario:</td>
-    	<td>
-    	<input type="text" id="usuario" placeholder="Nombre Usuario">
-    	</td>
-    </tr>
-    <tr>
-    	<td>Contraseña:</td>
-    	<td>
-    	<input type="text" id="contrasena" placeholder="Constraseña">
-    	</td>
-    </tr>
-     <tr>    	
-    	<td colspan="2">
-    	<input type="submit" value="Autentificar" id="autentificar">
-    	</td>
-    </tr>
-    </table>
-  </div>
-
-  <div data-role="footer">
-    <h1>Sistemas 2016</h1>
-  </div>
-		<script src="phonegap.js"></script>
+   <div data-role="page" id="inicio">
+          <div data-role="header"><h1>ItaExtiV1</h1></div>
+                  <div data-role="main" class="ui-content">
+                    <table>
+                    <tr>
+                        <td>Usuario:</td>
+                        <td>
+                        <input type="text" id="txtusuario" placeholder="Nombre Usuario">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Contraseña:</td>
+                        <td>
+                        <input type="text" id="txtcontrasena" placeholder="Constraseña">
+                        </td>
+                    </tr>
+                     <tr>    	
+                        <td colspan="2">
+                        <input type="submit" value="Autentificar" id="btnautentificar">
+                        </td>
+                    </tr>
+                    </table>
+                  </div>
+      
+           <div data-role="footer" data-position="fixed"><span style="font-size:8pt;">Sistemas 2016</span></div>
+</div>
+    
+    <div data-role="page" id="Captura">
+    <div data-role="header"><h1>ItaExtiV1</h1></div>
+    <div data-role="main" class="ui-content">
+    </div>
+        
+    </div>
+    
+    <script src="phonegap.js"></script>
 		<script src="js/jquery-1.12.2.min.js"></script>
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
 		<script src="js/actions.js"></script>
-</div>
 </body>
