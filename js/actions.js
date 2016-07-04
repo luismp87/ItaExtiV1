@@ -93,6 +93,6 @@ var fn = {
 			  alert("Scanning failed: " + error);
 		  }
 	   );
-	}
-}*/;
+	}*/
+};
 $(fn.ready);
