@@ -19,7 +19,7 @@ var fn = {
 			$.mobile.loading("show",{theme: 'b'});
 			$.ajax({
 				method: 'POST',
-				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/HelloWorld',
+				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/autentificar',
 				data: {usuario: nom, contrasena: passw},
 				contentType: "application/json; charset=utf-8",
 				dataType: "jsonp",
