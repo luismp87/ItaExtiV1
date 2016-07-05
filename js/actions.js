@@ -3,50 +3,57 @@ var fn = {
 		document.addEventListener("deviceready",fn.init,false);
 	},
 	init: function(){
-       //alert("hola");
 		// FUNCION PARA INICIO
 		window.location.href = '#inicio';
 		$('#btnautentificar').tap(fn.autentificar);
-		/*$('#BtnNueva').tap(fn.leerLpn);
-		$('#BtnReimpresion').tap(fn.reimprimir);
-		$('#generaReimpresion').tap(fn.generarReimpresion);*/
+        $('#btnleercodigo').tap(fn.leerCodigoDeBarras);		
 	},
 	autentificar: function(){         
-		// FUNCION PARA LOGUEARSE
 		var nom = $('#txtusuario').val();
 		var passw = $('#txtcontrasena').val();
-		//alert(passw);
 		if(nom != '' && passw != ''){	
 			$.mobile.loading("show",{theme: 'b'});
 			$.ajax({
                 method: 'POST',
-				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/autentificar',
-				//data: '{ usuario: "' + $("#txtusuario").val() + '", contrasena: "' + $("#txtcontrasena").val() + '" }',
+				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/autentificar',				
                 data: {usuario: nom, contrasena: passw},
-				contentType: "application/json; charset=utf-8",
-				dataType: "jsonp",
+                dataType: "json",
 				success: function (msg){
 					$.mobile.loading("hide");
-					if (msg.valor1 == "correcto"){
-						//alert("correcto");
-                        //window.location.href="#menu";
-				        navigator.notification.alert(msg.valor1,null,"Felicidades","Aceptar");
-					}
-					else{
-                        //alert("incorrecto");
-						navigator.notification.alert("Usuario y/o Contraseña Incorrecto",null,"Error","Aceptar");
-					}					
+                    $.each(msg,function(i,item){
+                        if(msg[i].valor1 = "correcto")
+                            {
+                            window.location.href = '#captura';
+                            }
+                        else
+                            {
+                            navigator.notification.alert("Usuario o contraseña incorrectos",null,"Error al Ingresar","Aceptar");   
+                            //alert("Usuario o contraseña incorrectos");
+                            }                        
+                    });					
                 },
 				error: function(jq, txt){
-					alert(jq + txt.responseText);
+					//alert(jq + txt.responseText);
+                    navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
 				}
 			});
 		}
 		else{
-			//navigator.notification.alert("Todos Los Campos Son Requeridos",null,"Error al Ingresar","Aceptar");
-			alert("todos los campos son requeridos");
+			navigator.notification.alert("Todos Los Campos Son Requeridos",null,"Error al Ingresar","Aceptar");
+			//alert("todos los campos son requeridos");
 		}	
-    }
+    },
+    leerCodigoDeBarras: function(){
+		cordova.plugins.barcodeScanner.scan(
+		  function (result) {
+			  //alert("Result: " + result.text);
+			  navigator.notification.alert("Resultado: " + result.text,null,"Felicidades","Aceptar");
+		  }, 
+		  function (error) {
+			  alert("Scanning failed: " + error);
+		  }
+	   );
+	}
 };
 $(fn.ready);
 //$(fn.init);
