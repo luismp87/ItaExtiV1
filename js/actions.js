@@ -47,10 +47,12 @@ var fn = {
 		cordova.plugins.barcodeScanner.scan(
 		  function (result) {
 			  //alert("Result: " + result.text);
-			  navigator.notification.alert("Resultado: " + result.text,null,"Felicidades","Aceptar");
+			  //navigator.notification.alert("Resultado: " + result.text,null,"Felicidades","Aceptar");
+              $("#txtitaextiV1").text(result.text);
 		  }, 
 		  function (error) {
-			  alert("Scanning failed: " + error);
+              navigator.notification.alert("Scanning failed: " + error,null,"Error","Aceptar");
+			  //alert("Scanning failed: " + error);
 		  }
 	   );
 	}
