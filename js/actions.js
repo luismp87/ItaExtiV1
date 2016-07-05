@@ -48,5 +48,5 @@ var fn = {
 		}	
     }
 };
-//$(fn.ready);
-$(fn.init);
+$(fn.ready);
+//$(fn.init);
