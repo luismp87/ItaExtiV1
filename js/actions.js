@@ -6,7 +6,7 @@ var fn = {
        //alert("hola");
 		// FUNCION PARA INICIO
 		window.location.href = '#inicio';
-		$('#btnautentificar').click(fn.autentificar);
+		$('#btnautentificar').tap(fn.autentificar);
 		/*$('#BtnNueva').tap(fn.leerLpn);
 		$('#BtnReimpresion').tap(fn.reimprimir);
 		$('#generaReimpresion').tap(fn.generarReimpresion);*/
