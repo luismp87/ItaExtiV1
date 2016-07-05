@@ -3,14 +3,15 @@ var fn = {
 		document.addEventListener("deviceready",fn.init,false);
 	},
 	init: function(){
+       //alert("hola");
 		// FUNCION PARA INICIO
 		window.location.href = '#inicio';
-		$('#btnautentificar').tap(fn.autentificar);
+		$('#btnautentificar').click(fn.autentificar);
 		/*$('#BtnNueva').tap(fn.leerLpn);
 		$('#BtnReimpresion').tap(fn.reimprimir);
 		$('#generaReimpresion').tap(fn.generarReimpresion);*/
 	},
-	autentificar: function(){
+	autentificar: function(){         
 		// FUNCION PARA LOGUEARSE
 		var nom = $('#txtusuario').val();
 		var passw = $('#txtcontrasena').val();
@@ -18,81 +19,34 @@ var fn = {
 		if(nom != '' && passw != ''){	
 			$.mobile.loading("show",{theme: 'b'});
 			$.ajax({
-				method: 'POST',
+                method: 'POST',
 				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/autentificar',
-				data: {usuario: nom, contrasena: passw},
-				contentType: "application/json; charset=utf-8",
-				dataType: "jsonp",
-				success: function (msg){
-					$.mobile.loading("hide");
-					if (msg.valor1 == "Bien"){
-						window.location.href="#Captura";
-						//navigator.notification.alert(msg.valor1,null,"Felicidades","Aceptar");
-					}
-					else{
-						navigator.notification.alert("Usuario y/o Contraseña Incorrecto",null,"Error","Aceptar");
-					}					
-				},
-				error: function(jq, txt){
-					alert(jq + txt.responseText);
-				}
-			});
-		}
-		else{
-			navigator.notification.alert("Todos Los Campos Son Requeridos",null,"Error al Ingresar","Aceptar");
-			//alert("todos los campos son requeridos");
-		}
-	/*,
-	reimprimir: function(){
-		window.location.href="#Reimpresion";
-	},
-	generarReimpresion: function(){
-		var diviReimpresion = $('#reDivision').val();
-		var hojaReimpresion = $('#reHoja').val();
-		var emailReimpresion = $('#reEmail').val();
-		
-		if(diviReimpresion != '' && hojaReimpresion != '' && emailReimpresion != ''){
-			$.mobile.loading("show",{theme: 'b'});
-			$.ajax({
-				method: 'POST',
-				url: 'http://servidoriis.laitaliana.com.mx/OV/ServicesHC/HC.asmx/reimpresion',
-				data: {division: diviReimpresion, hojacarga: hojaReimpresion, email: emailReimpresion},
+				 //data: '{ usuario: "' + $("#txtusuario").val() + '", contrasena: "' + $("#txtcontrasena").val() + '" }',
+                data: {usuario: nom, contrasena: passw},
 				contentType: "application/json; charset=utf-8",
 				dataType: "jsonp",
 				success: function (msg){
 					$.mobile.loading("hide");
 					if (msg.valor1 == "correcto"){
-						navigator.notification.alert("Se envio hoja de carga correctamente",null,"Correcto","Aceptar");
+						alert("correcto");
+                        //window.location.href="#menu";
+						//navigator.notification.alert(msg.valor1,null,"Felicidades","Aceptar");
 					}
-					if (msg.valor1 == "noexiste") {
-						navigator.notification.alert("Hoja de Carga no Existe",null,"Error","Aceptar");
+					else{
+                        alert("incorrecto");
+						//navigator.notification.alert("Usuario y/o Contraseña Incorrecto",null,"Error","Aceptar");
 					}					
-					if (msg.valor1 == "errorcorreo") {
-						navigator.notification.alert("Ocurrio un Error al Enviar Correo Electronico",null,"Error","Aceptar");
-					}
-					if (msg.valor1 == "errorpdf") {
-						navigator.notification.alert("Ocurrio un Error al Generar PDF",null,"Error","Aceptar");
-					}
-				},
+                },
 				error: function(jq, txt){
 					alert(jq + txt.responseText);
 				}
 			});
 		}
 		else{
-			navigator.notification.alert("Todos los campos son requeridos",null,"Error Reimpresion","Aceptar");
-		}
-	},
-	leerLpn: function(){
-		cordova.plugins.barcodeScanner.scan(
-		  function (result) {
-			  //alert("Result: " + result.text);
-			  navigator.notification.alert("Resultado: " + result.text,null,"Felicidades","Aceptar");
-		  }, 
-		  function (error) {
-			  alert("Scanning failed: " + error);
-		  }
-	   );
-	}*/
+			//navigator.notification.alert("Todos Los Campos Son Requeridos",null,"Error al Ingresar","Aceptar");
+			alert("todos los campos son requeridos");
+		}	
+    }
 };
 $(fn.ready);
+//$(fn.init);
