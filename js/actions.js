@@ -48,7 +48,7 @@ var fn = {
 		  function (result) {
 			  //alert("Result: " + result.text);
 			  navigator.notification.alert("Resultado: " + result.text,null,"Felicidades","Aceptar");
-              $("#txtitaextiV1").text("" + result.text);
+              $("#txtitaextiV1").value("" + result.text);
 		  }, 
 		  function (error) {
               navigator.notification.alert("Scanning failed: " + error,null,"Error","Aceptar");
