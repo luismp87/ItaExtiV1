@@ -30,11 +30,11 @@ var fn = {
 					if (msg.valor1 == "correcto"){
 						alert("correcto");
                         //window.location.href="#menu";
-						//navigator.notification.alert(msg.valor1,null,"Felicidades","Aceptar");
+				        navigator.notification.alert(msg.valor1,null,"Felicidades","Aceptar");
 					}
 					else{
                         alert("incorrecto");
-						//navigator.notification.alert("Usuario y/o Contraseña Incorrecto",null,"Error","Aceptar");
+						navigator.notification.alert("Usuario y/o Contraseña Incorrecto",null,"Error","Aceptar");
 					}					
                 },
 				error: function(jq, txt){
@@ -48,5 +48,5 @@ var fn = {
 		}	
     }
 };
-$(fn.ready);
-//$(fn.init);
+//$(fn.ready);
+$(fn.init);
