@@ -21,19 +21,19 @@ var fn = {
 			$.ajax({
                 method: 'POST',
 				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/autentificar',
-				 //data: '{ usuario: "' + $("#txtusuario").val() + '", contrasena: "' + $("#txtcontrasena").val() + '" }',
+				//data: '{ usuario: "' + $("#txtusuario").val() + '", contrasena: "' + $("#txtcontrasena").val() + '" }',
                 data: {usuario: nom, contrasena: passw},
 				contentType: "application/json; charset=utf-8",
 				dataType: "jsonp",
 				success: function (msg){
 					$.mobile.loading("hide");
 					if (msg.valor1 == "correcto"){
-						alert("correcto");
+						//alert("correcto");
                         //window.location.href="#menu";
 				        navigator.notification.alert(msg.valor1,null,"Felicidades","Aceptar");
 					}
 					else{
-                        alert("incorrecto");
+                        //alert("incorrecto");
 						navigator.notification.alert("Usuario y/o Contraseña Incorrecto",null,"Error","Aceptar");
 					}					
                 },
