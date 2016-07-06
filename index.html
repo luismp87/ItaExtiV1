@@ -4,6 +4,7 @@
 		<meta charset="utf-8">		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
 </head>
 <body>
     <!--Pantalla de logeo-->
@@ -20,22 +21,12 @@
                     <tr>
                         <td>Contraseña:</td>
                         <td>
-                        <input type="text" id="txtcontrasena" placeholder="Constraseña" value="marias20">
+                        <input type="password" id="txtcontrasena" placeholder="Constraseña" value="marias20">
                         </td>
                     </tr>
                      <tr>    	
                         <td colspan="2">
                         <input type="submit" value="Autentificar" id="btnautentificar">
-                        </td>
-                    </tr>
-                        <tr>    	
-                        <td colspan="2">
-                        <input type="text"  id="txtprueba">
-                        </td>
-                    </tr>
-                        <tr>    	
-                        <td colspan="2">
-                        <input type="submit" value="ColocarTexto" id="btnprueba">
                         </td>
                     </tr>
                     </table>
@@ -47,16 +38,70 @@
 <div data-role="page" id="captura">
           <div data-role="header"><h1>ItaExtiV1</h1></div>
                   <div data-role="main" class="ui-content">
-                    <table>
-                    <tr>
-                        
-                        <td>
-                        <input type="text" id="txtitaextiV1" placeholder="ID del extintor">
-                        <input type="submit" value="Leer" id="btnleercodigo">
-                        </td>
-                    </tr>                   
                     
-                    </table>
+                        <input type="text" id="txtitaextiV1" placeholder="ID del extintor">
+                        <!--<input type="submit" value="Leer CB" id="btnleercodigo">-->
+                            
+                        <!--<input type="submit" value="Buscar" id="btnbuscar_info_extintor2"  class="ui-btn ui-icon-search ui-btn-icon-left">-->
+                             
+                            <!--<p id="pID"></p><br>
+                            <p id="pUBICACION"></p>-->
+
+                        <table data-role="table" class="ui-responsive">
+                            <thead>
+                                <tr>
+                                    <td>
+                                    <a id="btnleercodigo" href="#" class="ui-btn ui-icon-search ui-btn-icon-left">Leer C.B</a>
+                                    </td>
+                                    <td>
+                                    <a id="btnbuscar_info_extintor" href="#" class="ui-btn ui-icon-search ui-btn-icon-left">Buscar</a>
+                                    </td>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>                                                                  
+                                    <td>Ubicacion:</td>
+                                    <td><span class="Informacion" id="pUBICACION"></span></td>
+
+                                </tr>
+                                <tr>                                                                  
+                                    <td>Capacidad:</td>
+                                    <td><span id="pCAPACIDAD"></td>
+
+                                </tr>
+                                <tr>                                                                  
+                                    <td>Clase:</td>
+                                    <td><span id="pCLASE"></td>
+
+                                </tr>
+                                <tr>                                                                  
+                                    <td>Agente:</td>
+                                    <td><span id="pAGENTE"></td>
+
+                                </tr>
+                                <tr>                                                                  
+                                    <td>Marca:</td>
+                                    <td><span id="pMARCA"></td>
+
+                                </tr>
+                                <tr>                                                                  
+                                    <td>Fecha de recarga:</td>
+                                    <td><span id="pFECHA_DE_RECARGA"></td>
+
+                                </tr>
+                                <tr>                                                                  
+                                    <td>Fecha de fabricacion</td>
+                                    <td><span id="pFECHA_DE_FABRICACION"></td>
+
+                                </tr>
+                                <tr>                                                                  
+                                    <td>Fecha de servicio proximo:</td>
+                                    <td><span id="pFECHA_DE_PROX_SERVI"></td>
+
+                                </tr>                                
+                            </tbody>
+                      </table>
                   </div>
       
            <div data-role="footer" data-position="fixed"><span style="font-size:8pt;">Sistemas 2016</span></div>
