@@ -49,7 +49,7 @@ var fn = {
 		cordova.plugins.barcodeScanner.scan(
 		  function (result) {			  
 			                 //navigator.notification.alert("Resultado: " + result.text,null,"Felicidades","Aceptar");
-                            ("#txtitaextiV1").val("" + result.text); 
+                            $("#txtitaextiV1").val("" + result.text); 
 		  }, 
 		  function (error) {
               navigator.notification.alert("Scanning failed: " + error,null,"Error","Aceptar");
