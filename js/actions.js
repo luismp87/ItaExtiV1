@@ -6,7 +6,9 @@ var fn = {
 		// FUNCION PARA INICIO
 		window.location.href = '#inicio';
 		$('#btnautentificar').tap(fn.autentificar);
-        $('#btnleercodigo').tap(fn.leerCodigoDeBarras);		
+        //tap
+        $('#btnleercodigo').tap(fn.leerCodigoDeBarras);	
+        $('#btnprueba').tap(fn.prueba);
 	},
 	autentificar: function(){         
 		var nom = $('#txtusuario').val();
@@ -45,20 +47,19 @@ var fn = {
     },
     leerCodigoDeBarras: function(){
 		cordova.plugins.barcodeScanner.scan(
-		  function (result) {
-			  //alert("Result: " + result.text);
-			  //navigator.notification.alert("Resultado: " + result.text,null,"Felicidades","Aceptar");
-              $("#txtitaextiV1").value("" + result.text);
-                            $("#txtitaextiV1").value=result.text;
-
-              
+		  function (result) {			  
+			                 //navigator.notification.alert("Resultado: " + result.text,null,"Felicidades","Aceptar");
+                            ("#txtitaextiV1").val("" + result.text); 
 		  }, 
 		  function (error) {
               navigator.notification.alert("Scanning failed: " + error,null,"Error","Aceptar");
 			  //alert("Scanning failed: " + error);
 		  }
 	   );
-	}
+	},
+    prueba: function(){        
+        $("#txtprueba").val("ss"); 
+    }
 };
 $(fn.ready);
 //$(fn.init);
