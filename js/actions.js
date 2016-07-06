@@ -3,12 +3,10 @@ var fn = {
 		document.addEventListener("deviceready",fn.init,false);
 	},
 	init: function(){
-		// FUNCION PARA INICIO
 		window.location.href = '#inicio';
-		$('#btnautentificar').click(fn.autentificar);
-        //tap
-        $('#btnleercodigo').click(fn.leerCodigoDeBarras);
-        $('#btnbuscar_info_extintor').click(fn.buscar_info_extintor);	        
+		$('#btnautentificar').tap(fn.autentificar);
+        $('#btnleercodigo').tap(fn.leerCodigoDeBarras);
+        $('#btnbuscar_info_extintor').tap(fn.buscar_info_extintor);	        
 
 	},
 	autentificar: function(){         
@@ -30,20 +28,20 @@ var fn = {
                             }
                         else
                             {
-                            //navigator.notification.alert("Usuario o contraseña incorrectos",null,"Error al Ingresar","Aceptar");   
-                            alert("Usuario o contraseña incorrectos");
+                            navigator.notification.alert("Usuario o contraseña incorrectos",null,"Error al Ingresar","Aceptar");   
+                            //alert("Usuario o contraseña incorrectos");
                             }                        
                     });					
                 },
 				error: function(jq, txt){
-					alert(jq + txt.responseText);
-                    //navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
+					//alert(jq + txt.responseText);
+                    navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
 				}
 			});
 		}
 		else{
-			//navigator.notification.alert("Todos Los Campos Son Requeridos",null,"Error al Ingresar","Aceptar");
-			alert("todos los campos son requeridos");
+			navigator.notification.alert("Todos Los Campos Son Requeridos",null,"Error al Ingresar","Aceptar");
+			//alert("todos los campos son requeridos");
 		}	
     },
     leerCodigoDeBarras: function(){
@@ -53,8 +51,8 @@ var fn = {
                             $("#txtitaextiV1").val("" + result.text); 
 		  }, 
 		  function (error) {
-              //navigator.notification.alert("Scanning failed: " + error,null,"Error","Aceptar");
-			  alert("Scanning failed: " + error);
+              navigator.notification.alert("Scanning failed: " + error,null,"Error","Aceptar");
+			  //alert("Scanning failed: " + error);
 		  }
 	   );
 	},
@@ -74,26 +72,34 @@ var fn = {
                             {
                             $("#pID").text(msg[i].ID);
                             $("#pUBICACION").text(msg[i].UBICACION);
+                            $("#pCAPACIDAD").text(msg[i].CAPACIDAD);
+                            $("#pCLASE").text(msg[i].CLASE);
+                            $("#pAGENTE").text(msg[i].AGENTE);
+                            $("#pMARCA").text(msg[i].MARCA);
+                            $("#pFECHA_DE_RECARGA").text(msg[i].FECHA_DE_RECARGA);
+                            $("#pFECHA_DE_FABRICACION").text(msg[i].FECHA_DE_FABRICACION);
+                            $("#pFECHA_DE_PROX_SERVI").text(msg[i].FECHA_DE_PROX_SERVI);
+                            
 
                             }
                         else
                             {
-                            //navigator.notification.alert("Usuario o contraseña incorrectos",null,"Error al Ingresar","Aceptar");   
-                            alert("Usuario o contraseña incorrectos");
+                            navigator.notification.alert("Usuario o contraseña incorrectos",null,"Error al Ingresar","Aceptar");   
+                            //alert("Usuario o contraseña incorrectos");
                             }                        
                     });					
                 },
 				error: function(jq, txt){
-					alert(jq + txt.responseText);
-                    //navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
+					//alert(jq + txt.responseText);
+                    navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
 				}
 			});
 		}
 		else{
-			//navigator.notification.alert("Ingrese el ID del extintor",null,"Error al Ingresar","Aceptar");
-			alert("Ingrese el ID del extintor");
+			navigator.notification.alert("Ingrese el ID del extintor",null,"Error al Ingresar","Aceptar");
+			//alert("Ingrese el ID del extintor");
 		}	
     }
 };
-//$(fn.ready);
-$(fn.init);
+$(fn.ready);
+//$(fn.init);
