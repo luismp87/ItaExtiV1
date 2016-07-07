@@ -1,3 +1,7 @@
-.Informacion{
-    color: blue;
+.Informacion, .entrada_texto{
+    color: red !important;
+    font-family: fantasy;        
+}
+table > tbody tr td{
+  font-family: fantasy;    
 }

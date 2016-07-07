@@ -24,7 +24,7 @@ var fn = {
                     $.each(msg,function(i,item){
                         if(msg[i].valor1 = "correcto")
                             {
-                            window.location.href = '#captura';
+                            window.location.href = '#TiposDeCaptura';
                             }
                         else
                             {
@@ -78,9 +78,7 @@ var fn = {
                             $("#pMARCA").text(msg[i].MARCA);
                             $("#pFECHA_DE_RECARGA").text(msg[i].FECHA_DE_RECARGA);
                             $("#pFECHA_DE_FABRICACION").text(msg[i].FECHA_DE_FABRICACION);
-                            $("#pFECHA_DE_PROX_SERVI").text(msg[i].FECHA_DE_PROX_SERVI);
-                            
-
+                            $("#pFECHA_DE_PROX_SERVI").text(msg[i].FECHA_DE_PROX_SERVI);                            
                             }
                         else
                             {
