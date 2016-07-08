@@ -4,10 +4,11 @@ var fn = {
 	},
 	init: function(){
 		window.location.href = '#inicio';
-		$('#btnautentificar').tap(fn.autentificar);
+		// LOGIO EN EL SERVIDOR --> $('#btnautentificar').tap(fn.autentificar);
+        $('#btnautentificar').tap(fn.autentificarJSON);
         $('#btnleercodigo').tap(fn.leerCodigoDeBarras);
         $('#btnbuscar_info_extintor').tap(fn.buscar_info_extintor);	        
-
+		//$('#btnprueba').tap(fn.myFunction);
 	},
 	autentificar: function(){         
 		var nom = $('#txtusuario').val();
@@ -97,7 +98,30 @@ var fn = {
 			navigator.notification.alert("Ingrese el ID del extintor",null,"Error al Ingresar","Aceptar");
 			//alert("Ingrese el ID del extintor");
 		}	
+    },
+    autentificarJSON : function() { 
+    var usuariof = $('#txtusuario').val();
+    var passf =   $('#txtcontrasena').val();  
+    var out = "";
+    var i;
+    var encontrado = "false";
+    //alert("hola1");
+    for(i = 0; i<myArray.length; i++) {
+        if(( myArray[i].usuario == usuariof) && (myArray[i].pass == passf)){
+        window.location.href = '#TiposDeCaptura';
+        encontrado = "true";
+        break;
+        }        
+    	//alert("hola" + myArray.length);
+        //out += '<a href="' + myArray[i].usuario + '">' + myArray[i].pass + '</a><br>';
     }
+    if(encontrado == "false")
+    {
+      //alert("Verifique el usuario y la contraseña");
+      navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");  
+    }
+    //document.getElementById("id01").innerHTML = out;
+	}
 };
 $(fn.ready);
 //$(fn.init);

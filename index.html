@@ -11,6 +11,7 @@
                <div data-role="page" id="inicio">
                       <div data-role="header"><h1>ItaExtiV1</h1></div>
                               <div data-role="main" class="ui-content">
+                              <div id="id01"></div>
                                 <table>
                                 <tr>
                                     <td>Usuario:</td>
@@ -22,6 +23,9 @@
                                 </tr>
                                  <tr>    	
                                     <td colspan="2"><input type="submit" value="Autentificar" id="btnautentificar"></td>
+                                </tr>
+                                 <tr>     
+                                    <td colspan="2"><input type="submit" value="Prueba" id="btnprueba"></td>
                                 </tr>
                                 </table>
                               </div>                  
@@ -61,7 +65,7 @@
                                         </thead>
                                         <tbody>
                                             <tr>                                                                  
-                                                <td>Ubicacion: <span class="Informacion" id="pUBICACION"></span></td>
+                                                <td>Ubicación: <span class="Informacion" id="pUBICACION"></span></td>
                                             </tr>
                                             <tr>                                                                  
                                                 <td>Capacidad: <span class="Informacion" id="pCAPACIDAD"></span></td>
@@ -79,7 +83,7 @@
                                                 <td>Fecha de recarga: <span class="Informacion" id="pFECHA_DE_RECARGA"></span></td>
                                             </tr>
                                             <tr>                                                                  
-                                                <td>Fecha de fabricacion: <span class="Informacion" id="pFECHA_DE_FABRICACION"></span></td>
+                                                <td>Fecha de fabricación: <span class="Informacion" id="pFECHA_DE_FABRICACION"></span></td>
                                             </tr>
                                             <tr>                                                                  
                                                 <td>Fecha de servicio proximo: <span class="Informacion" id="pFECHA_DE_PROX_SERVI"></span></td>
@@ -189,11 +193,10 @@
 <!--PANTALLA PARA BUSCAR ID DE HIDRANTE-->
             <div data-role="page" id="capturaHidra1">
                  <div data-role="header"><h1>ItaExtiV1</h1></div>
-                 <div data-role="main" class="ui-content">
-                 <input type="">
-                 </div>
+                 <div data-role="main" class="ui-content"></div>
                  <div data-role="footer" data-position="fixed"></div>
             </div>
+
 
     
     
@@ -201,4 +204,5 @@
 		<script src="js/jquery-1.12.2.min.js"></script>
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
 		<script src="js/actions.js"></script>
+    <script src="js/datos.js"></script>
 </body>
