@@ -106,8 +106,8 @@ var fn = {
     var i;
     var encontrado = "false";
     //alert("hola1");
-    for(i = 0; i<myArray.length; i++) {
-        if(( myArray[i].usuario == usuariof) && (myArray[i].pass == passf)){
+    for(i = 0; i<usuarios.length; i++) {
+        if(( usuarios[i].usuario == usuariof) && (usuarios[i].pass == passf)){
         window.location.href = '#TiposDeCaptura';
         encontrado = "true";
         break;
@@ -118,7 +118,7 @@ var fn = {
     if(encontrado == "false")
     {
       //alert("Verifique el usuario y la contraseña");
-      navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");  
+      navigator.notification.alert("Verifique el usuario y la contraseña",null,"Error al Ingresar","Aceptar");  
     }
     //document.getElementById("id01").innerHTML = out;
 	}

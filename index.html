@@ -15,18 +15,15 @@
                                 <table>
                                 <tr>
                                     <td>Usuario:</td>
-                                    <td><input type="text" class="entrada_texto" id="txtusuario" placeholder="Nombre Usuario" value="root"></td>
+                                    <td><input type="text" class="entrada_texto" id="txtusuario" placeholder="Nombre Usuario" value="seguridad"></td>
                                 </tr>
                                 <tr>
                                     <td>Contraseña:</td>
-                                    <td><input type="password" class="entrada_texto" id="txtcontrasena" placeholder="Constraseña" value="marias20"></td>
+                                    <td><input type="password" class="entrada_texto" id="txtcontrasena" placeholder="Constraseña" value="higiene"></td>
                                 </tr>
                                  <tr>    	
                                     <td colspan="2"><input type="submit" value="Autentificar" id="btnautentificar"></td>
-                                </tr>
-                                 <tr>     
-                                    <td colspan="2"><input type="submit" value="Prueba" id="btnprueba"></td>
-                                </tr>
+                                </tr>                                
                                 </table>
                               </div>                  
                        <div data-role="footer" data-position="fixed"><span style="font-size:8pt;">Sistemas 2016</span></div>
@@ -38,8 +35,12 @@
                  <h1>Registrar:</h1>
                  <br>
                      <ul data-role="listview">
-                       <li><a href="#capturaExt1">Extintores</a></li>
-                       <li><a href="#capturaHidra1">Hidrantes</a></li>
+                       <li><a href="#capturaExt1" class="ui-btn ui-icon-info ui-btn-icon-left">Revision de Extintores</a></li>
+                       <li><a href="#" class="ui-btn ui-icon-lock ui-btn-icon-left">Catalogo de extintores</a></li>
+                       <li></li>
+                       <li><a href="#capturaHidra1" class="ui-btn ui-icon-info ui-btn-icon-left">Revision de Hidrantes</a></li>
+                       <li><a href="#" class="ui-btn ui-icon-lock ui-btn-icon-left">Catalogo de Hidrantes</a></li>
+
                      </ul>
                  </div>
                  <div data-role="footer" data-position="fixed"></div>
@@ -109,73 +110,172 @@
             <tr>
             <td>Presion:</td>
             <td>
-             <input type="text" placeholder="Presión" id="textPRESION" class="entrada_texto"> 
+                    <ul data-role="listview">                    
+                    <li>
+                        <select id="textPRESION">                           
+                            <option value="OK">OK</option>
+                            <option value="X">X</option>
+                            <option value="NA">NA</option>
+                            <<option value="NT">NT</option>                           
+                        </select>
+                    </li>
+                    </ul>
             </td>
             </tr>
             <tr>
             <td>Manometro:</td>
             <td>
-             <input type="text" placeholder="Manometro" id="textMANOMETRO" class="entrada_texto"> 
+             <ul data-role="listview">                    
+                    <li>
+                        <select id="textMANOMETRO">
+                            <option value="OK">OK</option>
+                            <option value="X">X</option>
+                            <option value="NA">NA</option>
+                            <<option value="NT">NT</option>                           
+                        </select>
+                    </li>
+                    </ul>
             </td>
             </tr>
             <tr>
             <td>Seguro/Sello:</td>
             <td>
-             <input type="text" placeholder="Seguro/Sello" id="textSEGUROSELLO" class="entrada_texto"> 
+            <ul data-role="listview">                    
+                    <li>
+                        <select id="textSEGUROSELLO">
+                            <option value="OK">OK</option>
+                            <option value="X">X</option>
+                            <option value="NA">NA</option>
+                            <<option value="NT">NT</option>                           
+                        </select>
+                    </li>
+                    </ul> 
             </td>
             </tr>
             <tr>
             <td>Manguera:</td>
             <td>
-             <input type="text" placeholder="Manguera" id="textMANGUERA" class="entrada_texto"> 
+            <ul data-role="listview">                    
+                    <li>
+                        <select id="textMANGUERA">
+                            <option value="OK">OK</option>
+                            <option value="X">X</option>
+                            <option value="NA">NA</option>
+                            <<option value="NT">NT</option>                           
+                        </select>
+                    </li>
+                    </ul>
             </td>
             </tr>
             <tr>
             <td>Soporte:</td>
             <td>
-             <input type="text" placeholder="Soporte" id="textSOPORTE" class="entrada_texto"> 
+            <ul data-role="listview">                    
+                    <li>
+                        <select id="textSOPORTE">
+                            <option value="OK">OK</option>
+                            <option value="X">X</option>
+                            <option value="NA">NA</option>
+                            <<option value="NT">NT</option>                           
+                        </select>
+                    </li>
+                    </ul>
             </td>
             </tr>
             <tr>
             <td>Pintura:</td>
             <td>
-             <input type="text" placeholder="Pintura" id="textPINTURA" class="entrada_texto"> 
+            <ul data-role="listview">                    
+                    <li>
+                        <select id="textPINTURA">
+                            <option value="OK">OK</option>
+                            <option value="X">X</option>
+                            <option value="NA">NA</option>
+                            <<option value="NT">NT</option>                           
+                        </select>
+                    </li>
+                    </ul>
             </td>
             </tr>
             <tr>
             <td>Valcula:</td>
             <td>
-             <input type="text" placeholder="Valvula" id="textVALVULA" class="entrada_texto"> 
+            <ul data-role="listview">                    
+                    <li>
+                        <select id="textVALVULA">
+                            <option value="OK">OK</option>
+                            <option value="X">X</option>
+                            <option value="NA">NA</option>
+                            <<option value="NT">NT</option>                           
+                        </select>
+                    </li>
+                    </ul>
             </td>
             </tr>
             <tr>
             <td>Cilindro:</td>
             <td>
-             <input type="text" placeholder="Cilindro" id="textCILINDRO" class="entrada_texto"> 
+            <ul data-role="listview">                    
+                    <li>
+                        <select id="textCILINDRO">
+                            <option value="OK">OK</option>
+                            <option value="X">X</option>
+                            <option value="NA">NA</option>
+                            <<option value="NT">NT</option>                           
+                        </select>
+                    </li>
+                    </ul>
             </td>
             </tr>
             <tr>
             <td>Nemotecnia:</td>
             <td>
-             <input type="text" placeholder="Nemotecnia" id="textNEMOTECNIA" class="entrada_texto"> 
+            <ul data-role="listview">                    
+                    <li>
+                        <select id="textNEMOTECNIA">
+                            <option value="OK">OK</option>
+                            <option value="X">X</option>
+                            <option value="NA">NA</option>
+                            <<option value="NT">NT</option>                           
+                        </select>
+                    </li>
+                    </ul>
             </td>
             </tr>
             <tr>
             <td>Señalamiento:</td>
             <td>
-             <input type="text" placeholder="Señalamiento" id="textSENALAMIENTO" class="entrada_texto"> 
+            <ul data-role="listview">                    
+                    <li>
+                        <select id="textSENALAMIENTO">
+                            <option value="OK">OK</option>
+                            <option value="X">X</option>
+                            <option value="NA">NA</option>
+                            <<option value="NT">NT</option>                           
+                        </select>
+                    </li>
+                    </ul>
             </td>
             </tr>
             <tr>
             <td>Gabinete:</td>
             <td>
-             <input type="text" placeholder="Gabinete" id="textGABINETE" class="entrada_texto"> 
+            <ul data-role="listview">                    
+                    <li>
+                        <select id="textGABINETE">
+                            <option value="OK">OK</option>
+                            <option value="X">X</option>
+                            <option value="NA">NA</option>
+                            <<option value="NT">NT</option>                           
+                        </select>
+                    </li>
+                    </ul> 
             </td>
             </tr>
             <tr>
             <td>Observaciones:</td>
             <td>
-             <input type="text" placeholder="Observaciones" id="textOBSERVACIONES" class="entrada_texto"> 
+            <input type="text" class="entrada_texto" id="textOBSERVACIONES" placeholder="Observaciones">
             </td>
             </tr>
             </table>
