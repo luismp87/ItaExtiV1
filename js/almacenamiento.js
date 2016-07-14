@@ -25,8 +25,8 @@ var almacen = {
 		almacen.fproxservicio = fproxservicio;
 			
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
-			almacen.db.transaction(almacen.GuardarExtintor, almacen.error, almacen.ExtintorGuardado);
-			almacen.db = window.clase
+			almacen.db.transaction(almacen.GuardarExtintor, almacen.error, null);
+			
 		},
 									GuardarExtintor: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio)");
