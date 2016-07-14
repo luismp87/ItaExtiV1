@@ -9,12 +9,11 @@ var almacen = {
 	ffabricacion: null,
 	fproxservicio: null,
 
-numerodefilas : null,
+	numerodefilas : null,
 
 	db: null,
 	/*FUNCION PARA GUARDAR EN BASE DE DATOS*/
 	guardarEXT: function(id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio){
-
 		almacen.id_ext = id_ext;
 		almacen.ubicacion = ubicacion;
 		almacen.capacidad = capacidad;
@@ -43,7 +42,7 @@ numerodefilas : null,
 	/*FUNCION PARA LEER EN BASE DE DATOS*/
 	leerExtintor: function(){
 			almacen.db.transaction(almacen.ConsultaExtintor, almacen.error, null);
-			//return almacen.numerodefilas;
+			return almacen.numerodefilas;
 		},
 									ConsultaExtintor: function(tx){		
 									var filas = 0;							
@@ -62,9 +61,9 @@ numerodefilas : null,
 												//alert("id_ext: " + t.rows.item(i).id_ext);
 												//navigator.notification.alert("id_ext: " + t.rows.item(i).id_ext, null, "Correcto", "Aceptar");
 											}
-almacen.numerodefilas = filas;
-return almacen.numerodefilas;
+
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
 										});
+										almacen.numerodefilas = filas;
 									}
 }
