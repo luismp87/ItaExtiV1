@@ -75,16 +75,15 @@ var fn = {
 					$.mobile.loading("hide");
                     $.each(msg,function(i,item){
                         if(msg[i].valor1 = "encontro")
-                            {
-                            $("#pID").text(msg[i].ID);
+                            {                           
                             $("#pUBICACION").text(msg[i].UBICACION);
                             $("#pCAPACIDAD").text(msg[i].CAPACIDAD);
                             $("#pCLASE").text(msg[i].CLASE);
                             $("#pAGENTE").text(msg[i].AGENTE);
                             $("#pMARCA").text(msg[i].MARCA);
-                            $("#pFECHA_DE_RECARGA").text(msg[i].FECHA_DE_RECARGA);
-                            $("#pFECHA_DE_FABRICACION").text(msg[i].FECHA_DE_FABRICACION);
-                            $("#pFECHA_DE_PROX_SERVI").text(msg[i].FECHA_DE_PROX_SERVI);                            
+                            $("#pFRECARGA").text(msg[i].FRECARGA);
+                            $("#pFFABRICACION").text(msg[i].FFABRICACION);
+                            $("#pFPROXSERVICIO").text(msg[i].FPROXSERVICIO);                            
                             }
                         else
                             {
@@ -153,7 +152,7 @@ fn.fproxservicio= $('#txtusuario').val();
         almacen.leerExtintor();
     },
     ActualizarBDDesdeServer :function(){
-        
+
     }
 };
 $(fn.ready);
