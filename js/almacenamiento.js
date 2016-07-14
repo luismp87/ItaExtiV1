@@ -74,7 +74,7 @@ var almacen = {
 									Regresanumerodefilas: function(){
 										//alert("Reserva guardada en espera de sincronización");
 										//navigator.notification.alert("guardarEXT se ejecuto de forma correcta", null, "Correcto", "Aceptar");
-										return almacen.numerodefilas;
+										return 666;
 									}
 
 }
