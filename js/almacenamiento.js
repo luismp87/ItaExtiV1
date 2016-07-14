@@ -41,13 +41,14 @@ var almacen = {
 									},
 	/*FUNCION PARA LEER EN BASE DE DATOS*/
 	leerExtintor: function(){
+			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.ConsultaExtintor, almacen.error, null);
 			return almacen.numerodefilas;
 		},
 									ConsultaExtintor: function(tx){																	
-										tx.executeSql("SELECT count(*) as id_ext FROM ita_sh_extintores", [], function(tx2, t){
+										tx.executeSql("SELECT count(*) as filas FROM ita_sh_extintores", [], function(tx2, t){
 											for(i = 0; i < t.rows.length; i++){
-												almacen.numerodefilas =  parseInt(t.rows.item(i).id_ext);
+												almacen.numerodefilas =  parseInt(t.rows.item(i).filas);
 
 												/*navigator.notification.confirm("Personas: " + t.rows.item(i).pr + "\n"
 																			   + "Días: " + t.rows.item(i).di + "\n"
