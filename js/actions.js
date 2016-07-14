@@ -161,6 +161,7 @@ fn.fproxservicio= $('#txtusuario').val();
      var registros =   $('#NumDeExtintores').val();  
 if(registros == 0)
 {
+    $.mobile.loading("show",{theme: 'b'});
     $.ajax({
                 method: 'POST',
                 url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/enviarcatalogocompletodeextintores',              
