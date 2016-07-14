@@ -48,12 +48,13 @@ var almacen = {
 			
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, null);
-			almacen.db.transaction(almacen.ConsultaExtintor, almacen.error, almacen.Regresanumerodefilas);
+			almacen.db.transaction(almacen.ConsultaExtintor, almacen.error, null);
 		},
 									ConsultaExtintor: function(tx){
 										tx.executeSql("SELECT count(*) as filas FROM ita_sh_extintores", [], function(tx2, t){
 											for(i = 0; i < t.rows.length; i++){
-												almacen.numerodefilas = parseInt(t.rows.item(i).filas);
+												$("#txtusuario").val("" + t.rows.item(i).filas); 
+										
 
 												/*navigator.notification.confirm("Personas: " + t.rows.item(i).pr + "\n"
 																			   + "Días: " + t.rows.item(i).di + "\n"
@@ -70,11 +71,6 @@ var almacen = {
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
 										});
 										
-									},
-									Regresanumerodefilas: function(){
-										//alert("Reserva guardada en espera de sincronización");
-										//navigator.notification.alert("guardarEXT se ejecuto de forma correcta", null, "Correcto", "Aceptar");
-										return 666;
 									}
 
 }
