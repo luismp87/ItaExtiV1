@@ -165,7 +165,7 @@ if(registros == 0)
     $.ajax({
                 method: 'POST',
                 url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/enviarcatalogocompletodeextintores',              
-                data: {usuario: nom, contrasena: passw},
+                //data: {usuario: nom, contrasena: passw},
                 dataType: "json",
                 success: function (msg){
                     $.mobile.loading("hide");
