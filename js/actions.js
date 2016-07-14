@@ -149,7 +149,7 @@ fn.fproxservicio= $('#txtusuario').val();
         almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
     },
     MostrarDB : function(){
-        navigator.notification.alert("" + almacen.leerExtintor(),null,"Error al Ingresar","Aceptar");  
+        navigator.notification.alert("ss" +almacen.leerExtintor(),null,"Error al Ingresar","Aceptar");  
         //almacen.leerExtintor();
     },
     ActualizarBDDesdeServer :function(){
