@@ -53,7 +53,7 @@ var almacen = {
 									ConsultaExtintor: function(tx){
 										tx.executeSql("SELECT count(*) as filas FROM ita_sh_extintores", [], function(tx2, t){
 											for(i = 0; i < t.rows.length; i++){
-												$("#txtusuario").val("" + t.rows.item(i).filas); 
+												$("#NumDeExtintores").val("" + t.rows.item(i).filas); 
 										
 
 												/*navigator.notification.confirm("Personas: " + t.rows.item(i).pr + "\n"

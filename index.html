@@ -246,11 +246,32 @@
 <div data-role="page" id="mantoExtintores1">
                  <div data-role="header"><h1>ItaExtiV1</h1></div>
                  <div data-role="main" class="ui-content">
-                <input type="submit" value="Copiar el catalogo remoto en el dispositivo local (Se requiere conexión a internet)" id="btnActualizarBDDesdeServer">
-                
+                <input type="submit" value="Copiar catalogo remoto en local" id="btnActualizarBDDesdeServer">
+
                  </div>
                  <div data-role="footer" data-position="fixed"></div>
-            </div>            
+            </div>    
+<!--PANTALLA PARA RELLENAR LA BASE LOCAL-->
+<div data-role="page" id="RemotaALocal">
+                 <div data-role="header"><h1>ItaExtiV1</h1></div>
+                 <div data-role="main" class="ui-content">
+               <table>
+                 <tr>
+                 <td>Extintores:</td>
+                 <td>
+                   <input type="text" placeholder="Registrados localmente" id="NumDeExtintores"> 
+                 </td>
+                 </tr>
+                  <tr>                 
+                 <td colspan="2">
+                   <input type="submit" value="Remoto > Local" id="btnMigrarExtintoresRM">
+                 </td>
+                 </tr>
+               </table>
+
+                 </div>
+                 <div data-role="footer" data-position="fixed"></div>
+            </div>    
 
     
     
