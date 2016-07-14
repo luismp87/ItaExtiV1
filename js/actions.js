@@ -148,7 +148,7 @@ fn.fproxservicio= $('#txtusuario').val();
         almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
     },
     MostrarDB : function(){
-        almacen.ConsultaExtintor();
+        almacen.leerExtintor();
     }
 };
 $(fn.ready);
