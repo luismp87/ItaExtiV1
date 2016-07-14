@@ -31,6 +31,9 @@ var almacen = {
 										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio)");
 										tx.executeSql("INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('"+almacen.id_ext+"','"+almacen.ubicacion+"','"+almacen.capacidad+"','"+almacen.clase+"','"+almacen.agente+"','"+almacen.marca+"','"+almacen.frecarga+"','"+almacen.ffabricacion+"','"+almacen.fproxservicio+"')");
 									},
+									CreaSINOExiste: function(tx){
+										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio)");										
+									},
 									error: function(){
 										//alert("Error al acceder a la Base de Datos");
 										navigator.notification.alert("Error al acceder a la Base de Datos", null, "Error", "Aceptar");
@@ -41,14 +44,16 @@ var almacen = {
 									},
 	/*FUNCION PARA LEER EN BASE DE DATOS*/
 	leerExtintor: function(){
+			almacen.numerodefilas = 0;
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
+			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, almacen.ExtintorGuardado);
 			almacen.db.transaction(almacen.ConsultaExtintor, almacen.error, null);
 			return almacen.numerodefilas;
 		},
 									ConsultaExtintor: function(tx){																	
 										tx.executeSql("SELECT count(*) as filas FROM ita_sh_extintores", [], function(tx2, t){
 											for(i = 0; i < t.rows.length; i++){
-												almacen.numerodefilas =  parseInt(t.rows.item(i).filas);
+												almacen.numerodefilas =  t.rows.item(i).filas;
 
 												/*navigator.notification.confirm("Personas: " + t.rows.item(i).pr + "\n"
 																			   + "Días: " + t.rows.item(i).di + "\n"
