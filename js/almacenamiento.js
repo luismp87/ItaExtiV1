@@ -9,7 +9,7 @@ var almacen = {
 	ffabricacion: null,
 	fproxservicio: null,
 
-	numerodefilas : null,
+	numerodefilas : 0,
 
 	db: null,
 	/*FUNCION PARA GUARDAR EN BASE DE DATOS*/
@@ -44,11 +44,10 @@ var almacen = {
 			almacen.db.transaction(almacen.ConsultaExtintor, almacen.error, null);
 			return almacen.numerodefilas;
 		},
-									ConsultaExtintor: function(tx){		
-									var filas = 0;							
+									ConsultaExtintor: function(tx){																	
 										tx.executeSql("SELECT count(*) as id_ext FROM ita_sh_extintores", [], function(tx2, t){
 											for(i = 0; i < t.rows.length; i++){
-												filas =  parseInt(t.rows.item(i).id_ext);
+												almacen.numerodefilas =  parseInt(t.rows.item(i).id_ext);
 
 												/*navigator.notification.confirm("Personas: " + t.rows.item(i).pr + "\n"
 																			   + "Días: " + t.rows.item(i).di + "\n"
@@ -64,6 +63,6 @@ var almacen = {
 
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
 										});
-										almacen.numerodefilas = filas;
+										
 									}
 }
