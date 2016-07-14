@@ -42,7 +42,7 @@ var almacen = {
 			almacen.db.transaction(almacen.ConsultaExtintor, almacen.error, null);
 		},
 									ConsultaExtintor: function(tx){
-										tx.executeSql("SELECT count(*) FROM ita_sh_extintores", [], function(tx2, t){
+										tx.executeSql("SELECT count(*) as id_ext FROM ita_sh_extintores", [], function(tx2, t){
 											for(i = 0; i < t.rows.length; i++){
 												/*navigator.notification.confirm("Personas: " + t.rows.item(i).pr + "\n"
 																			   + "Días: " + t.rows.item(i).di + "\n"

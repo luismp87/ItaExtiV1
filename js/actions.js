@@ -10,7 +10,9 @@ var fn = {
         $('#btnbuscar_info_extintor').tap(fn.buscar_info_extintor);	        
 		//$('#btnprueba').tap(fn.myFunction);
         $('#btnGuardarDB').tap(fn.GuardarDB);
-         $('#btnMostrarDB').tap(fn.MostrarDB);
+        $('#btnMostrarDB').tap(fn.MostrarDB);
+        $('#btnActualizarBDDesdeServer').tap(fn.ActualizarBDDesdeServer);
+
         
 	},
 	autentificar: function(){         
@@ -149,6 +151,9 @@ fn.fproxservicio= $('#txtusuario').val();
     },
     MostrarDB : function(){
         almacen.leerExtintor();
+    },
+    ActualizarBDDesdeServer :function(){
+        
     }
 };
 $(fn.ready);
