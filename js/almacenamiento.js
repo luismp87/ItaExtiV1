@@ -45,11 +45,9 @@ numerodefilas : null,
 			almacen.db.transaction(almacen.ConsultaExtintor, almacen.error, null);
 			return almacen.numerodefilas;
 		},
-									ConsultaExtintor: function(tx){
-										var filas = 0;
+									ConsultaExtintor: function(tx){									
 										tx.executeSql("SELECT count(*) as id_ext FROM ita_sh_extintores", [], function(tx2, t){
 											for(i = 0; i < t.rows.length; i++){
-												filas =  filas +1;
 												/*navigator.notification.confirm("Personas: " + t.rows.item(i).pr + "\n"
 																			   + "Días: " + t.rows.item(i).di + "\n"
 																			   + "Tipo de Habitación: " + t.rows.item(i).th,
