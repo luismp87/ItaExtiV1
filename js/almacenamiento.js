@@ -30,11 +30,11 @@ var almacen = {
 	},
 	error: function(){
 		//alert("Error al acceder a la Base de Datos");
-		navigator.notification.alert("Error al acceder a la Base de Datos", null, "Felicidades", "Aceptar");
+		navigator.notification.alert("Error al acceder a la Base de Datos", null, "Error", "Aceptar");
 	},
 	ExtintorGuardado: function(){
 		//alert("Reserva guardada en espera de sincronización");
-		navigator.notification.alert("Reserva guardada en espera de sincronización", null, "Felicidades", "Aceptar");
+		navigator.notification.alert("guardarEXT se ejecuto de forma correcta", null, "Correcto", "Aceptar");
 	},
 	leerExtintor: function(){
 		almacen.db.transaction(almacen.ConsultaExtintor, almacen.error, null);
@@ -51,6 +51,7 @@ var almacen = {
 											  }, "Tabla Reservas","Vibrar,Sonar,Cancelar");*/
 				//server.sincronizar(t.rows.item(i).pr,t.rows.item(i).di,t.rows.item(i).th);
 				//alert("id_ext: " + t.rows.item(i).id_ext);
+				navigator.notification.alert("id_ext: " + t.rows.item(i).id_ext, null, "Correcto", "Aceptar");
 			}
 		});
 	}

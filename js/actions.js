@@ -10,6 +10,8 @@ var fn = {
         $('#btnbuscar_info_extintor').tap(fn.buscar_info_extintor);	        
 		//$('#btnprueba').tap(fn.myFunction);
         $('#btnGuardarDB').tap(fn.GuardarDB);
+         $('#btnMostrarDB').tap(fn.MostrarDB);
+        
 	},
 	autentificar: function(){         
 		var nom = $('#txtusuario').val();
@@ -144,6 +146,9 @@ fn.frecarga= $('#txtusuario').val();
 fn.ffabricacion= $('#txtusuario').val(); 
 fn.fproxservicio= $('#txtusuario').val(); 
         almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
+    },
+    MostrarDB : function(){
+        almacen.ConsultaExtintor();
     }
 };
 $(fn.ready);
