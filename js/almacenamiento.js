@@ -43,7 +43,7 @@ numerodefilas : null,
 	/*FUNCION PARA LEER EN BASE DE DATOS*/
 	leerExtintor: function(){
 			almacen.db.transaction(almacen.ConsultaExtintor, almacen.error, null);
-			return almacen.numerodefilas;
+			//return almacen.numerodefilas;
 		},
 									ConsultaExtintor: function(tx){		
 									var filas = 0;							
@@ -63,7 +63,8 @@ numerodefilas : null,
 												//navigator.notification.alert("id_ext: " + t.rows.item(i).id_ext, null, "Correcto", "Aceptar");
 											}
 almacen.numerodefilas = filas;
-navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
+return almacen.numerodefilas;
+//navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
 										});
 									}
 }
