@@ -44,7 +44,7 @@ var almacen = {
 									},
 	/*FUNCION PARA LEER EN BASE DE DATOS*/
 	leerExtintor: function(){
-			almacen.numerodefilas = 0;
+			
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, null);
 			almacen.db.transaction(almacen.ConsultaExtintor, almacen.error, null);
