@@ -156,20 +156,44 @@ fn.fproxservicio= $('#txtusuario').val();
         window.location.href = '#RemotaALocal';
     },
     MigrarExtintoresRM : function(){
-fn.id_ext = $('#txtusuario').val(); 
-fn.ubicacion= $('#txtusuario').val(); 
-fn.capacidad= $('#txtusuario').val(); 
-fn.clase= $('#txtusuario').val(); 
-fn.agente= $('#txtusuario').val(); 
-fn.marca= $('#txtusuario').val(); 
-fn.frecarga= $('#txtusuario').val(); 
-fn.ffabricacion= $('#txtusuario').val(); 
-fn.fproxservicio= $('#txtusuario').val(); 
+
     almacen.leerExtintor();
      var registros =   $('#NumDeExtintores').val();  
 if(registros == 0)
 {
-navigator.notification.alert("a guardar",null,"Error al Ingresar","Aceptar");    
+    $.ajax({
+                method: 'POST',
+                url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/enviarcatalogocompletodeextintores',              
+                data: {usuario: nom, contrasena: passw},
+                dataType: "json",
+                success: function (msg){
+                    $.mobile.loading("hide");
+                    $.each(msg,function(i,item){
+
+fn.id_ext =  msg[i].ID_EXT;
+fn.ubicacion= msg[i].UBICACION;
+fn.capacidad= msg[i].CAPACIDAD;
+fn.clase= msg[i].CLASE;
+fn.agente= msg[i].AGENTE;
+fn.marca= msg[i].MARCA;
+fn.frecarga= msg[i].FRECARGA;
+fn.ffabricacion= msg[i].FFABRICACION;
+fn.fproxservicio= msg[i].FPROXSERVICIO;
+
+
+                        almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
+                       
+
+
+
+                    });                 
+                },
+                error: function(jq, txt){
+                    //alert(jq + txt.responseText);
+                    navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
+                }
+            });
+//navigator.notification.alert("a guardar",null,"Error al Ingresar","Aceptar");    
         //almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
 }
 else
