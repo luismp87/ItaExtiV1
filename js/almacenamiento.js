@@ -46,14 +46,14 @@ var almacen = {
 	leerExtintor: function(){
 			almacen.numerodefilas = 0;
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
-			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, almacen.ExtintorGuardado);
+			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, null);
 			almacen.db.transaction(almacen.ConsultaExtintor, almacen.error, null);
 			return almacen.numerodefilas;
 		},
 									ConsultaExtintor: function(tx){																	
 										tx.executeSql("SELECT count(*) as filas FROM ita_sh_extintores", [], function(tx2, t){
 											for(i = 0; i < t.rows.length; i++){
-												almacen.numerodefilas =  t.rows.item(i).filas;
+												almacen.numerodefilas = parseInt(t.rows.item(i).filas);
 
 												/*navigator.notification.confirm("Personas: " + t.rows.item(i).pr + "\n"
 																			   + "Días: " + t.rows.item(i).di + "\n"
