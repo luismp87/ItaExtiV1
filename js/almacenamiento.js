@@ -42,8 +42,10 @@ var almacen = {
 			almacen.db.transaction(almacen.ConsultaExtintor, almacen.error, null);
 		},
 									ConsultaExtintor: function(tx){
+										var filas = 0;
 										tx.executeSql("SELECT count(*) as id_ext FROM ita_sh_extintores", [], function(tx2, t){
 											for(i = 0; i < t.rows.length; i++){
+												filas =  filas +1;
 												/*navigator.notification.confirm("Personas: " + t.rows.item(i).pr + "\n"
 																			   + "Días: " + t.rows.item(i).di + "\n"
 																			   + "Tipo de Habitación: " + t.rows.item(i).th,
@@ -53,8 +55,9 @@ var almacen = {
 																			  }, "Tabla Reservas","Vibrar,Sonar,Cancelar");*/
 												//server.sincronizar(t.rows.item(i).pr,t.rows.item(i).di,t.rows.item(i).th);
 												//alert("id_ext: " + t.rows.item(i).id_ext);
-												navigator.notification.alert("id_ext: " + t.rows.item(i).id_ext, null, "Correcto", "Aceptar");
+												//navigator.notification.alert("id_ext: " + t.rows.item(i).id_ext, null, "Correcto", "Aceptar");
 											}
+											return filas;
 										});
 									}
 }
