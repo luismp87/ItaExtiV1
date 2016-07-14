@@ -26,8 +26,7 @@ var almacen = {
 			
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.GuardarExtintor, almacen.error, almacen.ExtintorGuardado);
-			almacen.db.transaction(almacen.aux_ita_sh_extintores, almacen.error, null);
-			
+			almacen.db = window.clase
 		},
 									GuardarExtintor: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio)");
@@ -49,11 +48,9 @@ var almacen = {
 			
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, null);
-			almacen.db.transaction(almacen.aux_ita_sh_extintores, almacen.error, null);
 			almacen.db.transaction(almacen.ConsultaExtintor, almacen.error, null);
-			return almacen.numerodefilas;
 		},
-									ConsultaExtintor: function(tx){																	
+									ConsultaExtintor: function(tx){
 										tx.executeSql("SELECT count(*) as filas FROM ita_sh_extintores", [], function(tx2, t){
 											for(i = 0; i < t.rows.length; i++){
 												almacen.numerodefilas = parseInt(t.rows.item(i).filas);
@@ -74,10 +71,10 @@ var almacen = {
 										});
 										
 									},
-									aux_ita_sh_extintores: function(tx){																	
-										tx.executeSql("SELECT count(*) as filas FROM ita_sh_extintores", [], function(tx2, t){
-											for(i = 0; i < t.rows.length; i++){}
-										});
-										
+									Regresanumerodefilas: function(){
+										//alert("Reserva guardada en espera de sincronización");
+										//navigator.notification.alert("guardarEXT se ejecuto de forma correcta", null, "Correcto", "Aceptar");
+										return almacen.numerodefilas;
 									}
+
 }
