@@ -48,7 +48,7 @@ var almacen = {
 			
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, null);
-			almacen.db.transaction(almacen.ConsultaExtintor, almacen.error, null);
+			almacen.db.transaction(almacen.ConsultaExtintor, almacen.error, almacen.Regresanumerodefilas);
 		},
 									ConsultaExtintor: function(tx){
 										tx.executeSql("SELECT count(*) as filas FROM ita_sh_extintores", [], function(tx2, t){
