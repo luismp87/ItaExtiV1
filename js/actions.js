@@ -9,6 +9,7 @@ var fn = {
         $('#btnleercodigo').tap(fn.leerCodigoDeBarras);
         $('#btnbuscar_info_extintor').tap(fn.buscar_info_extintor);	        
 		//$('#btnprueba').tap(fn.myFunction);
+        $('#btnGuardarDB').tap(fn.GuardarDB);
 	},
 	autentificar: function(){         
 		var nom = $('#txtusuario').val();
@@ -48,7 +49,7 @@ var fn = {
     leerCodigoDeBarras: function(){
 		cordova.plugins.barcodeScanner.scan(
 		  function (result) {			  
-			                 //navigator.notification.alert("Resultado: " + result.text,null,"Felicidades","Aceptar");
+			                 //***navigator.notification.alert("Resultado: " + result.text,null,"Felicidades","Aceptar");
                             $("#txtitaextiV1").val("" + result.text); 
 		  }, 
 		  function (error) {
@@ -121,7 +122,29 @@ var fn = {
       navigator.notification.alert("Verifique el usuario y la contraseña",null,"Error al Ingresar","Aceptar");  
     }
     //document.getElementById("id01").innerHTML = out;
-	}
+	},
+    id_ext: '',
+    ubicacion: '',
+    capacidad: '',
+    clase: '',
+    agente: '',
+    marca : '',
+    frecarga: '',
+    ffabricacion: '',
+    fproxservicio: '',
+    GuardarDB : function() {
+
+fn.id_ext = $('#txtusuario').val(); 
+fn.ubicacion= $('#txtusuario').val(); 
+fn.capacidad= $('#txtusuario').val(); 
+fn.clase= $('#txtusuario').val(); 
+fn.agente= $('#txtusuario').val(); 
+fn.marca= $('#txtusuario').val(); 
+fn.frecarga= $('#txtusuario').val(); 
+fn.ffabricacion= $('#txtusuario').val(); 
+fn.fproxservicio= $('#txtusuario').val(); 
+        almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
+    }
 };
 $(fn.ready);
 //$(fn.init);
