@@ -156,6 +156,7 @@ var fn = {
         //almacen.leerExtintor();
     },
     ActualizarBDDesdeServer :function(){
+        almacen.leerExt();  
         window.location.href = '#RemotaALocal';
     },
     MigrarExtintoresRM : function(){       
