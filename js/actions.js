@@ -156,12 +156,11 @@ var fn = {
         //almacen.leerExtintor();
     },
     ActualizarBDDesdeServer :function(){
+        almacen.leerExt();
         window.location.href = '#RemotaALocal';
     },
     MigrarExtintoresRM : function(){
-
-        almacen.leerExt();
-        var registros =   $('#NumDeExtintores').val();  
+        var registros = $('#NumDeExtintores').val();  
         if(registros == 0)
             {
                 $.mobile.loading("show",{theme: 'b'});
@@ -171,7 +170,7 @@ var fn = {
                 //data: {usuario: nom, contrasena: passw},
                 dataType: "json",
                 success: function (msg){
-                    $.mobile.loading("hide");
+                   
                     $.each(msg,function(i,item){
 
                     fn.id_ext =  msg[i].ID_EXT;
@@ -195,6 +194,8 @@ var fn = {
             });
                     //navigator.notification.alert("a guardar",null,"Error al Ingresar","Aceptar");    
                             //almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
+                      almacen.leerExt();
+                     $.mobile.loading("hide");
                     }
                     else
                     {
