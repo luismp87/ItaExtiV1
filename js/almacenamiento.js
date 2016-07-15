@@ -39,12 +39,12 @@ var almacen = {
 										//alert("Error al acceder a la Base de Datos");
 										navigator.notification.alert("Error al acceder a la Base de Datos", null, "Error", "Aceptar");
 									},
-									ExtintorGuardado: function(){
+									Correcto: function(){
 										//alert("Reserva guardada en espera de sincronización");
-										navigator.notification.alert("guardarEXT se ejecuto de forma correcta", null, "Correcto", "Aceptar");
+										navigator.notification.alert("Ejecución satisfactoria", null, "Correcto", "Aceptar");
 									},
 	/*FUNCION PARA LEER EN BASE DE DATOS*/
-	leerExtintor: function(){
+	leerExt: function(){
 			
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, null);
@@ -71,6 +71,14 @@ var almacen = {
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
 										});
 										
-									}
+		},
+		eliminarExt: function(tx){
+			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
+			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, null);
+			almacen.db.transaction(almacen.eliminarExtintores, almacen.error, almacen.Correcto);
+		},
+									eliminarExtintores: function(tx){
+									tx.executeSql("DELETE FROM ita_sh_extintores");
+	}
 
 }

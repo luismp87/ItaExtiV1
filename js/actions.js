@@ -13,6 +13,8 @@ var fn = {
         $('#btnMostrarDB').tap(fn.MostrarDB);
         $('#btnActualizarBDDesdeServer').tap(fn.ActualizarBDDesdeServer);
         $('#btnMigrarExtintoresRM').tap(fn.MigrarExtintoresRM);
+        $('#btnEliminarExtintores').tap(fn.EliminarExtintores);
+        
         
 	},
 	autentificar: function(){         
@@ -72,7 +74,7 @@ var fn = {
                 data: {id: id},
                 dataType: "json",
 				success: function (msg){
-					$.mobile.loading("hide");
+					
                     $.each(msg,function(i,item){
                         if(msg[i].valor1 = "encontro")
                             {                           
@@ -97,6 +99,7 @@ var fn = {
                     navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
 				}
 			});
+            $.mobile.loading("hide");
 		}
 		else{
 			navigator.notification.alert("Ingrese el ID del extintor",null,"Error al Ingresar","Aceptar");
@@ -137,16 +140,16 @@ var fn = {
     fproxservicio: '',
     GuardarDB : function() {
 
-fn.id_ext = $('#txtusuario').val(); 
-fn.ubicacion= $('#txtusuario').val(); 
-fn.capacidad= $('#txtusuario').val(); 
-fn.clase= $('#txtusuario').val(); 
-fn.agente= $('#txtusuario').val(); 
-fn.marca= $('#txtusuario').val(); 
-fn.frecarga= $('#txtusuario').val(); 
-fn.ffabricacion= $('#txtusuario').val(); 
-fn.fproxservicio= $('#txtusuario').val(); 
-        almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
+            fn.id_ext = $('#txtusuario').val(); 
+            fn.ubicacion= $('#txtusuario').val(); 
+            fn.capacidad= $('#txtusuario').val(); 
+            fn.clase= $('#txtusuario').val(); 
+            fn.agente= $('#txtusuario').val(); 
+            fn.marca= $('#txtusuario').val(); 
+            fn.frecarga= $('#txtusuario').val(); 
+            fn.ffabricacion= $('#txtusuario').val(); 
+            fn.fproxservicio= $('#txtusuario').val(); 
+            almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
     },
     MostrarDB : function(){
         navigator.notification.alert("ss" +almacen.leerExtintor(),null,"Error al Ingresar","Aceptar");  
@@ -157,12 +160,12 @@ fn.fproxservicio= $('#txtusuario').val();
     },
     MigrarExtintoresRM : function(){
 
-    almacen.leerExtintor();
-     var registros =   $('#NumDeExtintores').val();  
-if(registros == 0)
-{
-    $.mobile.loading("show",{theme: 'b'});
-    $.ajax({
+        almacen.leerExt();
+        var registros =   $('#NumDeExtintores').val();  
+        if(registros == 0)
+            {
+                $.mobile.loading("show",{theme: 'b'});
+                $.ajax({
                 method: 'POST',
                 url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/enviarcatalogocompletodeextintores',              
                 //data: {usuario: nom, contrasena: passw},
@@ -171,37 +174,36 @@ if(registros == 0)
                     $.mobile.loading("hide");
                     $.each(msg,function(i,item){
 
-fn.id_ext =  msg[i].ID_EXT;
-fn.ubicacion= msg[i].UBICACION;
-fn.capacidad= msg[i].CAPACIDAD;
-fn.clase= msg[i].CLASE;
-fn.agente= msg[i].AGENTE;
-fn.marca= msg[i].MARCA;
-fn.frecarga= msg[i].FRECARGA;
-fn.ffabricacion= msg[i].FFABRICACION;
-fn.fproxservicio= msg[i].FPROXSERVICIO;
-
-
-                        almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
-                       
-
-
+                    fn.id_ext =  msg[i].ID_EXT;
+                    fn.ubicacion= msg[i].UBICACION;
+                    fn.capacidad= msg[i].CAPACIDAD;
+                    fn.clase= msg[i].CLASE;
+                    fn.agente= msg[i].AGENTE;
+                    fn.marca= msg[i].MARCA;
+                    fn.frecarga= msg[i].FRECARGA;
+                    fn.ffabricacion= msg[i].FFABRICACION;
+                    fn.fproxservicio= msg[i].FPROXSERVICIO;
+                
+                    almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
 
                     });                 
-                },
-                error: function(jq, txt){
+        },
+        error: function(jq, txt){
                     //alert(jq + txt.responseText);
                     navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
                 }
             });
-//navigator.notification.alert("a guardar",null,"Error al Ingresar","Aceptar");    
-        //almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
-}
-else
-{
-   navigator.notification.alert("Se tienen registros en la base de datos, antes eliminelos",null,"Error al Ingresar","Aceptar");    
-}
-    }
+                    //navigator.notification.alert("a guardar",null,"Error al Ingresar","Aceptar");    
+                            //almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
+                    }
+                    else
+                    {
+                       navigator.notification.alert("Se tienen registros en la base de datos, antes eliminelos",null,"Error al Ingresar","Aceptar");    
+                    }
+        },
+        EliminarExtintores : function(){
+            almacen.eliminarExt();
+        }
 
 };
 $(fn.ready);
