@@ -204,6 +204,7 @@ var fn = {
         },
         EliminarExtintores : function(){
             almacen.eliminarExt();
+            almacen.leerExt();  
         }
 
 };
