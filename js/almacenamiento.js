@@ -83,7 +83,7 @@ var almacen = {
 		leerinformacionEXT: function(tx){
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, null);
-			almacen.db.transaction(almacen.leerinfoEXT, almacen.error, almacen.Correcto);
+			almacen.db.transaction(almacen.leerinfoEXT, almacen.error, null);
 
 	},
 									leerinfoEXT: function(tx){
