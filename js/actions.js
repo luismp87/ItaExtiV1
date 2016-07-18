@@ -153,11 +153,9 @@ var fn = {
                     fn.ffabricacion= msg[i].FFABRICACION;
                     fn.fproxservicio= msg[i].FPROXSERVICIO;
                     
-                    //almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
-                    //navigator.notification.alert(""+ fn.id_ext,null,"ss","Aceptar");
-                    }); 
                     almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
                     navigator.notification.alert(""+ fn.id_ext,null,"ss","Aceptar");
+                    }); 
                     almacen.leerExt();  
                     navigator.notification.alert("Migración Correcta",null,"Listo","Aceptar");               
         },
