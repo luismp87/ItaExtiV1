@@ -68,37 +68,7 @@ var fn = {
 		var id = $('#txtitaextiV1').val();		
 		if(id != ''){	
 			$.mobile.loading("show",{theme: 'b'});
-			$.ajax({
-                method: 'POST',
-				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/buscar_info_extintor',				
-                data: {id: id},
-                dataType: "json",
-				success: function (msg){
-					
-                    $.each(msg,function(i,item){
-                        if(msg[i].valor1 = "encontro")
-                            {                           
-                            $("#pUBICACION").text(msg[i].UBICACION);
-                            $("#pCAPACIDAD").text(msg[i].CAPACIDAD);
-                            $("#pCLASE").text(msg[i].CLASE);
-                            $("#pAGENTE").text(msg[i].AGENTE);
-                            $("#pMARCA").text(msg[i].MARCA);
-                            $("#pFRECARGA").text(msg[i].FRECARGA);
-                            $("#pFFABRICACION").text(msg[i].FFABRICACION);
-                            $("#pFPROXSERVICIO").text(msg[i].FPROXSERVICIO);                            
-                            }
-                        else
-                            {
-                            navigator.notification.alert("Usuario o contraseña incorrectos",null,"Error al Ingresar","Aceptar");   
-                            //alert("Usuario o contraseña incorrectos");
-                            }                        
-                    });					
-                },
-				error: function(jq, txt){
-					//alert(jq + txt.responseText);
-                    navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
-				}
-			});
+                leerinformacionEXT();
             $.mobile.loading("hide");
 		}
 		else{
