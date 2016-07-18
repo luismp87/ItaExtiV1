@@ -31,6 +31,7 @@ var almacen = {
 									GuardarExtintor: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio)");
 										tx.executeSql("INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('"+almacen.id_ext+"','"+almacen.ubicacion+"','"+almacen.capacidad+"','"+almacen.clase+"','"+almacen.agente+"','"+almacen.marca+"','"+almacen.frecarga+"','"+almacen.ffabricacion+"','"+almacen.fproxservicio+"')");
+										navigator.notification.alert(""+ almacen.id_ext,null,"ss","Aceptar");
 									},
 									CreaSINOExiste: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio)");										
