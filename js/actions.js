@@ -155,7 +155,7 @@ var fn = {
                 
                     almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
 
-                    });
+                    }); 
                     almacen.leerExt();  
                     navigator.notification.alert("Migración Correcta",null,"Listo","Aceptar");               
         },
