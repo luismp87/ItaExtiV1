@@ -87,7 +87,7 @@ var almacen = {
 
 	},
 									leerinfoEXT: function(tx){
-									tx.executeSql("SELECT id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio FROM ita_sh_extintores WHERE UPPER(id_ext) = '" + $('#txtitaextiV1').val() + "'", [], function(tx2, t){
+									tx.executeSql("SELECT id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio FROM ita_sh_extintores", [], function(tx2, t){
 											for(i = 0; i < t.rows.length; i++){
 
 							$("#pUBICACION").text(t.rows.item(i).ubicacion);
@@ -109,7 +109,7 @@ var almacen = {
 																			  }, "Tabla Reservas","Vibrar,Sonar,Cancelar");*/
 												//server.sincronizar(t.rows.item(i).pr,t.rows.item(i).di,t.rows.item(i).th);
 												//alert("id_ext: " + t.rows.item(i).id_ext);
-												//navigator.notification.alert("id_ext: " + t.rows.item(i).id_ext, null, "Correcto", "Aceptar");
+												navigator.notification.alert("ubicacion: " + t.rows.item(i).ubicacion, null, "Correcto", "Aceptar");
 											}
 
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
