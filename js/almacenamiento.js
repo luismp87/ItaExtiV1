@@ -87,9 +87,9 @@ almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 
 	},
 									leerinfoEXT: function(tx){
-									tx.executeSql("SELECT * FROM ita_sh_extintores WHERE UPPER(id_ext) = '" + $('#txtitaextiV1').val() + "'", [], function(tx2, t){
+									tx.executeSql("SELECT ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio FROM ita_sh_extintores WHERE UPPER(id_ext) = '" + $('#txtitaextiV1').val() + "'", [], function(tx2, t){
 											for(i = 0; i < t.rows.length; i++){
-												
+
 							$("#pUBICACION").text(t.rows.item(i).ubicacion);
                             $("#pCAPACIDAD").text(t.rows.item(i).capacidad);
                             $("#pCLASE").text(t.rows.item(i).clase);
