@@ -68,7 +68,7 @@ var fn = {
 		var id = $('#txtitaextiV1').val();		
 		if(id != ''){	
 			$.mobile.loading("show",{theme: 'b'});
-                leerinformacionEXT();
+            almacen.leerinformacionEXT();
             $.mobile.loading("hide");
 		}
 		else{
