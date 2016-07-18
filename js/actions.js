@@ -152,7 +152,7 @@ var fn = {
                     fn.frecarga= msg[i].FRECARGA;
                     fn.ffabricacion= msg[i].FFABRICACION;
                     fn.fproxservicio= msg[i].FPROXSERVICIO;
-                    navigator.notification.alert(""+ fn.fproxservicio,null,"Error al Ingresar","Aceptar");
+                    navigator.notification.alert(""+ fn.id_ext,null,"Error al Ingresar","Aceptar");
                     almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
 
                     }); 
