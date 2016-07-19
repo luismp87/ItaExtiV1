@@ -23,28 +23,21 @@ myArray: null,
 		almacen.frecarga = frecarga;
 		almacen.ffabricacion = ffabricacion;
 		almacen.fproxservicio = fproxservicio;
-		almacen.myArray	= myArray;
-		//navigator.notification.alert("array0 " +myArray[1] ,null,"Listo","Aceptar");          
+		almacen.myArray	= myArray;        
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.GuardarExtintor, almacen.error, null);
 			
 		},
 									GuardarExtintor: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio)");
-										//tx.executeSql("INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('"+almacen.id_ext+"','"+almacen.ubicacion+"','"+almacen.capacidad+"','"+almacen.clase+"','"+almacen.agente+"','"+almacen.marca+"','"+almacen.frecarga+"','"+almacen.ffabricacion+"','"+almacen.fproxservicio+"')");
-										//tx.executeSql("INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('1','1','1','1','1','1','1','1','1')");
-										//tx.executeSql("INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('2','2','2','2','2','2','2','2','2')");
-										//navigator.notification.alert(""+ almacen.id_ext,null,"ss","Aceptar");
-										    navigator.notification.alert("longitud " +almacen.myArray.length ,null,"Listo","Aceptar");      
-										    for(i = 0; i<almacen.myArray.length; i++) {
-										    	if((almacen.myArray[i] != "") && (almacen.myArray[i] != undefined)){
+										    //navigator.notification.alert("longitud " +almacen.myArray.length ,null,"Listo","Aceptar");      
+										    for(i = 0; i<almacen.myArray.length; i++) 
+										    {
+										    	if((almacen.myArray[i] != "") && (almacen.myArray[i] != undefined))
+										    	{
 										    		tx.executeSql("INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('"+almacen.myArray[i]+"')");
-       // navigator.notification.alert("array0 " +almacen.myArray[i] ,null,"Listo","Aceptar");          
-    }
-        }        
-    	//alert("hola" + myArray.length);
-        //out += '<a href="' + myArray[i].usuario + '">' + myArray[i].pass + '</a><br>';
-    
+    											}
+        									}        
 									},
 									CreaSINOExiste: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio)");										
@@ -101,7 +94,7 @@ myArray: null,
 
 	},
 									leerinfoEXT: function(tx){
-									tx.executeSql("SELECT id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio FROM ita_sh_extintores", [], function(tx2, t){
+									tx.executeSql("SELECT id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio FROM ita_sh_extintores where upper(id_ext) = upper('" +$('#txtitaextiV1').val()+ "')", [], function(tx2, t){
 											for(i = 0; i < t.rows.length; i++){
 
 							$("#pUBICACION").text(t.rows.item(i).ubicacion);

@@ -130,7 +130,7 @@ var fn = {
         window.location.href = '#RemotaALocal';
     },
     MigrarExtintoresRM : function(){ 
-        var myArray = new Array(100); 
+        var myArray = new Array(500); 
         var registros = $('#NumDeExtintores').val();  
         if(registros == 0)
             {
@@ -144,19 +144,6 @@ var fn = {
                     $.mobile.loading("hide");
                     $.each(msg,function(i,item){
                         myArray[i] = msg[i].ID_EXT + "','" + msg[i].UBICACION + "','" + msg[i].CAPACIDAD+ "','" + msg[i].CLASE+ "','" + msg[i].AGENTE+ "','" + msg[i].MARCA+ "','" + msg[i].FRECARGA+ "','" + msg[i].FFABRICACION+ "','" + msg[i].FPROXSERVICIO;
-                        //navigator.notification.alert("array0 " +myArray[i] ,null,"Listo","Aceptar");          
-                    /*fn.id_ext =  msg[i].ID_EXT;
-                    fn.ubicacion= msg[i].UBICACION;
-                    fn.capacidad= msg[i].CAPACIDAD;
-                    fn.clase= msg[i].CLASE;
-                    fn.agente= msg[i].AGENTE;
-                    fn.marca= msg[i].MARCA;
-                    fn.frecarga= msg[i].FRECARGA;
-                    fn.ffabricacion= msg[i].FFABRICACION;
-                    fn.fproxservicio= msg[i].FPROXSERVICIO;
-                    
-                    almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
-                    */
                     }); 
                     almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio,myArray);
                     almacen.leerExt();  
