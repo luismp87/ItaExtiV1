@@ -12,6 +12,8 @@ var fn = {
         $('#btnActualizarBDDesdeServer').tap(fn.ActualizarBDDesdeServer);
         $('#btnMigrarExtintoresRM').tap(fn.MigrarExtintoresRM);
         $('#btnEliminarExtintores').tap(fn.EliminarExtintores);
+        $('#ablanqueaCext1').tap(fn.blanqueaCext1);
+        
         
         
 	},
@@ -147,7 +149,20 @@ var fn = {
         EliminarExtintores : function(){
             almacen.eliminarExt();
             almacen.leerExt();  
+        },
+        blanqueaCext1: function(){
+                            $("#pPLANTA").text("");
+                            $("#pUBICACION").text("");
+                            $("#pCAPACIDAD").text("");
+                            $("#pCLASE").text("");
+                            $("#pAGENTE").text("");
+                            $("#pMARCA").text("");
+                            $("#pFRECARGA").text("");
+                            $("#pFFABRICACION").text("");
+                            $("#pFPROXSERVICIO").text("");              
         }
+
+
 
 };
 $(fn.ready);

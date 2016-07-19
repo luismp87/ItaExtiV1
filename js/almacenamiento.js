@@ -1,4 +1,5 @@
 var almacen = {
+	/*VARIABLES SOBRE EL EXTINTOR*/
 	id_ext: null,
 	ubicacion: null,
 	capacidad: null,
@@ -9,6 +10,21 @@ var almacen = {
 	ffabricacion: null,
 	fproxservicio: null,
 	planta: null,
+/*VARIABLES SOBRE CARACTERISTICAS DEL EXTINTOR*/
+presion: null,
+manometro: null,
+segurosello: null,
+manguera: null,
+soporte: null,
+pintura: null,
+valvula: null,
+cilindro: null,
+nemotecnia: null,
+senalamiento: null,
+gabinete: null,
+observaciones: null,
+
+
 
 	myArray: null,
 
@@ -83,6 +99,7 @@ var almacen = {
 										});
 										
 		},
+/*FUNCION PARA ELIMINAR EN BASE DE DATOS*/
 		eliminarExt: function(tx){
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, null);
@@ -91,6 +108,7 @@ var almacen = {
 									eliminarExtintores: function(tx){
 									tx.executeSql("DELETE FROM ita_sh_extintores");
 	},
+/*FUNCION PARA LEER EN BASE DE DATOS*/
 		leerinformacionEXT: function(tx){
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, null);
@@ -133,6 +151,28 @@ var almacen = {
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
 										});
 	
-	}
+	},
+/*FUNCION PARA GUARDAR LA INFORMACION DE LO QUE SE CAPTURA SOBRE EXTINTORES EN BASE DE DATOS*/
+		guardarRegistroEXT: function(id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones){
+		almacen.presion=presion;
+		almacen.manometro=manometro;
+		almacen.segurosello=segurosello;
+		almacen.manguera=manguera;
+		almacen.soporte=soporte;
+		almacen.pintura=pintura;
+		almacen.valvula=valvula;
+		almacen.cilindro=cilindro;
+		almacen.nemotecnia=nemotecnia;
+		almacen.senalamiento=senalamiento;
+		almacen.gabinete=gabinete;
+		almacen.observaciones=observaciones;
+			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
+			almacen.db.transaction(almacen.GuardarRegistroExtintor, almacen.error, null);
+			
+		},
+									GuardarRegistroExtintor: function(tx){
+										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_reg_ext (id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones)");
+										tx.executeSql("INSERT INTO ita_sh_reg_ext (id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones) VALUES ('"+almacen.myArray[i]+"')");       
+									}
 
 }
