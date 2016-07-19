@@ -143,7 +143,7 @@ var fn = {
                 success: function (msg){
                     $.mobile.loading("hide");
                     $.each(msg,function(i,item){
-                        myArray[i] = msg[i].ID_EXT;
+                        myArray[i] = msg[i].ID_EXT + "','" + msg[i].UBICACION + "','" + msg[i].CAPACIDAD+ "','" + msg[i].CLASE+ "','" + msg[i].AGENTE+ "','" + msg[i].MARCA+ "','" + msg[i].FRECARGA+ "','" + msg[i].FFABRICACION+ "','" + msg[i].FPROXSERVICIO;
                         //navigator.notification.alert("array0 " +myArray[i] ,null,"Listo","Aceptar");          
                     /*fn.id_ext =  msg[i].ID_EXT;
                     fn.ubicacion= msg[i].UBICACION;
