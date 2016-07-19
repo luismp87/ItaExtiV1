@@ -25,7 +25,7 @@ var almacen = {
 		almacen.ffabricacion = ffabricacion;
 		almacen.fproxservicio = fproxservicio;
 		//almacen.SQLpk = "INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('3','3','3','3','3','3','3','3','3');INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('4','4','4','4','4','4','4','4','4');";	
-		almacen.SQLpk = "INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('3','3','3','3','3','3','3','3','3')";
+		almacen.SQLpk = "INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('3','3','3','3','3','3','3','3','3');";
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.GuardarExtintor, almacen.error, null);
 			
