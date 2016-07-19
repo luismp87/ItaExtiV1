@@ -144,7 +144,7 @@ var fn = {
                     $.mobile.loading("hide");
                     $.each(msg,function(i,item){
                         myArray[i] = msg[i].ID_EXT;
-                        navigator.notification.alert("array0 " +myArray[i] ,null,"Listo","Aceptar");          
+                        //navigator.notification.alert("array0 " +myArray[i] ,null,"Listo","Aceptar");          
                     /*fn.id_ext =  msg[i].ID_EXT;
                     fn.ubicacion= msg[i].UBICACION;
                     fn.capacidad= msg[i].CAPACIDAD;
@@ -158,7 +158,7 @@ var fn = {
                     almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
                     */
                     }); 
-                    almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
+                    almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio,myArray);
                     almacen.leerExt();  
                     navigator.notification.alert("Migración Correcta",null,"Listo","Aceptar");               
         },

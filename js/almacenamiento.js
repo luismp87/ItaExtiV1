@@ -8,12 +8,12 @@ var almacen = {
 	frecarga: null,
 	ffabricacion: null,
 	fproxservicio: null,
-
+myArray: null,
 	numerodefilas : 0,
 
 	db: null,
 	/*FUNCION PARA GUARDAR EN BASE DE DATOS*/
-	guardarEXT: function(id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio){
+	guardarEXT: function(id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio,myArray){
 		almacen.id_ext = id_ext;
 		almacen.ubicacion = ubicacion;
 		almacen.capacidad = capacidad;
@@ -23,7 +23,8 @@ var almacen = {
 		almacen.frecarga = frecarga;
 		almacen.ffabricacion = ffabricacion;
 		almacen.fproxservicio = fproxservicio;
-			
+		almacen.myArray	= myArray;
+		navigator.notification.alert("array0 " +myArray[1] ,null,"Listo","Aceptar");          
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.GuardarExtintor, almacen.error, null);
 			
@@ -33,7 +34,7 @@ var almacen = {
 										//tx.executeSql("INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('"+almacen.id_ext+"','"+almacen.ubicacion+"','"+almacen.capacidad+"','"+almacen.clase+"','"+almacen.agente+"','"+almacen.marca+"','"+almacen.frecarga+"','"+almacen.ffabricacion+"','"+almacen.fproxservicio+"')");
 										tx.executeSql("INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('1','1','1','1','1','1','1','1','1')");
 										tx.executeSql("INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('2','2','2','2','2','2','2','2','2')");
-										navigator.notification.alert(""+ almacen.id_ext,null,"ss","Aceptar");
+										//navigator.notification.alert(""+ almacen.id_ext,null,"ss","Aceptar");
 									},
 									CreaSINOExiste: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio)");										
