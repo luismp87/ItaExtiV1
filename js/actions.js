@@ -129,8 +129,7 @@ var fn = {
         almacen.leerExt();  
         window.location.href = '#RemotaALocal';
     },
-    MigrarExtintoresRM : function(){ 
-    almacen.leerExt();     
+    MigrarExtintoresRM : function(){  
         var registros = $('#NumDeExtintores').val();  
         if(registros == 0)
             {
@@ -156,7 +155,7 @@ var fn = {
                     
                     //almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
                     almacen.guardarEXT(msg[i].ID_EXT, msg[i].UBICACION,msg[i].CAPACIDAD,msg[i].CLASE,msg[i].AGENTE,msg[i].MARCA,msg[i].FRECARGA,msg[i].FFABRICACION,msg[i].FPROXSERVICIO);
-                    navigator.notification.alert(""+ msg[i].ID_EXT,null,"ss","Aceptar");
+                    //navigator.notification.alert(""+ msg[i].ID_EXT,null,"ss","Aceptar");
                     }); 
                     almacen.leerExt();  
                     navigator.notification.alert("Migración Correcta",null,"Listo","Aceptar");               
