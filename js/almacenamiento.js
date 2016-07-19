@@ -94,9 +94,10 @@ myArray: null,
 
 	},
 									leerinfoEXT: function(tx){
+										var encontroEXT = 0;
 									tx.executeSql("SELECT id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio FROM ita_sh_extintores where upper(id_ext) = upper('" +$('#txtitaextiV1').val()+ "')", [], function(tx2, t){
 											for(i = 0; i < t.rows.length; i++){
-
+							encontroEXT= 1;
 							$("#pUBICACION").text(t.rows.item(i).ubicacion);
                             $("#pCAPACIDAD").text(t.rows.item(i).capacidad);
                             $("#pCLASE").text(t.rows.item(i).clase);
@@ -116,11 +117,15 @@ myArray: null,
 																			  }, "Tabla Reservas","Vibrar,Sonar,Cancelar");*/
 												//server.sincronizar(t.rows.item(i).pr,t.rows.item(i).di,t.rows.item(i).th);
 												//alert("id_ext: " + t.rows.item(i).id_ext);
-												navigator.notification.alert("ubicacion: " + t.rows.item(i).id_ext, null, "Correcto", "Aceptar");
+												//navigator.notification.alert("ubicacion: " + t.rows.item(i).id_ext, null, "Correcto", "Aceptar");
 											}
 
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
 										});
+	if(encontroEXT == 0)
+	{
+		navigator.notification.alert("Sin resultados verifique el ID del Extintor", null, "Correcto", "Aceptar");
+	}
 	}
 
 }

@@ -9,8 +9,6 @@ var fn = {
         $('#btnleercodigo').tap(fn.leerCodigoDeBarras);
         $('#btnbuscar_info_extintor').tap(fn.buscar_info_extintor);	        
 		//$('#btnprueba').tap(fn.myFunction);
-        $('#btnGuardarDB').tap(fn.GuardarDB);
-        $('#btnMostrarDB').tap(fn.MostrarDB);
         $('#btnActualizarBDDesdeServer').tap(fn.ActualizarBDDesdeServer);
         $('#btnMigrarExtintoresRM').tap(fn.MigrarExtintoresRM);
         $('#btnEliminarExtintores').tap(fn.EliminarExtintores);
@@ -108,23 +106,6 @@ var fn = {
     frecarga: '',
     ffabricacion: '',
     fproxservicio: '',
-    GuardarDB : function() {
-
-            fn.id_ext = $('#txtusuario').val(); 
-            fn.ubicacion= $('#txtusuario').val(); 
-            fn.capacidad= $('#txtusuario').val(); 
-            fn.clase= $('#txtusuario').val(); 
-            fn.agente= $('#txtusuario').val(); 
-            fn.marca= $('#txtusuario').val(); 
-            fn.frecarga= $('#txtusuario').val(); 
-            fn.ffabricacion= $('#txtusuario').val(); 
-            fn.fproxservicio= $('#txtusuario').val(); 
-            almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
-    },
-    MostrarDB : function(){
-        navigator.notification.alert("ss" +almacen.leerExtintor(),null,"Error al Ingresar","Aceptar");  
-        //almacen.leerExtintor();
-    },
     ActualizarBDDesdeServer :function(){
         almacen.leerExt();  
         window.location.href = '#RemotaALocal';
