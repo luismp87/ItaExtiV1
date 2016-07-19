@@ -38,7 +38,8 @@ myArray: null,
 										    navigator.notification.alert("longitud " +almacen.myArray.length ,null,"Listo","Aceptar");      
 										    for(i = 0; i<almacen.myArray.length; i++) {
 										    	if((almacen.myArray[i] != "") && (almacen.myArray[i] != undefined)){
-        navigator.notification.alert("array0 " +almacen.myArray[i] ,null,"Listo","Aceptar");          
+										    		tx.executeSql("INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('"+almacen.myArray[i]+"')");
+       // navigator.notification.alert("array0 " +almacen.myArray[i] ,null,"Listo","Aceptar");          
     }
         }        
     	//alert("hola" + myArray.length);
