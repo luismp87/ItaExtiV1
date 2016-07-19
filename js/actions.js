@@ -155,6 +155,7 @@ var fn = {
                     
                     //almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
                     almacen.guardarEXT("1", "1","1","1","1","1","1","1","1");
+                    almacen.leerExt(); 
                     almacen.guardarEXT("2", "2","2","2","2","2","2","2","2");
                     //navigator.notification.alert(""+ msg[i].ID_EXT,null,"ss","Aceptar");
                     //}); 
