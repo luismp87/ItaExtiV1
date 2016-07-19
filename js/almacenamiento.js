@@ -37,7 +37,7 @@ myArray: null,
 										//navigator.notification.alert(""+ almacen.id_ext,null,"ss","Aceptar");
 										    navigator.notification.alert("longitud " +almacen.myArray.length ,null,"Listo","Aceptar");      
 										    for(i = 0; i<almacen.myArray.length; i++) {
-										    	if(almacen.myArray[i] != ""){
+										    	if((almacen.myArray[i] != "") && (almacen.myArray[i] != undefined)){
         navigator.notification.alert("array0 " +almacen.myArray[i] ,null,"Listo","Aceptar");          
     }
         }        
