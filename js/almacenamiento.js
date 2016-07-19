@@ -8,7 +8,6 @@ var almacen = {
 	frecarga: null,
 	ffabricacion: null,
 	fproxservicio: null,
-	SQLpk: null,
 
 	numerodefilas : 0,
 
@@ -24,8 +23,7 @@ var almacen = {
 		almacen.frecarga = frecarga;
 		almacen.ffabricacion = ffabricacion;
 		almacen.fproxservicio = fproxservicio;
-		//almacen.SQLpk = "INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('3','3','3','3','3','3','3','3','3');INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('4','4','4','4','4','4','4','4','4');";	
-		almacen.SQLpk = "INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('3','3','3','3','3','3','3','3','3'),('4','4','4','4','4','4','4','4','4');";
+			
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.GuardarExtintor, almacen.error, null);
 			
@@ -33,9 +31,9 @@ var almacen = {
 									GuardarExtintor: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio)");
 										//tx.executeSql("INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('"+almacen.id_ext+"','"+almacen.ubicacion+"','"+almacen.capacidad+"','"+almacen.clase+"','"+almacen.agente+"','"+almacen.marca+"','"+almacen.frecarga+"','"+almacen.ffabricacion+"','"+almacen.fproxservicio+"')");
-										
-										tx.executeSql(""+almacen.SQLpk);
-										//navigator.notification.alert(""+ almacen.id_ext,null,"ss","Aceptar");
+										tx.executeSql("INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('1','1','1','1','1','1','1','1','1')");
+										tx.executeSql("INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('2','2','2','2','2','2','2','2','2')");
+										navigator.notification.alert(""+ almacen.id_ext,null,"ss","Aceptar");
 									},
 									CreaSINOExiste: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio)");										

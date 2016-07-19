@@ -129,7 +129,7 @@ var fn = {
         almacen.leerExt();  
         window.location.href = '#RemotaALocal';
     },
-    MigrarExtintoresRM : function(){  
+    MigrarExtintoresRM : function(){       
         var registros = $('#NumDeExtintores').val();  
         if(registros == 0)
             {
@@ -141,24 +141,22 @@ var fn = {
                 dataType: "json",
                 success: function (msg){
                     $.mobile.loading("hide");
-                    //$.each(msg,function(i,item){
+                    $.each(msg,function(i,item){
 
-                    //fn.id_ext =  msg[i].ID_EXT;
-                    //fn.ubicacion= msg[i].UBICACION;
-                    //fn.capacidad= msg[i].CAPACIDAD;
-                    //fn.clase= msg[i].CLASE;
-                    //fn.agente= msg[i].AGENTE;
-                    //fn.marca= msg[i].MARCA;
-                    //fn.frecarga= msg[i].FRECARGA;
-                    //fn.ffabricacion= msg[i].FFABRICACION;
-                    //fn.fproxservicio= msg[i].FPROXSERVICIO;
+                    /*fn.id_ext =  msg[i].ID_EXT;
+                    fn.ubicacion= msg[i].UBICACION;
+                    fn.capacidad= msg[i].CAPACIDAD;
+                    fn.clase= msg[i].CLASE;
+                    fn.agente= msg[i].AGENTE;
+                    fn.marca= msg[i].MARCA;
+                    fn.frecarga= msg[i].FRECARGA;
+                    fn.ffabricacion= msg[i].FFABRICACION;
+                    fn.fproxservicio= msg[i].FPROXSERVICIO;
                     
-                    //almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
-                    //almacen.guardarEXT("1", "1","1","1","1","1","1","1","1");
-                    //almacen.leerExt(); 
-                    //almacen.guardarEXT("2", "2","2","2","2","2","2","2","2");
-                    //navigator.notification.alert(""+ msg[i].ID_EXT,null,"ss","Aceptar");
-                    //}); 
+                    almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
+                    */
+                    }); 
+                    almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
                     almacen.leerExt();  
                     navigator.notification.alert("Migración Correcta",null,"Listo","Aceptar");               
         },
@@ -169,9 +167,7 @@ var fn = {
             });
                     //navigator.notification.alert("a guardar",null,"Error al Ingresar","Aceptar");    
                             //almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
-                    almacen.guardarEXT("1", "1","1","1","1","1","1","1","1");
-                    almacen.leerExt(); 
-                    almacen.guardarEXT("2", "2","2","2","2","2","2","2","2"); 
+                    
                     }
                     else
                     {
