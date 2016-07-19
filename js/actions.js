@@ -141,7 +141,7 @@ var fn = {
                 dataType: "json",
                 success: function (msg){
                     $.mobile.loading("hide");
-                    $.each(msg,function(i,item){
+                    //$.each(msg,function(i,item){
 
                     //fn.id_ext =  msg[i].ID_EXT;
                     //fn.ubicacion= msg[i].UBICACION;
@@ -154,9 +154,10 @@ var fn = {
                     //fn.fproxservicio= msg[i].FPROXSERVICIO;
                     
                     //almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
-                    almacen.guardarEXT(msg[i].ID_EXT, msg[i].UBICACION,msg[i].CAPACIDAD,msg[i].CLASE,msg[i].AGENTE,msg[i].MARCA,msg[i].FRECARGA,msg[i].FFABRICACION,msg[i].FPROXSERVICIO);
+                    almacen.guardarEXT("1", "1","1","1","1","1","1","1","1");
+                    almacen.guardarEXT("2", "2","2","2","2","2","2","2","2");
                     //navigator.notification.alert(""+ msg[i].ID_EXT,null,"ss","Aceptar");
-                    }); 
+                    //}); 
                     almacen.leerExt();  
                     navigator.notification.alert("Migración Correcta",null,"Listo","Aceptar");               
         },
