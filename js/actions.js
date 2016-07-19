@@ -154,9 +154,9 @@ var fn = {
                     //fn.fproxservicio= msg[i].FPROXSERVICIO;
                     
                     //almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
-                    almacen.guardarEXT("1", "1","1","1","1","1","1","1","1");
-                    almacen.leerExt(); 
-                    almacen.guardarEXT("2", "2","2","2","2","2","2","2","2");
+                    //almacen.guardarEXT("1", "1","1","1","1","1","1","1","1");
+                    //almacen.leerExt(); 
+                    //almacen.guardarEXT("2", "2","2","2","2","2","2","2","2");
                     //navigator.notification.alert(""+ msg[i].ID_EXT,null,"ss","Aceptar");
                     //}); 
                     almacen.leerExt();  
@@ -169,7 +169,9 @@ var fn = {
             });
                     //navigator.notification.alert("a guardar",null,"Error al Ingresar","Aceptar");    
                             //almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
-                    
+                   almacen.guardarEXT("1", "1","1","1","1","1","1","1","1");
+                    almacen.leerExt(); 
+                    almacen.guardarEXT("2", "2","2","2","2","2","2","2","2"); 
                     }
                     else
                     {
