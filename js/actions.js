@@ -130,9 +130,7 @@ var fn = {
         window.location.href = '#RemotaALocal';
     },
     MigrarExtintoresRM : function(){ 
-    var datos  = [][]; 
-    datos[i][0] = "Hola";
-navigator.notification.alert("Array: " +datos[i][0],null,"Listo","Aceptar");   
+        var myArray = new Array(100); 
         var registros = $('#NumDeExtintores').val();  
         if(registros == 0)
             {
@@ -145,8 +143,8 @@ navigator.notification.alert("Array: " +datos[i][0],null,"Listo","Aceptar");
                 success: function (msg){
                     $.mobile.loading("hide");
                     $.each(msg,function(i,item){
-datos[i][0] = msg[i].ID_EXT;
-navigator.notification.alert("Array: " +datos[i][0],null,"Listo","Aceptar");
+                        myArray[i] = "Hello";
+                         navigator.notification.alert("array0 " +myArray[i] ,null,"Listo","Aceptar");          
                     /*fn.id_ext =  msg[i].ID_EXT;
                     fn.ubicacion= msg[i].UBICACION;
                     fn.capacidad= msg[i].CAPACIDAD;
