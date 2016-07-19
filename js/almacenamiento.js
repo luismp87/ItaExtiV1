@@ -94,8 +94,9 @@ myArray: null,
 
 	},
 									leerinfoEXT: function(tx){
-										var encontroEXT = 0;
+										
 									tx.executeSql("SELECT id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio FROM ita_sh_extintores where upper(id_ext) = upper('" +$('#txtitaextiV1').val()+ "')", [], function(tx2, t){
+											var encontroEXT = 0;
 											for(i = 0; i < t.rows.length; i++){
 							encontroEXT= 1;
 							$("#pUBICACION").text(t.rows.item(i).ubicacion);
@@ -124,7 +125,7 @@ myArray: null,
 										});
 	if(encontroEXT == 0)
 	{
-		navigator.notification.alert("Sin resultados verifique el ID del Extintor", null, "Correcto", "Aceptar");
+		navigator.notification.alert("Sin resultados verifique el ID del Extintor", null, "Advertencia", "Aceptar");
 	}
 	}
 

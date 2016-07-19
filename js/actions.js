@@ -141,7 +141,7 @@ var fn = {
                     }
                     else
                     {
-                       navigator.notification.alert("Se tienen registros en la base de datos, antes eliminelos",null,"Error al Ingresar","Aceptar");    
+                       navigator.notification.alert("Se tienen registros en la base de datos, antes eliminelos",null,"Advertencia","Aceptar");    
                     }
         },
         EliminarExtintores : function(){
