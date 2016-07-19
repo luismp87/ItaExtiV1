@@ -36,11 +36,11 @@ myArray: null,
 										//tx.executeSql("INSERT INTO ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio) VALUES ('2','2','2','2','2','2','2','2','2')");
 										//navigator.notification.alert(""+ almacen.id_ext,null,"ss","Aceptar");
 										    for(i = 0; i<almacen.myArray.length; i++) {
-        navigator.notification.alert("array0 " +myArray[i] ,null,"Listo","Aceptar");          
+        navigator.notification.alert("array0 " +almacen.myArray[i] ,null,"Listo","Aceptar");          
         }        
     	//alert("hola" + myArray.length);
         //out += '<a href="' + myArray[i].usuario + '">' + myArray[i].pass + '</a><br>';
-    }
+    
 									},
 									CreaSINOExiste: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio)");										
