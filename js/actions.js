@@ -143,8 +143,8 @@ var fn = {
                 success: function (msg){
                     $.mobile.loading("hide");
                     $.each(msg,function(i,item){
-                        myArray[i] = "Hello";
-                         navigator.notification.alert("array0 " +myArray[i] ,null,"Listo","Aceptar");          
+                        myArray[i] = msg[i].ID_EXT;
+                        navigator.notification.alert("array0 " +myArray[i] ,null,"Listo","Aceptar");          
                     /*fn.id_ext =  msg[i].ID_EXT;
                     fn.ubicacion= msg[i].UBICACION;
                     fn.capacidad= msg[i].CAPACIDAD;
