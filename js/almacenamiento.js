@@ -99,12 +99,13 @@ observaciones: null,
 							            $('#textGABINETE').val("0");
 							            $('#textOBSERVACIONES').val("0");  */  
 
-							             $('#textPRESION option').prop('selected', function() {
+							            /* $('#textPRESION option').prop('selected', function() {
         return this.defaultSelected;
     });
 
-$("#textPRESION").val($("#textPRESION option:first").val());
-							             document.getElementById("mySelect").value = "0";
+$("#textPRESION").val($("#textPRESION option:first").val());*/
+$("#textPRESION option:first").attr('selected','selected');
+							            /* document.getElementById("mySelect").value = "0";*/
 
 										window.location.href = '#TiposDeCaptura';
 									},
