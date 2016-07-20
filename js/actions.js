@@ -161,8 +161,50 @@ var fn = {
                             $("#pFFABRICACION").text("");
                             $("#pFPROXSERVICIO").text("");              
         },
+            presion: '',
+            manometro: '',
+            segurosello: '',
+            manguera: '',
+            soporte: '',
+            pintura: '',
+            valvula: '',
+            cilindro: '',
+            nemotecnia: '',
+            senalamiento: '',
+            gabinete: '',
+            observaciones: '',
         GuardarRegExt: function(){
-            navigator.notification.alert("le llegue al boton guardar",null,"Advertencia","Aceptar"); 
+           
+            fn.id_ext = $('#txtitaextiV1').val();
+            fn.presion= $('#textPRESION').val();
+            fn.manometro = $('#textMANOMETRO').val();
+            fn.segurosello = $('#textSEGUROSELLO').val();
+            fn.manguera = $('#textMANGUERA').val();
+            fn.soporte = $('#textSOPORTE').val();
+            fn.pintura =$('#textPINTURA').val();
+            fn.valvula = $('#textVALVULA').val();
+            fn.cilindro = $('#textCILINDRO').val();
+            fn.nemotecnia = $('#textNEMOTECNIA').val();
+            fn.senalamiento = $('#textSENALAMIENTO').val();
+            fn.gabinete = $('#textGABINETE').val();
+            fn.observaciones = $('#textOBSERVACIONES').val()
+
+
+           /* $('#textPRESION').val()
+             $('#textMANOMETRO').val()
+              $('#textSEGUROSELLO').val()
+               $('#textMANGUERA').val()
+                $('#textSOPORTE').val()
+                 $('#textPINTURA').val()
+                  $('#textVALVULA').val()
+                   $('#textCILINDRO').val()
+                    $('#textNEMOTECNIA').val()
+                    $('#textSENALAMIENTO').val()
+                    $('#textGABINETE').val()
+                    $('#textOBSERVACIONES').val()*/
+            
+            guardarRegistroEXT(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones);
+            navigator.notification.alert("Datos : " + fn.id_ext + " - " + fn.presion + " - " + fn.manometro + " - " + fn.segurosello + " - " + fn.manguera + " - " + fn.soporte + " - " + fn.pintura + " - " + fn.valvula + " - " + fn.cilindro + " - " + fn.nemotecnia + " - " + fn.senalamiento + " - " + fn.gabinete + " - " + fn.observaciones,null,"Advertencia","Aceptar");    
         }
 
 

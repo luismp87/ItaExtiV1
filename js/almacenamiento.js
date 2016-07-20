@@ -70,6 +70,10 @@ observaciones: null,
 										//alert("Reserva guardada en espera de sincronización");
 										navigator.notification.alert("Ejecución satisfactoria", null, "Correcto", "Aceptar");
 									},
+									GuardadoCorrectoLocal: function(){
+										//alert("Reserva guardada en espera de sincronización");
+										navigator.notification.alert("Se guardo la información en el dispositivo", null, "Correcto", "Aceptar");
+									},
 	/*FUNCION PARA LEER EN BASE DE DATOS*/
 	leerExt: function(){
 			
@@ -154,6 +158,7 @@ observaciones: null,
 	},
 /*FUNCION PARA GUARDAR LA INFORMACION DE LO QUE SE CAPTURA SOBRE EXTINTORES EN BASE DE DATOS*/
 		guardarRegistroEXT: function(id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones){
+		almacen.id_ext = id_ext;
 		almacen.presion=presion;
 		almacen.manometro=manometro;
 		almacen.segurosello=segurosello;
@@ -167,12 +172,12 @@ observaciones: null,
 		almacen.gabinete=gabinete;
 		almacen.observaciones=observaciones;
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
-			almacen.db.transaction(almacen.GuardarRegistroExtintor, almacen.error, null);
+			almacen.db.transaction(almacen.GuardarRegistroExtintor, almacen.error, almacen.GuardadoCorrectoLocal);
 			
 		},
 									GuardarRegistroExtintor: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_reg_ext (id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones)");
-										tx.executeSql("INSERT INTO ita_sh_reg_ext (id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones) VALUES ('"+almacen.myArray[i]+"')");       
+										tx.executeSql("INSERT INTO ita_sh_reg_ext (id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones) VALUES ('"+almacen.id_ext+"','"+almacen.presion+"','"+almacen.manometro+"','"+almacen.segurosello+"','"+almacen.manguera+"','"+almacen.soporte+"','"+almacen.pintura+"','"+almacen.valvula+"','"+almacen.cilindro+"','"+almacen.nemotecnia+"','"+almacen.senalamiento+"','"+almacen.gabinete+"','"+almacen.observaciones+"')");       
 									}
 
 }
