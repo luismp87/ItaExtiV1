@@ -74,7 +74,7 @@ observaciones: null,
 										//alert("Reserva guardada en espera de sincronización");
 										navigator.notification.alert("Se guardo la información en el dispositivo", null, "Correcto", "Aceptar");
 										//$("#txtitaextiV1").val("");
-										document.getElementById("textPRESION").value = "0"; 
+										/*document.getElementById("textPRESION").value = "0"; 
 										document.getElementById("textMANOMETRO").value = "0"; 
 										document.getElementById("textSEGUROSELLO").value = "0"; 
 										document.getElementById("textMANGUERA").value = "0"; 
@@ -97,8 +97,44 @@ observaciones: null,
 							            $('#textNEMOTECNIA').val("0");
 							            $('#textSENALAMIENTO').val("0");
 							            $('#textGABINETE').val("0");
-							            $('#textOBSERVACIONES').val("0");      
-										//window.location.href = '#TiposDeCaptura';
+							            $('#textOBSERVACIONES').val("0");  */  
+
+							            $('#textPRESION option').prop('selected', function() {
+        								return this.defaultSelected;
+    									});  
+    									 $('#textMANOMETRO option').prop('selected', function() {
+        								return this.defaultSelected;
+    									}); 
+    									  $('#textSEGUROSELLO option').prop('selected', function() {
+        								return this.defaultSelected;
+    									}); 
+    									   $('#textMANGUERA option').prop('selected', function() {
+        								return this.defaultSelected;
+    									}); 
+    									    $('#textSOPORTE option').prop('selected', function() {
+        								return this.defaultSelected;
+    									}); 
+    									     $('#textPINTURA option').prop('selected', function() {
+        								return this.defaultSelected;
+    									}); 
+    									      $('#textVALVULA option').prop('selected', function() {
+        								return this.defaultSelected;
+    									}); 
+    									       $('#textCILINDRO option').prop('selected', function() {
+        								return this.defaultSelected;
+    									}); 
+    									        $('#textNEMOTECNIA option').prop('selected', function() {
+        								return this.defaultSelected;
+    									}); 
+    									         $('#textSENALAMIENTO option').prop('selected', function() {
+        								return this.defaultSelected;
+    									}); 
+    									         $('#textGABINETE option').prop('selected', function() {
+        								return this.defaultSelected;
+    									}); 
+    									         $("#textOBSERVACIONES").val(""); 
+
+										window.location.href = '#TiposDeCaptura';
 									},
 	/*FUNCION PARA LEER EN BASE DE DATOS*/
 	leerExt: function(){
