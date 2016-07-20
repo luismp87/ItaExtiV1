@@ -73,8 +73,20 @@ observaciones: null,
 									GuardadoCorrectoLocalEXT: function(){
 										//alert("Reserva guardada en espera de sincronización");
 										navigator.notification.alert("Se guardo la información en el dispositivo", null, "Correcto", "Aceptar");
-										//$("#txtitaextiV1").val(""); 
-										$('#textPRESION').val("");
+										//$("#txtitaextiV1").val("");
+										document.getElementById("textPRESION").value = "0"; 
+										document.getElementById("textMANOMETRO").value = "0"; 
+										document.getElementById("textSEGUROSELLO").value = "0"; 
+										document.getElementById("textMANGUERA").value = "0"; 
+										document.getElementById("textSOPORTE").value = "0"; 
+										document.getElementById("textPINTURA").value = "0"; 
+										document.getElementById("textVALVULA").value = "0"; 
+										document.getElementById("textCILINDRO").value = "0"; 
+										document.getElementById("textNEMOTECNIA").value = "0"; 
+										document.getElementById("textSENALAMIENTO").value = "0"; 
+										document.getElementById("textGABINETE").value = "0"; 
+										document.getElementById("textOBSERVACIONES").value = ""; 
+										/*$('#textPRESION').VALUES
 							            $('#textMANOMETRO').val("");
 							            $('#textSEGUROSELLO').val("");
 							            $('#textMANGUERA').val("");
@@ -85,7 +97,7 @@ observaciones: null,
 							            $('#textNEMOTECNIA').val("");
 							            $('#textSENALAMIENTO').val("");
 							            $('#textGABINETE').val("");
-							            $('#textOBSERVACIONES').val("");        
+							            $('#textOBSERVACIONES').val("");   */     
 										window.location.href = '#TiposDeCaptura';
 									},
 	/*FUNCION PARA LEER EN BASE DE DATOS*/
