@@ -13,7 +13,7 @@ var fn = {
         $('#btnMigrarExtintoresRM').tap(fn.MigrarExtintoresRM);
         $('#btnEliminarExtintores').tap(fn.EliminarExtintores);
         $('#ablanqueaCext1').tap(fn.blanqueaCext1);
-        
+        $('#capturaExt2 div[data-role=footer] #btnGuardarRegExt').tap(fn.GuardarRegExt);
         
         
 	},
@@ -160,6 +160,9 @@ var fn = {
                             $("#pFRECARGA").text("");
                             $("#pFFABRICACION").text("");
                             $("#pFPROXSERVICIO").text("");              
+        },
+        GuardarRegExt: function(){
+            navigator.notification.alert("le llegue al boton guardar",null,"Advertencia","Aceptar"); 
         }
 
 
