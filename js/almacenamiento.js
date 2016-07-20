@@ -99,40 +99,9 @@ observaciones: null,
 							            $('#textGABINETE').val("0");
 							            $('#textOBSERVACIONES').val("0");  */  
 
-							            $('#textPRESION option').prop('selected', function() {
-        								return this.defaultSelected;
-    									});  
-    									 $('#textMANOMETRO option').prop('selected', function() {
-        								return this.defaultSelected;
-    									}); 
-    									  $('#textSEGUROSELLO option').prop('selected', function() {
-        								return this.defaultSelected;
-    									}); 
-    									   $('#textMANGUERA option').prop('selected', function() {
-        								return this.defaultSelected;
-    									}); 
-    									    $('#textSOPORTE option').prop('selected', function() {
-        								return this.defaultSelected;
-    									}); 
-    									     $('#textPINTURA option').prop('selected', function() {
-        								return this.defaultSelected;
-    									}); 
-    									      $('#textVALVULA option').prop('selected', function() {
-        								return this.defaultSelected;
-    									}); 
-    									       $('#textCILINDRO option').prop('selected', function() {
-        								return this.defaultSelected;
-    									}); 
-    									        $('#textNEMOTECNIA option').prop('selected', function() {
-        								return this.defaultSelected;
-    									}); 
-    									         $('#textSENALAMIENTO option').prop('selected', function() {
-        								return this.defaultSelected;
-    									}); 
-    									         $('#textGABINETE option').prop('selected', function() {
-        								return this.defaultSelected;
-    									}); 
-    									         $("#textOBSERVACIONES").val(""); 
+							            $('#name2').change(function(){
+    										$('#name').prop('selectedIndex',0);
+										});
 
 										window.location.href = '#TiposDeCaptura';
 									},
