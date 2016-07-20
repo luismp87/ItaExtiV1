@@ -107,8 +107,8 @@ $("#textPRESION").val($("#textPRESION option:first").val());*/
 /*$("#textPRESION option:first").attr('selected','selected');*/
 							            /* document.getElementById("mySelect").value = "0";*/
 
-$("#textPRESION option:selected").prop("selected", false);
-$("#textPRESION option:first").prop("selected", "selected");
+	
+$('select option:first-child').attr("selected", "selected");
 										window.location.href = '#TiposDeCaptura';
 									},
 	/*FUNCION PARA LEER EN BASE DE DATOS*/
