@@ -86,19 +86,19 @@ observaciones: null,
 										document.getElementById("textSENALAMIENTO").value = "0"; 
 										document.getElementById("textGABINETE").value = "0"; 
 										document.getElementById("textOBSERVACIONES").value = ""; 
-										/*$('#textPRESION').VALUES
-							            $('#textMANOMETRO').val("");
-							            $('#textSEGUROSELLO').val("");
-							            $('#textMANGUERA').val("");
-							            $('#textSOPORTE').val("");
-							            $('#textPINTURA').val("");
-							            $('#textVALVULA').val("");
-							            $('#textCILINDRO').val("");
-							            $('#textNEMOTECNIA').val("");
-							            $('#textSENALAMIENTO').val("");
-							            $('#textGABINETE').val("");
-							            $('#textOBSERVACIONES').val("");   */     
-										window.location.href = '#TiposDeCaptura';
+										$('#textPRESION').val("0");
+							            $('#textMANOMETRO').val("0");
+							            $('#textSEGUROSELLO').val("0");
+							            $('#textMANGUERA').val("0");
+							            $('#textSOPORTE').val("0");
+							            $('#textPINTURA').val("0");
+							            $('#textVALVULA').val("0");
+							            $('#textCILINDRO').val("0");
+							            $('#textNEMOTECNIA').val("0");
+							            $('#textSENALAMIENTO').val("0");
+							            $('#textGABINETE').val("0");
+							            $('#textOBSERVACIONES').val("0");      
+										//window.location.href = '#TiposDeCaptura';
 									},
 	/*FUNCION PARA LEER EN BASE DE DATOS*/
 	leerExt: function(){
