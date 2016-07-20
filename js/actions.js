@@ -12,8 +12,9 @@ var fn = {
         $('#btnActualizarBDDesdeServer').tap(fn.ActualizarBDDesdeServer);
         $('#btnMigrarExtintoresRM').tap(fn.MigrarExtintoresRM);
         $('#btnEliminarExtintores').tap(fn.EliminarExtintores);
-        $('#ablanqueaCext1').tap(fn.blanqueaCext1);
+        $('.ablanqueaCext1').tap(fn.blanqueaCext1);
         $('#capturaExt2 div[data-role=footer] #btnGuardarRegExt').tap(fn.GuardarRegExt);
+        $('#btniraRegistrarEXT').tap(fn.iraRegistrarEXT);
         
         
 	},
@@ -174,6 +175,7 @@ var fn = {
             gabinete: '',
             observaciones: '',
         GuardarRegExt: function(){
+            
            
             fn.id_ext = $('#txtitaextiV1').val();
             fn.presion= $('#textPRESION').val();
@@ -187,11 +189,25 @@ var fn = {
             fn.nemotecnia = $('#textNEMOTECNIA').val();
             fn.senalamiento = $('#textSENALAMIENTO').val();
             fn.gabinete = $('#textGABINETE').val();
-            fn.observaciones = $('#textOBSERVACIONES').val();        
+            fn.observaciones = $('#textOBSERVACIONES').val();      
             
            almacen.guardarRegistroEXT(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones);
-            $('select option:first-child').attr("selected", "selected");
+          
+           
+
             //navigator.notification.alert("Datos 2: " + fn.id_ext + " - " + fn.presion + " - " + fn.manometro + " - " + fn.segurosello + " - " + fn.manguera + " - " + fn.soporte + " - " + fn.pintura + " - " + fn.valvula + " - " + fn.cilindro + " - " + fn.nemotecnia + " - " + fn.senalamiento + " - " + fn.gabinete + " - " + fn.observaciones,null,"Advertencia","Aceptar");    
+        },
+        iraRegistrarEXT: function(){         
+            var planta = $("#pPLANTA").text();
+            if(planta.length <= 0)
+            { 
+                 navigator.notification.alert("Escanee o ingrese el ID del Extintor",null,"Advertencia","Aceptar");  
+                window.location.href = '#capturaExt1';
+            } 
+            else
+            {
+                window.location.href = '#capturaExt2';
+            }        
         }
 
 
