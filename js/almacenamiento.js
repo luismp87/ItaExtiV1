@@ -99,9 +99,7 @@ observaciones: null,
 							            $('#textGABINETE').val("0");
 							            $('#textOBSERVACIONES').val("0");  */  
 
-							            $('#name2').change(function(){
-    										$('#name').prop('selectedIndex',0);
-										});
+							             $("#textPRESION").val($("#textPRESION option[selected]").val());
 
 										window.location.href = '#TiposDeCaptura';
 									},
