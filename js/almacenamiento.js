@@ -70,9 +70,23 @@ observaciones: null,
 										//alert("Reserva guardada en espera de sincronización");
 										navigator.notification.alert("Ejecución satisfactoria", null, "Correcto", "Aceptar");
 									},
-									GuardadoCorrectoLocal: function(){
+									GuardadoCorrectoLocalEXT: function(){
 										//alert("Reserva guardada en espera de sincronización");
 										navigator.notification.alert("Se guardo la información en el dispositivo", null, "Correcto", "Aceptar");
+										//$("#txtitaextiV1").val(""); 
+										$('#textPRESION').val("");
+							            $('#textMANOMETRO').val("");
+							            $('#textSEGUROSELLO').val("");
+							            $('#textMANGUERA').val("");
+							            $('#textSOPORTE').val("");
+							            $('#textPINTURA').val("");
+							            $('#textVALVULA').val("");
+							            $('#textCILINDRO').val("");
+							            $('#textNEMOTECNIA').val("");
+							            $('#textSENALAMIENTO').val("");
+							            $('#textGABINETE').val("");
+							            $('#textOBSERVACIONES').val("");        
+										window.location.href = '#TiposDeCaptura';
 									},
 	/*FUNCION PARA LEER EN BASE DE DATOS*/
 	leerExt: function(){
@@ -172,7 +186,7 @@ observaciones: null,
 		almacen.gabinete=gabinete;
 		almacen.observaciones=observaciones;
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
-			almacen.db.transaction(almacen.GuardarRegistroExtintor, almacen.error, almacen.GuardadoCorrectoLocal);
+			almacen.db.transaction(almacen.GuardarRegistroExtintor, almacen.error, almacen.GuardadoCorrectoLocalEXT);
 			
 		},
 									GuardarRegistroExtintor: function(tx){
