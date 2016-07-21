@@ -3,7 +3,9 @@ var fn = {
 		document.addEventListener("deviceready",fn.init,false);
 	},
 	init: function(){
-		window.location.href = '#inicio';
+        if(!fn.estaRegistrado())
+            window.location.href = '#inicio';
+		//window.location.href = '#inicio';
 		// LOGIO EN EL SERVIDOR --> $('#btnautentificar').tap(fn.autentificar);
         $('#btnautentificar').tap(fn.autentificarJSON);
         $('#btnleercodigo').tap(fn.leerCodigoDeBarras);
@@ -18,6 +20,13 @@ var fn = {
         
         
 	},
+     estaRegistrado: function(){
+        var usr = window.localStorage.getItem("user");
+        if(usr == undefined || usr == '')
+            return false;
+        else
+            return true;
+    },
 	autentificar: function(){         
 		var nom = $('#txtusuario').val();
 		var passw = $('#txtcontrasena').val();
@@ -32,7 +41,7 @@ var fn = {
 					$.mobile.loading("hide");
                     $.each(msg,function(i,item){
                         if(msg[i].valor1 = "correcto")
-                            {
+                            {                           
                             window.location.href = '#TiposDeCaptura';
                             }
                         else
@@ -86,6 +95,8 @@ var fn = {
     //alert("hola1");
     for(i = 0; i<usuarios.length; i++) {
         if(( usuarios[i].usuario == usuariof) && (usuarios[i].pass == passf)){
+        window.localStorage.setItem("user",nom);
+        //alert(""+usuariof);
         window.location.href = '#TiposDeCaptura';
         encontrado = "true";
         break;
