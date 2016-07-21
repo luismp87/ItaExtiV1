@@ -17,6 +17,7 @@ var fn = {
         $('.ablanqueaCext1').tap(fn.blanqueaCext1);
         $('#capturaExt2 div[data-role=footer] #btnGuardarRegExt').tap(fn.GuardarRegExt);
         $('#btniraRegistrarEXT').tap(fn.iraRegistrarEXT);
+        $('#btncerrarsesion').tap(fn.cerrarsesion);
         
         
 	},
@@ -200,10 +201,49 @@ var fn = {
             fn.nemotecnia = $('#textNEMOTECNIA').val();
             fn.senalamiento = $('#textSENALAMIENTO').val();
             fn.gabinete = $('#textGABINETE').val();
-            fn.observaciones = $('#textOBSERVACIONES').val();      
-            
-           almacen.guardarRegistroEXT(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones);
-          
+            fn.observaciones = $('#textOBSERVACIONES').val();    
+
+            if((fn.presion != "0") &&              
+            (fn.manometro != "0") &&  
+            (fn.segurosello != "0") &&  
+            (fn.manguera != "0") &&  
+            (fn.soporte != "0") &&  
+            (fn.pintura != "0") &&  
+            (fn.valvula != "0") &&  
+            (fn.cilindro != "0") &&  
+            (fn.nemotecnia != "0") &&  
+            (fn.senalamiento != "0") &&  
+            (fn.gabinete != "0"))
+          { 
+            if(navigator.connection.type != Connection.NONE)
+            {
+                 navigator.notification.alert("Segun se manda el server.",null,"Advertencia","Aceptar");
+                //server.sincronizar(fn.per,fn.dia,fn.th);//Enviar a servidor
+            }
+            else
+            {
+                almacen.guardarReserva(fn.per,fn.dia,fn.th);//Guardar Localmente
+
+                    almacen.guardarRegistroEXT(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones);
+                    $("#textPRESION").val("0").change();
+                    $("#textMANOMETRO").val("0").change();
+                    $("#textSEGUROSELLO").val("0").change();
+                    $("#textMANGUERA").val("0").change();
+                    $("#textSOPORTE").val("0").change();
+                    $("#textPINTURA").val("0").change();
+                    $("#textVALVULA").val("0").change();
+                    $("#textCILINDRO").val("0").change();
+                    $("#textNEMOTECNIA").val("0").change();
+                    $("#textSENALAMIENTO").val("0").change();
+                    $("#textGABINETE").val("0").change();
+                    $("#textOBSERVACIONES").val("");
+                    window.location.href = '#TiposDeCaptura';
+            }
+          }
+          else
+          {
+            navigator.notification.alert("Tiene características sin seleccionar.",null,"Advertencia","Aceptar");    
+          }
            
 
             //navigator.notification.alert("Datos 2: " + fn.id_ext + " - " + fn.presion + " - " + fn.manometro + " - " + fn.segurosello + " - " + fn.manguera + " - " + fn.soporte + " - " + fn.pintura + " - " + fn.valvula + " - " + fn.cilindro + " - " + fn.nemotecnia + " - " + fn.senalamiento + " - " + fn.gabinete + " - " + fn.observaciones,null,"Advertencia","Aceptar");    
@@ -219,6 +259,11 @@ var fn = {
             {
                 window.location.href = '#capturaExt2';
             }        
+        },
+        cerrarsesion: function(){
+        window.localStorage.setItem("user",'');    
+        window.location.href = '#inicio';
+
         }
 
 
