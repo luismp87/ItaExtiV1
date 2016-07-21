@@ -215,30 +215,28 @@ var fn = {
             (fn.senalamiento != "0") &&  
             (fn.gabinete != "0"))
           { 
-            if(navigator.connection.type != Connection.NONE)
-            {
-                 navigator.notification.alert("Segun se manda el server.",null,"Advertencia","Aceptar");
-                //server.sincronizar(fn.per,fn.dia,fn.th);//Enviar a servidor
-            }
-            else
-            {
-                almacen.guardarReserva(fn.per,fn.dia,fn.th);//Guardar Localmente
-
-                    almacen.guardarRegistroEXT(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones);
-                    $("#textPRESION").val("0").change();
-                    $("#textMANOMETRO").val("0").change();
-                    $("#textSEGUROSELLO").val("0").change();
-                    $("#textMANGUERA").val("0").change();
-                    $("#textSOPORTE").val("0").change();
-                    $("#textPINTURA").val("0").change();
-                    $("#textVALVULA").val("0").change();
-                    $("#textCILINDRO").val("0").change();
-                    $("#textNEMOTECNIA").val("0").change();
-                    $("#textSENALAMIENTO").val("0").change();
-                    $("#textGABINETE").val("0").change();
-                    $("#textOBSERVACIONES").val("");
-                    window.location.href = '#TiposDeCaptura';
-            }
+                        if(navigator.connection.type != Connection.NONE)
+                        {
+                             navigator.notification.alert("Segun se manda al server.",null,"Advertencia","Aceptar");
+                            //server.sincronizar(fn.per,fn.dia,fn.th);//Enviar a servidor
+                        }
+                        else
+                        {
+                                almacen.guardarRegistroEXT(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones);
+                                $("#textPRESION").val("0").change();
+                                $("#textMANOMETRO").val("0").change();
+                                $("#textSEGUROSELLO").val("0").change();
+                                $("#textMANGUERA").val("0").change();
+                                $("#textSOPORTE").val("0").change();
+                                $("#textPINTURA").val("0").change();
+                                $("#textVALVULA").val("0").change();
+                                $("#textCILINDRO").val("0").change();
+                                $("#textNEMOTECNIA").val("0").change();
+                                $("#textSENALAMIENTO").val("0").change();
+                                $("#textGABINETE").val("0").change();
+                                $("#textOBSERVACIONES").val("");
+                                window.location.href = '#TiposDeCaptura';
+                        }
           }
           else
           {
