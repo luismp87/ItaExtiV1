@@ -95,7 +95,7 @@ var fn = {
     //alert("hola1");
     for(i = 0; i<usuarios.length; i++) {
         if(( usuarios[i].usuario == usuariof) && (usuarios[i].pass == passf)){
-        window.localStorage.setItem("user",nom);
+        window.localStorage.setItem("user",usuariof);
         //alert(""+usuariof);
         window.location.href = '#TiposDeCaptura';
         encontrado = "true";
