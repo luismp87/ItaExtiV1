@@ -215,13 +215,13 @@ var fn = {
             (fn.senalamiento != "0") &&  
             (fn.gabinete != "0"))
           { 
-                        if(navigator.connection.type != Connection.NONE)
-                        {
-                             navigator.notification.alert("Segun se manda al server.",null,"Advertencia","Aceptar");
+                        //if(navigator.connection.type != Connection.NONE)
+                        //{
+                             //navigator.notification.alert("Segun se manda al server.",null,"Advertencia","Aceptar");
                             //server.sincronizar(fn.per,fn.dia,fn.th);//Enviar a servidor
-                        }
-                        else
-                        {
+                        //}
+                        //else
+                        //{
                                 almacen.guardarRegistroEXT(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones);
                                 $("#textPRESION").val("0").change();
                                 $("#textMANOMETRO").val("0").change();
@@ -236,7 +236,7 @@ var fn = {
                                 $("#textGABINETE").val("0").change();
                                 $("#textOBSERVACIONES").val("");
                                 window.location.href = '#TiposDeCaptura';
-                        }
+                        //}
           }
           else
           {
