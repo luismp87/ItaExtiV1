@@ -23,8 +23,8 @@ nemotecnia: null,
 senalamiento: null,
 gabinete: null,
 observaciones: null,
-usuario: null,
-fechaderegistro: null,
+/*usuario: null,
+fechaderegistro: null,*/
 
 
 
@@ -159,7 +159,7 @@ fechaderegistro: null,
 	
 	},
 /*FUNCION PARA GUARDAR LA INFORMACION DE LO QUE SE CAPTURA SOBRE EXTINTORES EN BASE DE DATOS*/
-		guardarRegistroEXT: function(id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario){
+		guardarRegistroEXT: function(id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones){
 		almacen.id_ext = id_ext;
 		almacen.presion=presion;
 		almacen.manometro=manometro;
@@ -173,16 +173,16 @@ fechaderegistro: null,
 		almacen.senalamiento=senalamiento;
 		almacen.gabinete=gabinete;
 		almacen.observaciones=observaciones;
-		almacen.usuario = usuario;
-		almacen.fechaderegistro = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear(), ' '+d.getHours(),':'+d.getMinutes(),':'+d.getSeconds();
+		//almacen.usuario = usuario;
+		//almacen.fechaderegistro = "ss";//d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear(), ' '+d.getHours(),':'+d.getMinutes(),':'+d.getSeconds();
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.GuardarRegistroExtintor, almacen.error, almacen.GuardadoCorrectoLocalEXT);
 			
 		},
 									GuardarRegistroExtintor: function(tx){
-										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_reg_ext (id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario,fechaderegistro)");
-										tx.executeSql("INSERT INTO ita_sh_reg_ext (id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario,fechaderegistro) VALUES ('"+almacen.id_ext+"','"+almacen.presion+"','"+almacen.manometro+"','"+almacen.segurosello+"','"+almacen.manguera+"','"+almacen.soporte+"','"+almacen.pintura+"','"+almacen.valvula+"','"+almacen.cilindro+"','"+almacen.nemotecnia+"','"+almacen.senalamiento+"','"+almacen.gabinete+"','"+almacen.observaciones+"','"+almacen.usuario+"','"+almacen.fechaderegistro+"')");       
-										alert(""+ almacen.fechaderegistro);
+										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_reg_ext (id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones)");
+										tx.executeSql("INSERT INTO ita_sh_reg_ext (id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones) VALUES ('"+almacen.id_ext+"','"+almacen.presion+"','"+almacen.manometro+"','"+almacen.segurosello+"','"+almacen.manguera+"','"+almacen.soporte+"','"+almacen.pintura+"','"+almacen.valvula+"','"+almacen.cilindro+"','"+almacen.nemotecnia+"','"+almacen.senalamiento+"','"+almacen.gabinete+"','"+almacen.observaciones+"')");       
+										alert("- "+ almacen.id_ext + " - " + almacen.presion);
 									}
 
 
