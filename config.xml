@@ -23,5 +23,5 @@
 		<gap:plugin name="org.apache.cordova.vibration"></gap:plugin>
 		<gap:plugin name="org.apache.cordova.device"></gap:plugin>
 		<gap:plugin name="com.phonegap.plugins.barcodescanner"></gap:plugin>
-		<gap:plugin name="org.apache.cordova.network-information" /></gap:plugin>
+		<gap:plugin name="org.apache.cordova.network-information"></gap:plugin>
 	</widget>
