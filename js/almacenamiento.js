@@ -185,4 +185,5 @@ fechaderegistro: null,
 										alert(""+ almacen.fechaderegistro);
 									}
 
+
 }
