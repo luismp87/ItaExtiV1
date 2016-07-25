@@ -368,5 +368,5 @@ observaciones: null,
 										tx.executeSql("INSERT INTO ita_sh_reg_ext (id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones) VALUES ('"+almacen.id_ext+"','"+almacen.presion+"','"+almacen.manometro+"','"+almacen.segurosello+"','"+almacen.manguera+"','"+almacen.soporte+"','"+almacen.pintura+"','"+almacen.valvula+"','"+almacen.cilindro+"','"+almacen.nemotecnia+"','"+almacen.senalamiento+"','"+almacen.gabinete+"','"+almacen.observaciones+"')");       
 									}
 
->>>>>>> origin/master
+
 }

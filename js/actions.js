@@ -592,5 +592,5 @@ var fn = {
 
 };
 $(fn.ready);
->>>>>>> origin/master
+
 //$(fn.init);
