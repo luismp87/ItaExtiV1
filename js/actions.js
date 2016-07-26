@@ -122,8 +122,16 @@ var fn = {
     ffabricacion: '',
     fproxservicio: '',
     ActualizarBDDesdeServer :function(){
+        if(window.localStorage.getItem("user") == "sistemas")
+        {
         almacen.leerExt();  
         window.location.href = '#RemotaALocal';
+        }
+        else
+        {
+          navigator.notification.alert("Su usuario no esta permitido para ingresar a esta opcion",null,"Advertencia","Aceptar");    
+        window.location.href = '#TiposDeCaptura';
+        }
     },
     MigrarExtintoresRM : function(){ 
         var myArray = new Array(500); 
@@ -225,6 +233,19 @@ var fn = {
                             /**************/
                              //navigator.notification.alert("Segun se manda al server.",null,"Advertencia","Aceptar");
                             //server.sincronizar(fn.per,fn.dia,fn.th);//Enviar a servidor
+                                $("#textPRESION").val("0").change();
+                                $("#textMANOMETRO").val("0").change();
+                                $("#textSEGUROSELLO").val("0").change();
+                                $("#textMANGUERA").val("0").change();
+                                $("#textSOPORTE").val("0").change();
+                                $("#textPINTURA").val("0").change();
+                                $("#textVALVULA").val("0").change();
+                                $("#textCILINDRO").val("0").change();
+                                $("#textNEMOTECNIA").val("0").change();
+                                $("#textSENALAMIENTO").val("0").change();
+                                $("#textGABINETE").val("0").change();
+                                $("#textOBSERVACIONES").val("");
+                                window.location.href = '#TiposDeCaptura';
                         }
                         else
                         {
