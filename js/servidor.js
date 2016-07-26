@@ -85,7 +85,7 @@ $.ajax({
 		{
 			navigator.notification.alert("Hubo un error al intentar sincronizar los datos guardados", null, "Error", "Aceptar");
 		}*/
-		navigator.notification.alert("Los datos se guardaron remotamente satisfactoriamente " + msg, null, "Advertencia", "Aceptar");
+		navigator.notification.alert("Los datos se guardaron remotamente satisfactoriamente ", null, "Advertencia", "Aceptar");
 	},
 /*ENVIAR AL SERVER LOS REGISTROS YA CAPTURADOS AL SERVIDOR VARIOS REGISTROS*/
 	sincronizarRegistrados: function(id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario,fechaderegistro){
@@ -142,8 +142,21 @@ $.ajax({
 					//alert(jq + txt.responseText);
                     navigator.notification.alert(jq + txt.responseText,null,"Error","Aceptar");
 				}
-			}).done(server.sincronizado);
+			}).done(server.sincronizadoRegistrados);
 
 
+	},
+	sincronizadoRegistrados: function(msg){
+		/*if(msg == 1)
+		{
+			navigator.notification.alert("Los datos guardados se han sincronizado satisfactoriamente", null, "Sincronizado", "Aceptar");
+			almacen.gurdarHistorial(server.pr,server.di,server.th);//Guardar en Historial
+		}
+		else
+		{
+			navigator.notification.alert("Hubo un error al intentar sincronizar los datos guardados", null, "Error", "Aceptar");
+		}*/
+		almacen.eliminarregistrosExt();
+		navigator.notification.alert("Los datos se guardaron remotamente satisfactoriamente ", null, "Advertencia", "Aceptar");
 	}
 };
