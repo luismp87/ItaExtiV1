@@ -220,15 +220,14 @@ var fn = {
                         if(navigator.connection.type != Connection.NONE)
                         {
                              
-/******GUARDAMOS EN EL SERVIDOR SI SE TIENE SEÑAL******/
-server.sincronizar(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones,fn.usuario);//Enviar a servidor
-/**************/
+                            /******GUARDAMOS EN EL SERVIDOR SI SE TIENE SEÑAL******/
+                            server.sincronizar(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones,fn.usuario);//Enviar a servidor
+                            /**************/
                              navigator.notification.alert("Segun se manda al server.",null,"Advertencia","Aceptar");
                             //server.sincronizar(fn.per,fn.dia,fn.th);//Enviar a servidor
                         }
                         else
                         {
-                            
                                 almacen.guardarRegistroEXT(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones,fn.usuario);
                                 $("#textPRESION").val("0").change();
                                 $("#textMANOMETRO").val("0").change();
