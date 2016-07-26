@@ -221,7 +221,7 @@ fechaderegistro: null,
 																				  if(btn == 2) navigator.notification.beep(1);
 																			  }, "Tabla Reservas","Vibrar,Sonar,Cancelar");*/
 												//server.sincronizar(t.rows.item(i).pr,t.rows.item(i).di,t.rows.item(i).th);
-												server.sincronizar(t.rows.item(i).id_ext,t.rows.item(i).presion,t.rows.item(i).manometro,t.rows.item(i).segurosello,t.rows.item(i).manguera,t.rows.item(i).soporte,t.rows.item(i).pintura,t.rows.item(i).valvula,t.rows.item(i).cilindro,t.rows.item(i).nemotecnia,t.rows.item(i).senalamiento,t.rows.item(i).gabinete,t.rows.item(i).observaciones,t.rows.item(i).usuario);//Enviar a servidor
+												server.sincronizarRegistrados(t.rows.item(i).id_ext,t.rows.item(i).presion,t.rows.item(i).manometro,t.rows.item(i).segurosello,t.rows.item(i).manguera,t.rows.item(i).soporte,t.rows.item(i).pintura,t.rows.item(i).valvula,t.rows.item(i).cilindro,t.rows.item(i).nemotecnia,t.rows.item(i).senalamiento,t.rows.item(i).gabinete,t.rows.item(i).observaciones,t.rows.item(i).usuario,t.rows.item(i).fechaderegistro);//Enviar a servidor
 												//alert("id_ext: " + t.rows.item(i).id_ext);
 												//navigator.notification.alert("ubicacion: " + t.rows.item(i).id_ext, null, "Correcto", "Aceptar");
 											}
