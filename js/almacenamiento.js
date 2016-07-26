@@ -184,7 +184,7 @@ fechaderegistro: null,
 									GuardarRegistroExtintor: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_reg_ext (id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario,fechaderegistro)");
 										tx.executeSql("INSERT INTO ita_sh_reg_ext (id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario,fechaderegistro) VALUES ('"+almacen.id_ext+"','"+almacen.presion+"','"+almacen.manometro+"','"+almacen.segurosello+"','"+almacen.manguera+"','"+almacen.soporte+"','"+almacen.pintura+"','"+almacen.valvula+"','"+almacen.cilindro+"','"+almacen.nemotecnia+"','"+almacen.senalamiento+"','"+almacen.gabinete+"','"+almacen.observaciones+"','"+almacen.usuario+"','"+almacen.fechaderegistro+"')");       
-										alert("- "+ almacen.usuario + " - " + almacen.fechaderegistro);
+										//alert("- "+ almacen.usuario + " - " + almacen.fechaderegistro);
 									}
 
 

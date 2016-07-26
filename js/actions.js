@@ -221,30 +221,7 @@ var fn = {
                         {
                              
 /******GUARDAMOS EN EL SERVIDOR SI SE TIENE SEÑAL******/
-/*$.ajax({
-                method: 'POST',
-                url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/insertarregextintores',              
-                data: {usuario: nom, contrasena: passw},
-                dataType: "json",
-                success: function (msg){
-                    $.mobile.loading("hide");
-                    $.each(msg,function(i,item){
-                        if(msg[i].valor1 = "correcto")
-                            {                           
-                            window.location.href = '#TiposDeCaptura';
-                            }
-                        else
-                            {
-                            navigator.notification.alert("Usuario o contraseña incorrectos",null,"Error al Ingresar","Aceptar");   
-                            //alert("Usuario o contraseña incorrectos");
-                            }                        
-                    });                 
-                },
-                error: function(jq, txt){
-                    //alert(jq + txt.responseText);
-                    navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
-                }
-            });*/
+server.sincronizar(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones,fn.usuario);//Enviar a servidor
 /**************/
                              navigator.notification.alert("Segun se manda al server.",null,"Advertencia","Aceptar");
                             //server.sincronizar(fn.per,fn.dia,fn.th);//Enviar a servidor
