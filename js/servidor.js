@@ -52,44 +52,32 @@ $.ajax({
 				usuario: usuario,
 				fechaderegistro: fechaderegistro},
                 dataType: "json",
-				success: function (msg){
+				/*success: function (msg){
 					$.mobile.loading("hide");
                     $.each(msg,function(i,item){
                         if(msg[i].valor1 = "correcto")
                             {                           
-                           navigator.notification.alert("bien",null,"Error al Ingresar","Aceptar");   
+                           navigator.notification.alert("La información se envio al servidor de forma correcta",null,"Advertencia","Aceptar");   
                             }
                         else
                             {
-                            navigator.notification.alert("Usuario o contraseña incorrectos",null,"Error al Ingresar","Aceptar");   
+                            navigator.notification.alert("Error al enviar la información al servidor",null,"Error al Ingresar","Aceptar");   
                             //alert("Usuario o contraseña incorrectos");
                             }                        
                     });					
-                },
+                },*/
 				error: function(jq, txt){
 					//alert(jq + txt.responseText);
-                    navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
+                    navigator.notification.alert(jq + txt.responseText,null,"Error","Aceptar");
 				}
-			});
+			}).done(server.sincronizado);
+
+
 	},
 	sincronizado: function(msg){
 		if(msg == 1){
 			navigator.notification.alert("Los datos guardados se han sincronizado satisfactoriamente", null, "Sincronizado", "Aceptar");
-			/*almacen.gurdarHistorial(server.id_ext ,
-server.presion,
-server.manometro,
-server.segurosello,
-server.manguera,
-server.soporte,
-server.pintura,
-server.valvula,
-server.cilindro,
-server.nemotecnia,
-server.senalamiento,
-server.gabinete,
-server.observaciones,
-server.usuario,
-fechaderegistro );*///Guardar en Historial
+			//almacen.gurdarHistorial(server.pr,server.di,server.th);//Guardar en Historial
 		}else
 			navigator.notification.alert("Hubo un error al intentar sincronizar los datos guardados", null, "Error", "Aceptar");
 	}
