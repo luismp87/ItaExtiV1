@@ -176,7 +176,7 @@ fechaderegistro: null,
 		almacen.usuario = usuario;
 		var d = new Date(); 
 		
-		almacen.fechaderegistro = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear(), ' '+d.getHours(),':'+d.getMinutes(),':'+d.getSeconds();
+		almacen.fechaderegistro = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.GuardarRegistroExtintor, almacen.error, almacen.GuardadoCorrectoLocalEXT);
 			
