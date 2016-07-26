@@ -33,10 +33,10 @@ sincronizar: function(id_ext,presion,manometro,segurosello,manguera,soporte,pint
             var d = new Date(); 
             server.fechaderegistro = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();
             var fechaderegistro = server.fechaderegistro;
-		$.ajax({
-			method: "POST",
-			url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/insertarregextintores',              
-			data: { id_ext: id_ext, 
+$.ajax({
+                method: 'POST',
+				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/insertarregextintores',				
+                data: { id_ext: id_ext, 
 				presion: presion, 
 				manometro: manometro, 
 				segurosello: segurosello, 
@@ -51,10 +51,26 @@ sincronizar: function(id_ext,presion,manometro,segurosello,manguera,soporte,pint
 				observaciones: observaciones,
 				usuario: usuario,
 				fechaderegistro: fechaderegistro},
-			error: function(jq,txt){
-				navigator.notification.alert("Hubo un error al intentar sincronizar los datos guardados", null, "Error", "Aceptar");
-			}
-		}).done(server.sincronizado);
+                dataType: "json",
+				success: function (msg){
+					$.mobile.loading("hide");
+                    $.each(msg,function(i,item){
+                        if(msg[i].valor1 = "correcto")
+                            {                           
+                           navigator.notification.alert("bien",null,"Error al Ingresar","Aceptar");   
+                            }
+                        else
+                            {
+                            navigator.notification.alert("Usuario o contraseña incorrectos",null,"Error al Ingresar","Aceptar");   
+                            //alert("Usuario o contraseña incorrectos");
+                            }                        
+                    });					
+                },
+				error: function(jq, txt){
+					//alert(jq + txt.responseText);
+                    navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
+				}
+			});
 	},
 	sincronizado: function(msg){
 		if(msg == 1){
