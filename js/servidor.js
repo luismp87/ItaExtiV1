@@ -35,7 +35,7 @@ sincronizar: function(id_ext,presion,manometro,segurosello,manguera,soporte,pint
             var fechaderegistro = server.fechaderegistro;
 		$.ajax({
 			method: "POST",
-			url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/enviarcatalogocompletodeextintores',              
+			url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/insertarregextintores',              
 			data: { id_ext: id_ext, 
 				presion: presion, 
 				manometro: manometro, 
