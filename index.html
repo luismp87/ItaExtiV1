@@ -18,7 +18,7 @@
                        <li><a href="#mantoExtintores1" class="ui-btn ui-icon-lock ui-btn-icon-left">Catalogo de extintores</a></li>
                       <li></li>
                        <li><a href="#" class="ui-btn ui-icon-info ui-btn-icon-left">Revision de Hidrantes</a></li>
-                       <li><a href="#" class="ui-btn ui-icon-lock ui-btn-icon-left">Catalogo de Hidrantes</a></li>
+                       <li><a href="#mantoExtintores1" class="ui-btn ui-icon-lock ui-btn-icon-left">Catalogo de Hidrantes</a></li>
                        <li></li>
                       <li><a href="#" id="btncerrarsesion" class="ui-btn ui-icon-alert ui-btn-icon-left">Cerrar sesion</a></li>
 
@@ -119,7 +119,7 @@
                         <select id="textPRESION">
                             <option value="0" selected="selected">Presion</option>
                             <option value="OK">OK</option>
-                            <option value="X">X</option>
+                            <option value="DEF">DEF</option>
                             <option value="NA">NA</option>
                             <<option value="NT">NT</option>                           
                         </select>
@@ -129,7 +129,7 @@
                         <select id="textMANOMETRO">
                             <option value="0" selected="selected">Manometro</option>
                             <option value="OK">OK</option>
-                            <option value="X">X</option>
+                            <option value="DEF">DEF</option>
                             <option value="NA">NA</option>
                             <<option value="NT">NT</option>                           
                         </select>
@@ -139,7 +139,7 @@
                         <select id="textSEGUROSELLO">
                             <option value="0" selected="selected">Seguro/Sello</option>
                             <option value="OK">OK</option>
-                            <option value="X">X</option>
+                            <option value="DEF">DEF</option>
                             <option value="NA">NA</option>
                             <<option value="NT">NT</option>                           
                         </select>
@@ -149,7 +149,7 @@
                         <select id="textMANGUERA">
                             <option value="0" selected="selected">Manguera</option>
                             <option value="OK">OK</option>
-                            <option value="X">X</option>
+                            <option value="DEF">DEF</option>
                             <option value="NA">NA</option>
                             <<option value="NT">NT</option>                           
                         </select>
@@ -159,7 +159,7 @@
                         <select id="textSOPORTE">
                             <option value="0" selected="selected">Soporte</option>
                             <option value="OK">OK</option>
-                            <option value="X">X</option>
+                            <option value="DEF">DEF</option>
                             <option value="NA">NA</option>
                             <<option value="NT">NT</option>                           
                         </select>
@@ -169,7 +169,7 @@
                         <select id="textPINTURA">
                             <option value="0" selected="selected">Pintura</option>
                             <option value="OK">OK</option>
-                            <option value="X">X</option>
+                            <option value="DEF">DEF</option>
                             <option value="NA">NA</option>
                             <<option value="NT">NT</option>                           
                         </select>
@@ -179,7 +179,7 @@
                         <select id="textVALVULA">
                             <option value="0" selected="selected">Valvula</option>
                             <option value="OK">OK</option>
-                            <option value="X">X</option>
+                            <option value="DEF">DEF</option>
                             <option value="NA">NA</option>
                             <<option value="NT">NT</option>                           
                         </select>
@@ -189,7 +189,7 @@
                         <select id="textCILINDRO">
                             <option value="0" selected="selected">Cilindro</option>
                             <option value="OK">OK</option>
-                            <option value="X">X</option>
+                            <option value="DEF">DEF</option>
                             <option value="NA">NA</option>
                             <<option value="NT">NT</option>                           
                         </select>
@@ -199,7 +199,7 @@
                         <select id="textNEMOTECNIA">
                             <option value="0" selected="selected">Nemotecnia</option>
                             <option value="OK">OK</option>
-                            <option value="X">X</option>
+                            <option value="DEF">DEF</option>
                             <option value="NA">NA</option>
                             <<option value="NT">NT</option>                           
                         </select>
@@ -209,7 +209,7 @@
                         <select id="textSENALAMIENTO">
                             <option value="0" selected="selected">Señalamiento</option>
                             <option value="OK">OK</option>
-                            <option value="X">X</option>
+                            <option value="DEF">DEF</option>
                             <option value="NA">NA</option>
                             <<option value="NT">NT</option>                           
                         </select>
@@ -221,7 +221,7 @@
                         <select id="textGABINETE">
                             <option value="0" selected="selected">Gabinete</option>
                             <option value="OK">OK</option>
-                            <option value="X">X</option>
+                            <option value="DEF">DEF</option>
                             <option value="NA">NA</option>
                             <<option value="NT">NT</option>                           
                         </select>
@@ -276,7 +276,42 @@
 
                  </div>
                  <div data-role="footer" data-position="fixed"></div>
-            </div>    
+            </div>
+<!--PANTALLA PARA DARLE MANTENIMIENTO A LOS HIDRANTES-->
+<div data-role="page" id="mantoHidrantes1">
+                 <div data-role="header"><h1>ItaExtiV1</h1></div>
+                 <div data-role="main" class="ui-content">
+                <input type="submit" value="Copiar catalogo remoto en local" id="btnActualizarBDDesdeServerHidra">
+
+                 </div>
+                 <div data-role="footer" data-position="fixed"></div>
+            </div>   
+<!--PANTALLA PARA RELLENAR LA BASE LOCAL de hidrantes-->
+<div data-role="page" id="RemotaALocalHidra">
+                 <div data-role="header"><h1>ItaExtiV1</h1></div>
+                 <div data-role="main" class="ui-content">
+               <table>
+                 <tr>
+                 <td>Extintores:</td>
+                 <td>
+                   <input type="text" placeholder="Registrados localmente" id="NumDeHidrantes" readonly> 
+                 </td>
+                 </tr>
+                  <tr>                 
+                 <td colspan="2">
+                   <input type="submit" value="Remoto > Local" id="btnMigrarHidrantesRM">
+                 </td>
+                 </tr>
+                 <tr>                 
+                 <td colspan="2">
+                   <input type="submit" value="Eliminar Local" id="btnEliminarHidrantes">
+                 </td>
+                 </tr>
+               </table>
+
+                 </div>
+                 <div data-role="footer" data-position="fixed"></div>
+            </div>
 
     
     

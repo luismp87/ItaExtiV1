@@ -18,6 +18,12 @@ var fn = {
         $('#capturaExt2 div[data-role=footer] #btnGuardarRegExt').tap(fn.GuardarRegExt);
         $('#btniraRegistrarEXT').tap(fn.iraRegistrarEXT);
         $('#btncerrarsesion').tap(fn.cerrarsesion);
+
+        /**HIDRANTES*/
+        $('#btnActualizarBDDesdeServerHidra').tap(fn.ActualizarBDDesdeServerHidra);
+        $('#btnMigrarHidrantesRM').tap(fn.MigrarHidrantesRM);
+
+        
         
         document.addEventListener("online", almacen.leerinformacionregistradaEXT, false);
 	},
@@ -301,6 +307,54 @@ var fn = {
         window.localStorage.setItem("user",'');    
         window.location.href = '#inicio';
 
+        },
+/*FUNCIONES DE HIDRANTES*/
+        ActualizarBDDesdeServerHidra: function(){
+            if(window.localStorage.getItem("user") == "sistemas")
+        {
+        almacen.leerExt();  
+        window.location.href = '#RemotaALocalHidra';
+        }
+        else
+        {
+          navigator.notification.alert("Su usuario no esta autorizado para ingresar a esta opción",null,"Advertencia","Aceptar");    
+        window.location.href = '#TiposDeCaptura';
+        }
+
+        },         
+        MigrarHidrantesRM : function(){ 
+        var myArray = new Array(500); 
+        var registros = $('#NumDeHidrantes').val();  
+        if(registros == 0)
+            {
+                $.mobile.loading("show",{theme: 'b'});
+                $.ajax({
+                method: 'POST',
+                url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/enviarcatalogocompletodehidrantes',              
+                //data: {usuario: nom, contrasena: passw},
+                dataType: "json",
+                success: function (msg){
+                    $.mobile.loading("hide");
+                    $.each(msg,function(i,item){
+                        myArray[i] = msg[i].ID_HIDRA + "','" + msg[i].UBICACION + "','" + msg[i].PLANTA+ "'";
+                    }); 
+                    almacen.guardarHIDRA(myArray);
+                    almacen.leerHidra();  
+                    navigator.notification.alert("Migración Correcta",null,"Listo","Aceptar");               
+        },
+        error: function(jq, txt){
+                    //alert(jq + txt.responseText);
+                    navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
+                }
+            });
+                    //navigator.notification.alert("a guardar",null,"Error al Ingresar","Aceptar");    
+                            //almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
+                    
+                    }
+                    else
+                    {
+                       navigator.notification.alert("Se tienen registros en la base de datos, antes eliminelos",null,"Advertencia","Aceptar");    
+                    }
         }
 
 
