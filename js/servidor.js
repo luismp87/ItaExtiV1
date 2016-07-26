@@ -1,4 +1,4 @@
-var server ={
+var server = {
 			id_ext : null,
 			presion: null,
             manometro: null,
@@ -14,7 +14,7 @@ var server ={
             observaciones: null,
             usuario: null,
             fechaderegistro: null,
-sincronizar: function(pid_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario,fechaderegistro){
+sincronizar: function(id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario){
 
 			server.id_ext =id_ext;
 			server.presion = presion;
@@ -30,7 +30,9 @@ sincronizar: function(pid_ext,presion,manometro,segurosello,manguera,soporte,pin
             server.gabinete = gabinete;
             server.observaciones = observaciones;
             server.usuario = usuario;
-            fechaderegistro = fechaderegistro;
+            var d = new Date(); 
+            server.fechaderegistro = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();
+            var fechaderegistro = server.fechaderegistro;
 		$.ajax({
 			method: "POST",
 			url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/enviarcatalogocompletodeextintores',              
@@ -76,4 +78,3 @@ fechaderegistro );*///Guardar en Historial
 			navigator.notification.alert("Hubo un error al intentar sincronizar los datos guardados", null, "Error", "Aceptar");
 	}
 };
-}
