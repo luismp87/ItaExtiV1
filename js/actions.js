@@ -19,7 +19,7 @@ var fn = {
         $('#btniraRegistrarEXT').tap(fn.iraRegistrarEXT);
         $('#btncerrarsesion').tap(fn.cerrarsesion);
         
-        
+        document.addEventListener("online", almacen.leerinformacionregistradaEXT, false);
 	},
      estaRegistrado: function(){
         var usr = window.localStorage.getItem("user");

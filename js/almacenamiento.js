@@ -64,6 +64,9 @@ fechaderegistro: null,
 									CreaSINOExiste: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_extintores (id_ext, ubicacion,capacidad,clase,agente,marca,frecarga,ffabricacion,fproxservicio,planta)");										
 									},
+									CreaSINOExisteRegEXT: function(tx){
+										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_reg_ext (id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario,fechaderegistro)");										
+									},
 									error: function(){
 										//alert("Error al acceder a la Base de Datos");
 										navigator.notification.alert("Error al acceder a la Base de Datos", null, "Error", "Aceptar");
@@ -185,7 +188,56 @@ fechaderegistro: null,
 										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_reg_ext (id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario,fechaderegistro)");
 										tx.executeSql("INSERT INTO ita_sh_reg_ext (id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario,fechaderegistro) VALUES ('"+almacen.id_ext+"','"+almacen.presion+"','"+almacen.manometro+"','"+almacen.segurosello+"','"+almacen.manguera+"','"+almacen.soporte+"','"+almacen.pintura+"','"+almacen.valvula+"','"+almacen.cilindro+"','"+almacen.nemotecnia+"','"+almacen.senalamiento+"','"+almacen.gabinete+"','"+almacen.observaciones+"','"+almacen.usuario+"','"+almacen.fechaderegistro+"')");       
 										//alert("- "+ almacen.usuario + " - " + almacen.fechaderegistro);
-									}
+									},
+/*FUNCION PARA LEER EN BASE DE DATOS LOS REGISTROS CAPTURADOS SOBRE EXTINTORES*/
+		leerinformacionregistradaEXT: function(tx){
+			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
+			almacen.db.transaction(almacen.CreaSINOExisteRegEXT, almacen.error, null);			
+			almacen.db.transaction(almacen.leerinforegistradaEXT, almacen.error, null);
+
+	},
+									leerinforegistradaEXT: function(tx){
+										
+									tx.executeSql("SELECT id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario,fechaderegistro FROM ita_sh_extintores", [], function(tx2, t){
+									var encontroEXT = 0;
+											for(i = 0; i < t.rows.length; i++){
+							encontroEXT= 1;
+							/*$("#pPLANTA").text(t.rows.item(i).planta);
+							$("#pUBICACION").text(t.rows.item(i).ubicacion);
+                            $("#pCAPACIDAD").text(t.rows.item(i).capacidad);
+                            $("#pCLASE").text(t.rows.item(i).clase);
+                            $("#pAGENTE").text(t.rows.item(i).agente);
+                            $("#pMARCA").text(t.rows.item(i).marca);
+                            $("#pFRECARGA").text(t.rows.item(i).frecarga);
+                            $("#pFFABRICACION").text(t.rows.item(i).ffabricacion);
+                            $("#pFPROXSERVICIO").text(t.rows.item(i).fproxservicio);  */                 
+										
+
+												/*navigator.notification.confirm("Personas: " + t.rows.item(i).pr + "\n"
+																			   + "Días: " + t.rows.item(i).di + "\n"
+																			   + "Tipo de Habitación: " + t.rows.item(i).th,
+																			  function(btn){
+																				  if(btn == 1) navigator.vibrate(500);
+																				  if(btn == 2) navigator.notification.beep(1);
+																			  }, "Tabla Reservas","Vibrar,Sonar,Cancelar");*/
+												//server.sincronizar(t.rows.item(i).pr,t.rows.item(i).di,t.rows.item(i).th);
+												server.sincronizar(t.rows.item(i).id_ext,t.rows.item(i).presion,t.rows.item(i).manometro,t.rows.item(i).segurosello,t.rows.item(i).manguera,t.rows.item(i).soporte,t.rows.item(i).pintura,t.rows.item(i).valvula,t.rows.item(i).cilindro,t.rows.item(i).nemotecnia,t.rows.item(i).senalamiento,t.rows.item(i).gabinete,t.rows.item(i).observaciones,t.rows.item(i).usuario);//Enviar a servidor
+												//alert("id_ext: " + t.rows.item(i).id_ext);
+												//navigator.notification.alert("ubicacion: " + t.rows.item(i).id_ext, null, "Correcto", "Aceptar");
+											}
+
+	if(encontroEXT == 0)
+	{
+		navigator.notification.alert("Sin resultados por migrar", null, "Advertencia", "Aceptar");
+	}
+	else if(encontroEXT == 1)
+	{
+		navigator.notification.alert("Se migro informacion local al servidor", null, "Advertencia", "Aceptar");
+	}
+//navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
+										});
+	
+	}
 
 
 }
