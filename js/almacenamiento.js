@@ -241,7 +241,7 @@ fechaderegistro: null,
 	eliminarregistrosExt: function(tx){
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExisteRegEXT, almacen.error, null);
-			almacen.db.transaction(almacen.eliminarregExtintores, almacen.error, almacen.Correcto);
+			almacen.db.transaction(almacen.eliminarregExtintores, almacen.error, null);
 		},
 									eliminarregExtintores: function(tx){
 									tx.executeSql("DELETE FROM ita_sh_reg_ext");

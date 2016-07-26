@@ -129,7 +129,7 @@ var fn = {
         }
         else
         {
-          navigator.notification.alert("Su usuario no esta permitido para ingresar a esta opcion",null,"Advertencia","Aceptar");    
+          navigator.notification.alert("Su usuario no esta autorizado para ingresar a esta opción",null,"Advertencia","Aceptar");    
         window.location.href = '#TiposDeCaptura';
         }
     },
