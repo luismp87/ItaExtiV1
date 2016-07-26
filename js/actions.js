@@ -228,6 +228,7 @@ server.sincronizar(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,
                         }
                         else
                         {
+                            
                                 almacen.guardarRegistroEXT(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones,fn.usuario);
                                 $("#textPRESION").val("0").change();
                                 $("#textMANOMETRO").val("0").change();
