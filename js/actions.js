@@ -26,6 +26,7 @@ var fn = {
         $('#btnleercodigohidra').tap(fn.leerCodigoDeBarrashidra);
         $('#btnbuscar_info_hidrante').tap(fn.buscar_info_hidrante);    
         $('#btniraRegistrarHIDRA').tap(fn.iraRegistrarHIDRA);
+        $('.ablanqueaChidra1').tap(fn.blanqueaChidra1);
 
         
         
@@ -409,6 +410,11 @@ var fn = {
                 $("#texthOBSERVACIONES").val("");
                 window.location.href = '#capturaHidra2';
             }        
+        },
+        blanqueaChidra1: function(){
+                            $("#pPLANTAHIDRA").text("");
+                            $("#pUBICACIONHIDRA").text("");
+                            
         }
 
 
