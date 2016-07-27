@@ -23,7 +23,7 @@ var fn = {
         $('#btnActualizarBDDesdeServerHidra').tap(fn.ActualizarBDDesdeServerHidra);
         $('#btnMigrarHidrantesRM').tap(fn.MigrarHidrantesRM);
         $('#btnEliminarHidrantes').tap(fn.EliminarHidrantes);
-        $('#btnleercodigo').tap(fn.leerCodigoDeBarrashidra);
+        $('#btnleercodigohidra').tap(fn.leerCodigoDeBarrashidra);
         $('#btnbuscar_info_hidrante').tap(fn.buscar_info_hidrante);    
         
 
@@ -368,7 +368,7 @@ var fn = {
         cordova.plugins.barcodeScanner.scan(
           function (result) {             
                              //***navigator.notification.alert("Resultado: " + result.text,null,"Felicidades","Aceptar");
-                            $("#txtitahidraiV1").val("" + result.text); 
+                            $("#txtitahidraV1").val("" + result.text); 
           }, 
           function (error) {
               navigator.notification.alert("Scanning failed: " + error,null,"Error","Aceptar");
@@ -377,7 +377,7 @@ var fn = {
        );
     },
     buscar_info_hidrante : function(){         
-        var id = $('#txtitahidraiV1').val();      
+        var id = $('#txtitahidraV1').val();      
         if(id != ''){   
             $.mobile.loading("show",{theme: 'b'});
             almacen.leerinformacionHIDRA();

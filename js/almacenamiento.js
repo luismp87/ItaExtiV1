@@ -314,7 +314,7 @@ fechaderegistro: null,
 	},
 									leerinfoHIDRA: function(tx){
 										
-									tx.executeSql("SELECT id_hidra, ubicacion,planta FROM ita_sh_hidrantes where upper(id_hidra) = upper('" +$('#txtitahidraiV1').val()+ "')", [], function(tx2, t){
+									tx.executeSql("SELECT id_hidra, ubicacion,planta FROM ita_sh_hidrantes where upper(id_hidra) = upper('" +$('#txtitahidraV1').val()+ "')", [], function(tx2, t){
 									var encontroEXT = 0;
 											for(i = 0; i < t.rows.length; i++){
 							encontroEXT= 1;
