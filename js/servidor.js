@@ -170,7 +170,6 @@ $.ajax({
 /*ENVIAR AL SERVER EL CAPTURADO EN LA PANTALLA DE CARACTERISTICAS AL SERVIDOR UN SOLO REGISTRO*/
 sincronizarhidra: function(id_hidra,llave,etiqueta,manguera,tuberia,valvula,martillo,micavidrio,gabinete,senalamiento,observaciones,usuario){
 
-
 				server.id_hidra = id_hidra;
 				server.llave = llave;
 				server.etiqueta = etiqueta;
