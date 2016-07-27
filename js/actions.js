@@ -336,7 +336,7 @@ var fn = {
                 success: function (msg){
                     $.mobile.loading("hide");
                     $.each(msg,function(i,item){
-                        myArray[i] = msg[i].ID_HIDRA + "','" + msg[i].UBICACION + "','" + msg[i].PLANTA+ "'";
+                        myArray[i] = msg[i].ID_HIDRA + "','" + msg[i].UBICACION + "','" + msg[i].PLANTA ;
                     }); 
                     almacen.guardarHIDRA(myArray);
                     almacen.leerHidra();  
