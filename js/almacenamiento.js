@@ -305,6 +305,45 @@ fechaderegistro: null,
 									eliminarHidrantes: function(tx){
 									tx.executeSql("DELETE FROM ita_sh_hidrantes");
 	},
+	/*FUNCION PARA LEER EN BASE DE DATOS SOBRE HIDRANTES*/
+		leerinformacionHIDRA: function(tx){
+			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
+			almacen.db.transaction(almacen.CreaSINOExisteHidra, almacen.error, null);
+			almacen.db.transaction(almacen.leerinfoHIDRA, almacen.error, null);
+
+	},
+									leerinfoHIDRA: function(tx){
+										
+									tx.executeSql("SELECT id_hidra, ubicacion,planta FROM ita_sh_hidrantes where upper(id_hidra) = upper('" +$('#txtitahidraiV1').val()+ "')", [], function(tx2, t){
+									var encontroEXT = 0;
+											for(i = 0; i < t.rows.length; i++){
+							encontroEXT= 1;
+							$("#pPLANTAHIDRA").text(t.rows.item(i).planta);
+							$("#pUBICACIONHIDRA").text(t.rows.item(i).ubicacion);
+                                        
+										
+
+												/*navigator.notification.confirm("Personas: " + t.rows.item(i).pr + "\n"
+																			   + "Días: " + t.rows.item(i).di + "\n"
+																			   + "Tipo de Habitación: " + t.rows.item(i).th,
+																			  function(btn){
+																				  if(btn == 1) navigator.vibrate(500);
+																				  if(btn == 2) navigator.notification.beep(1);
+																			  }, "Tabla Reservas","Vibrar,Sonar,Cancelar");*/
+												//server.sincronizar(t.rows.item(i).pr,t.rows.item(i).di,t.rows.item(i).th);
+												//alert("id_ext: " + t.rows.item(i).id_ext);
+												//navigator.notification.alert("ubicacion: " + t.rows.item(i).id_ext, null, "Correcto", "Aceptar");
+											}
+
+	if(encontroEXT == 0)
+	{
+		navigator.notification.alert("Sin resultados verifique el ID del Hidrante", null, "Advertencia", "Aceptar");
+	}
+//navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
+										});
+	
+	}
+
 
 
 }

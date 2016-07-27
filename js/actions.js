@@ -23,7 +23,8 @@ var fn = {
         $('#btnActualizarBDDesdeServerHidra').tap(fn.ActualizarBDDesdeServerHidra);
         $('#btnMigrarHidrantesRM').tap(fn.MigrarHidrantesRM);
         $('#btnEliminarHidrantes').tap(fn.EliminarHidrantes);
-        
+        $('#btnleercodigo').tap(fn.leerCodigoDeBarrashidra);
+        $('#btnbuscar_info_hidrante').tap(fn.buscar_info_hidrante);    
         
 
         
@@ -315,7 +316,7 @@ var fn = {
         ActualizarBDDesdeServerHidra: function(){
             if(window.localStorage.getItem("user") == "sistemas")
         {
-        almacen.leerExt();  
+        almacen.leerHidra();  
         window.location.href = '#RemotaALocalHidra';
         }
         else
@@ -363,6 +364,30 @@ var fn = {
             almacen.eliminarHidra();
             almacen.leerHidra();  
         },
+        leerCodigoDeBarrashidra: function(){
+        cordova.plugins.barcodeScanner.scan(
+          function (result) {             
+                             //***navigator.notification.alert("Resultado: " + result.text,null,"Felicidades","Aceptar");
+                            $("#txtitahidraiV1").val("" + result.text); 
+          }, 
+          function (error) {
+              navigator.notification.alert("Scanning failed: " + error,null,"Error","Aceptar");
+              //alert("Scanning failed: " + error);
+          }
+       );
+    },
+    buscar_info_hidrante : function(){         
+        var id = $('#txtitahidraiV1').val();      
+        if(id != ''){   
+            $.mobile.loading("show",{theme: 'b'});
+            almacen.leerinformacionHIDRA();
+            $.mobile.loading("hide");
+        }
+        else{
+            navigator.notification.alert("Ingrese el ID del extintor",null,"Error al Ingresar","Aceptar");
+            //alert("Ingrese el ID del extintor");
+        }   
+    }
 
 
 

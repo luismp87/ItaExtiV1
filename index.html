@@ -17,7 +17,7 @@
                        <li class="ablanqueaCext1"><a href="#capturaExt1" class="ui-btn ui-icon-info ui-btn-icon-left">Revision de Extintores</a></li>
                        <li><a href="#mantoExtintores1" class="ui-btn ui-icon-lock ui-btn-icon-left">Catalogo de extintores</a></li>
                       <li></li>
-                       <li><a href="#" class="ui-btn ui-icon-info ui-btn-icon-left">Revision de Hidrantes</a></li>
+                       <li><a href="#capturaHidra1" class="ui-btn ui-icon-info ui-btn-icon-left">Revision de Hidrantes</a></li>
                        <li><a href="#mantoHidrantes1" class="ui-btn ui-icon-lock ui-btn-icon-left">Catalogo de Hidrantes</a></li>
                        <li></li>
                       <li><a href="#" id="btncerrarsesion" class="ui-btn ui-icon-alert ui-btn-icon-left">Cerrar sesion</a></li>
@@ -312,6 +312,45 @@
                  </div>
                  <div data-role="footer" data-position="fixed"></div>
             </div>
+<!--CAPTURA DE CODIGO DE BARRAR Y MUESTRA DE INFORMACION para hidrantes-->
+            <div data-role="page" id="capturaHidra1">
+                      <div data-role="header"><h1>ItaExtiV1</h1></div>
+                              <div data-role="main" class="ui-content">
+                                
+                                    <input type="text" class="entrada_texto" id="txtitahidraV1" placeholder="ID del hidrante" value="LISA_H_1">
+                                    <!--<input type="submit" value="Leer CB" id="btnleercodigo">-->
+                                     <a id="btnleercodigohidra" href="#" class="ui-btn ui-icon-search ui-btn-icon-left">Leer C.B</a>    
+                                    <!--<input type="submit" value="Buscar" id="btnbuscar_info_extintor2"  class="ui-btn ui-icon-search ui-btn-icon-left">-->
+                                    <a id="btnbuscar_info_hidrante" href="#" class="ui-btn ui-icon-search ui-btn-icon-left">Buscar</a>     
+                                        <!--<p id="pID"></p><br>
+                                        <p id="pUBICACION"></p>-->
+
+                                    <table data-role="table" class="ui-responsive">
+                                        <thead>
+                                            <tr>
+                                                <th></th>                                   
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>                                                                  
+                                                <td>Planta: <span class="Informacion" id="pPLANTAHIDRA"></span></td>
+                                            </tr>
+                                            <tr>                                                                  
+                                                <td>Ubicación: <span class="Informacion" id="pUBICACIONHIDRA"></span></td>
+                                            </tr>                                           
+                                        </tbody>
+                                  </table>
+                              </div>
+                  
+                       <div data-role="footer" data-position="fixed">
+                            <div data-role="navbar">
+                                <ul>
+                                    <li><a href="#TiposDeCaptura">Atras</a></li>
+                                    <li><a id="btniraRegistrarEXT" href="#">Registrar</a></li>                        
+                                </ul>
+                            </div><!-- /navbar -->
+                       </div>
+            </div>            
 
     
     
