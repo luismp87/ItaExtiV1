@@ -25,6 +25,13 @@ gabinete: null,
 observaciones: null,
 usuario: null,
 fechaderegistro: null,
+//VARIABLES SOBRE CARACTERISTICAS DE HIDRANTES
+ 		id_hidra: null,
+        llave:null,
+        etiqueta: null,
+        tuberia:null,
+        martillo:null,
+        micavidrio: null,
 
 
 
@@ -79,6 +86,10 @@ fechaderegistro: null,
 										navigator.notification.alert("Ejecución satisfactoria", null, "Correcto", "Aceptar");
 									},
 									GuardadoCorrectoLocalEXT: function(){										
+										navigator.notification.alert("Se guardo la información en el dispositivo", null, "Correcto", "Aceptar");										
+										
+									},
+									GuardadoCorrectoLocalHIDRA: function(){										
 										navigator.notification.alert("Se guardo la información en el dispositivo", null, "Correcto", "Aceptar");										
 										
 									},
@@ -342,7 +353,34 @@ fechaderegistro: null,
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
 										});
 	
-	}
+	},
+			guardarRegistroHIDRA: function(id_hidra,llave,etiqueta,manguera,tuberia,valvula,martillo,micavidrio,gabinete,senalamiento,observaciones,usuario){
+
+				almacen.id_hidra = id_hidra;
+				almacen.llave = llave;
+				almacen.etiqueta = etiqueta;
+				almacen.manguera = manguera;
+				almacen.tuberia = tuberia;
+				almacen.valvula = valvula;
+				almacen.martillo = martillo;
+				almacen.micavidrio = micavidrio;
+				almacen.gabinete = gabinete;
+				almacen.senalamiento = senalamiento;
+				almacen.observaciones = observaciones;
+				almacen.usuario = usuario;
+				
+				var d = new Date(); 
+		
+				almacen.fechaderegistro = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();
+			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
+			almacen.db.transaction(almacen.GuardarRegistroExtintor, almacen.error, almacen.GuardadoCorrectoLocalHIDRA);
+			
+		},
+									GuardarRegistroExtintor: function(tx){
+										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_reg_hidra (id_hidra,llave,etiqueta,manguera,tuberia,valvula,martillo,micavidrio,gabinete,senalamiento,observaciones,usuario,fechaderegistro)");
+										tx.executeSql("INSERT INTO ita_sh_reg_hidra (id_hidra,llave,etiqueta,manguera,tuberia,valvula,martillo,micavidrio,gabinete,senalamiento,observaciones,usuario,fechaderegistro) VALUES ('" + almacen.id_hidra +"','"+almacen.llave +"','"+almacen.etiqueta +"','"+almacen.manguera +"','"+almacen.tuberia +"','"+almacen.valvula +"','"+almacen.martillo +"','"+almacen.micavidrio +"','"+almacen.gabinete +"','"+almacen.senalamiento +"','"+almacen.observaciones +"','"+almacen.usuario +"','"+almacen.fechaderegistro + "')");
+										//alert("- "+ almacen.usuario + " - " + almacen.fechaderegistro);
+									}
 
 
 

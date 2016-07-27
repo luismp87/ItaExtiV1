@@ -386,7 +386,7 @@ var fn = {
             $.mobile.loading("hide");
         }
         else{
-            navigator.notification.alert("Ingrese el ID del extintor",null,"Error al Ingresar","Aceptar");
+            navigator.notification.alert("Ingrese el ID del hidrante",null,"Error al Ingresar","Aceptar");
             //alert("Ingrese el ID del extintor");
         }   
     },
@@ -394,7 +394,7 @@ var fn = {
             var planta = $("#pPLANTAHIDRA").text();
             if(planta.length <= 0)
             { 
-                 navigator.notification.alert("Escanee o ingrese el ID del Extintor",null,"Advertencia","Aceptar");  
+                 navigator.notification.alert("Escanee o ingrese el ID del Hidrante",null,"Advertencia","Aceptar");  
                 window.location.href = '#capturaHidra1';
             } 
             else
@@ -475,7 +475,7 @@ var fn = {
                         }
                         else
                         {
-                                //almacen.guardarRegistroEXT(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones,fn.usuario);
+                                almacen.guardarRegistroHIDRA(fn.id_hidra,fn.llave,fn.etiqueta,fn.manguera,fn.tuberia,fn.valvula,fn.martillo,fn.micavidrio,fn.gabinete,fn.senalamiento,fn.observaciones,fn.usuario);
                                 $("#texthLLAVE").val("0").change();
                                 $("#texthETIQUETA").val("0").change();
                                 $("#texthMANGUERA").val("0").change();
