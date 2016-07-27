@@ -22,6 +22,9 @@ var fn = {
         /**HIDRANTES*/
         $('#btnActualizarBDDesdeServerHidra').tap(fn.ActualizarBDDesdeServerHidra);
         $('#btnMigrarHidrantesRM').tap(fn.MigrarHidrantesRM);
+        $('#btnEliminarHidrantes').tap(fn.EliminarHidrantes);
+        
+        
 
         
         
@@ -355,7 +358,11 @@ var fn = {
                     {
                        navigator.notification.alert("Se tienen registros en la base de datos, antes eliminelos",null,"Advertencia","Aceptar");    
                     }
-        }
+        },
+        EliminarHidrantes : function(){
+            almacen.eliminarHidra();
+            almacen.leerHidra();  
+        },
 
 
 

@@ -295,7 +295,16 @@ fechaderegistro: null,
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
 										});
 										
-		}
+		},
+		/*FUNCION PARA ELIMINAR EN BASE DE DATOS*/
+		eliminarHidra: function(tx){
+			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
+			almacen.db.transaction(almacen.CreaSINOExisteHidra, almacen.error, null);
+			almacen.db.transaction(almacen.eliminarHidrantes, almacen.error, almacen.Correcto);
+		},
+									eliminarHidrantes: function(tx){
+									tx.executeSql("DELETE FROM ita_sh_hidrantes");
+	},
 
 
 }
