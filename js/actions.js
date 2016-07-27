@@ -455,23 +455,21 @@ var fn = {
                         {
                              
                             /******GUARDAMOS EN EL SERVIDOR SI SE TIENE SEÑAL******/
-                            //bueno//server.sincronizar(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones,fn.usuario);//Enviar a servidor
+                            server.sincronizar(fn.id_hidra,fn.llave,fn.etiqueta,fn.manguera,fn.tuberia,fn.valvula,fn.martillo,fn.micavidrio,fn.gabinete,fn.senalamiento,fn.observaciones,fn.usuario);//Enviar a servidor
                             /**************/
-                             navigator.notification.alert("Segun se manda al server.",null,"Advertencia","Aceptar");
+                             //navigator.notification.alert("Segun se manda al server.",null,"Advertencia","Aceptar");
                             //server.sincronizar(fn.per,fn.dia,fn.th);//Enviar a servidor
-                                //bueno//$("#textPRESION").val("0").change();
-                                //bueno//$("#textMANOMETRO").val("0").change();
-                                //bueno//$("#textSEGUROSELLO").val("0").change();
-                                //bueno//$("#textMANGUERA").val("0").change();
-                                //bueno//$("#textSOPORTE").val("0").change();
-                                //bueno//$("#textPINTURA").val("0").change();
-                                //bueno//$("#textVALVULA").val("0").change();
-                                //bueno//$("#textCILINDRO").val("0").change();
-                                //bueno//$("#textNEMOTECNIA").val("0").change();
-                                //bueno//$("#textSENALAMIENTO").val("0").change();
-                                //bueno//$("#textGABINETE").val("0").change();
-                                //bueno//$("#textOBSERVACIONES").val("");
-                                //bueno//window.location.href = '#TiposDeCaptura';
+                                $("#texthLLAVE").val("0").change();
+                                $("#texthETIQUETA").val("0").change();
+                                $("#texthMANGUERA").val("0").change();
+                                $("#texthTUBERIA").val("0").change();
+                                $("#texthVALVULA").val("0").change();
+                                $("#texthMARTILLO").val("0").change();
+                                $("#texthMICAVIDRIO").val("0").change();
+                                $("#texthGABINETE").val("0").change();
+                                $("#texthSENALAMIENTO").val("0").change();                                
+                                $("#texthOBSERVACIONES").val("");
+                                window.location.href = '#TiposDeCaptura';
                         }
                         else
                         {
