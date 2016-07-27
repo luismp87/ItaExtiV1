@@ -455,7 +455,7 @@ var fn = {
                         {
                              
                             /******GUARDAMOS EN EL SERVIDOR SI SE TIENE SEÑAL******/
-                            server.sincronizar(fn.id_hidra,fn.llave,fn.etiqueta,fn.manguera,fn.tuberia,fn.valvula,fn.martillo,fn.micavidrio,fn.gabinete,fn.senalamiento,fn.observaciones,fn.usuario);//Enviar a servidor
+                            server.sincronizarhidra(fn.id_hidra,fn.llave,fn.etiqueta,fn.manguera,fn.tuberia,fn.valvula,fn.martillo,fn.micavidrio,fn.gabinete,fn.senalamiento,fn.observaciones,fn.usuario);//Enviar a servidor
                             /**************/
                              //navigator.notification.alert("Segun se manda al server.",null,"Advertencia","Aceptar");
                             //server.sincronizar(fn.per,fn.dia,fn.th);//Enviar a servidor
