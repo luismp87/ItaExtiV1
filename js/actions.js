@@ -25,7 +25,7 @@ var fn = {
         $('#btnEliminarHidrantes').tap(fn.EliminarHidrantes);
         $('#btnleercodigohidra').tap(fn.leerCodigoDeBarrashidra);
         $('#btnbuscar_info_hidrante').tap(fn.buscar_info_hidrante);    
-        
+        $('#btniraRegistrarHIDRA').tap(fn.iraRegistrarHIDRA);
 
         
         
@@ -387,7 +387,29 @@ var fn = {
             navigator.notification.alert("Ingrese el ID del extintor",null,"Error al Ingresar","Aceptar");
             //alert("Ingrese el ID del extintor");
         }   
-    }
+    },
+            iraRegistrarHIDRA: function(){         
+            var planta = $("#pPLANTAHIDRA").text();
+            if(planta.length <= 0)
+            { 
+                 navigator.notification.alert("Escanee o ingrese el ID del Extintor",null,"Advertencia","Aceptar");  
+                window.location.href = '#capturaHidra1';
+            } 
+            else
+            {
+                $("#texthLLAVE").val("0").change();
+                $("#texthETIQUETA").val("0").change();
+                $("#texthMANGUERA").val("0").change();
+                $("#texthTUBERIA").val("0").change();
+                $("#texthVALVULA").val("0").change();
+                $("#texthMARTILLO").val("0").change();
+                $("#texthMICAVIDRIO").val("0").change();
+                $("#texthGABINETE").val("0").change();
+                $("#texthSENALAMIENTO").val("0").change();               
+                $("#texthOBSERVACIONES").val("");
+                window.location.href = '#capturaHidra2';
+            }        
+        }
 
 
 
