@@ -27,6 +27,7 @@ var fn = {
         $('#btnbuscar_info_hidrante').tap(fn.buscar_info_hidrante);    
         $('#btniraRegistrarHIDRA').tap(fn.iraRegistrarHIDRA);
         $('.ablanqueaChidra1').tap(fn.blanqueaChidra1);
+         $('#capturaHidra2 div[data-role=footer] #btnGuardarRegHidra').tap(fn.GuardarRegHidra);
 
         
         
@@ -415,6 +416,86 @@ var fn = {
                             $("#pPLANTAHIDRA").text("");
                             $("#pUBICACIONHIDRA").text("");
                             
+        },
+        id_hidra: '',
+        llave:'',
+        etiqueta: '',
+        tuberia:'',
+        martillo:'',
+        micavidrio: '',
+
+
+        GuardarRegHidra: function(){
+            
+           
+            fn.id_hidra = $('#txtitahidraV1').val();
+            fn.llave= $('#texthLLAVE').val();
+            fn.etiqueta = $('#texthETIQUETA').val();
+            fn.manguera = $('#texthMANGUERA').val();
+            fn.tuberia = $('#texthTUBERIA').val();
+            fn.valvula = $('#texthVALVULA').val();
+            fn.martillo = $('#texthMARTILLO').val();
+            fn.micavidrio = $('#texthMICAVIDRIO').val();
+            fn.gabinete = $('#texthGABINETE').val();
+            fn.senalamiento = $('#texthSENALAMIENTO').val();
+            fn.observaciones = $('#texthOBSERVACIONES').val();    
+            fn.usuario = window.localStorage.getItem("user");
+
+            if((fn.llave != "0") &&              
+            (fn.etiqueta != "0") &&  
+            (fn.manguera != "0") &&  
+            (fn.tuberia != "0") &&  
+            (fn.valvula != "0") &&  
+            (fn.martillo != "0") &&  
+            (fn.micavidrio != "0") &&  
+            (fn.gabinete != "0") &&  
+            (fn.senalamiento != "0"))
+          { 
+                        if(navigator.connection.type != Connection.NONE)
+                        {
+                             
+                            /******GUARDAMOS EN EL SERVIDOR SI SE TIENE SEÑAL******/
+                            //bueno//server.sincronizar(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones,fn.usuario);//Enviar a servidor
+                            /**************/
+                             navigator.notification.alert("Segun se manda al server.",null,"Advertencia","Aceptar");
+                            //server.sincronizar(fn.per,fn.dia,fn.th);//Enviar a servidor
+                                //bueno//$("#textPRESION").val("0").change();
+                                //bueno//$("#textMANOMETRO").val("0").change();
+                                //bueno//$("#textSEGUROSELLO").val("0").change();
+                                //bueno//$("#textMANGUERA").val("0").change();
+                                //bueno//$("#textSOPORTE").val("0").change();
+                                //bueno//$("#textPINTURA").val("0").change();
+                                //bueno//$("#textVALVULA").val("0").change();
+                                //bueno//$("#textCILINDRO").val("0").change();
+                                //bueno//$("#textNEMOTECNIA").val("0").change();
+                                //bueno//$("#textSENALAMIENTO").val("0").change();
+                                //bueno//$("#textGABINETE").val("0").change();
+                                //bueno//$("#textOBSERVACIONES").val("");
+                                //bueno//window.location.href = '#TiposDeCaptura';
+                        }
+                        else
+                        {
+                                //almacen.guardarRegistroEXT(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones,fn.usuario);
+                                $("#texthLLAVE").val("0").change();
+                                $("#texthETIQUETA").val("0").change();
+                                $("#texthMANGUERA").val("0").change();
+                                $("#texthTUBERIA").val("0").change();
+                                $("#texthVALVULA").val("0").change();
+                                $("#texthMARTILLO").val("0").change();
+                                $("#texthMICAVIDRIO").val("0").change();
+                                $("#texthGABINETE").val("0").change();
+                                $("#texthSENALAMIENTO").val("0").change();                                
+                                $("#texthOBSERVACIONES").val("");
+                                window.location.href = '#TiposDeCaptura';
+                        }
+          }
+          else
+          {
+            navigator.notification.alert("Tiene características sin seleccionar.",null,"Advertencia","Aceptar");    
+          }
+           
+
+            //navigator.notification.alert("Datos 2: " + fn.id_ext + " - " + fn.presion + " - " + fn.manometro + " - " + fn.segurosello + " - " + fn.manguera + " - " + fn.soporte + " - " + fn.pintura + " - " + fn.valvula + " - " + fn.cilindro + " - " + fn.nemotecnia + " - " + fn.senalamiento + " - " + fn.gabinete + " - " + fn.observaciones,null,"Advertencia","Aceptar");    
         }
 
 
