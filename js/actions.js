@@ -185,7 +185,7 @@ var fn = {
             almacen.leerExt();  
         },
         blanqueaCext1: function(){
-                            $("#txtitaextiV1").text("");
+                            $("#txtitaextiV1").val("");
                             $("#pPLANTA").text("");
                             $("#pUBICACION").text("");
                             $("#pCAPACIDAD").text("");
@@ -417,7 +417,7 @@ var fn = {
             }        
         },
         blanqueaChidra1: function(){
-                            $("#txtitahidraV1").text("");
+                            $("#txtitahidraV1").val("");
                             $("#pPLANTAHIDRA").text("");
                             $("#pUBICACIONHIDRA").text("");
                             
