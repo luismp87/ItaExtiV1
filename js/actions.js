@@ -314,7 +314,9 @@ var fn = {
             }        
         },
         cerrarsesion: function(){
-        window.localStorage.setItem("user",'');    
+        window.localStorage.setItem("user",'');   
+         $("#txtusuario").val("");
+         $("#txtcontrasena").val("");
         window.location.href = '#inicio';
 
         },
