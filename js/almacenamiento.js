@@ -245,11 +245,11 @@ fechaderegistro: null,
 
 	if(encontroEXT == 0)
 	{
-		navigator.notification.alert("Sin resultados por migrar", null, "Advertencia", "Aceptar");
+		//navigator.notification.alert("Sin resultados por migrar", null, "Advertencia", "Aceptar");
 	}
 	else if(encontroEXT == 1)
 	{
-		navigator.notification.alert("Se migro informacion local al servidor", null, "Advertencia", "Aceptar");
+		//navigator.notification.alert("Se migro informacion local al servidor", null, "Advertencia", "Aceptar");
 	}
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
 										});
@@ -423,11 +423,11 @@ fechaderegistro: null,
 
 	if(encontroEXT == 0)
 	{
-		navigator.notification.alert("Sin resultados por migrar", null, "Advertencia", "Aceptar");
+		//navigator.notification.alert("Sin resultados por migrar", null, "Advertencia", "Aceptar");
 	}
 	else if(encontroEXT == 1)
 	{
-		navigator.notification.alert("Se migro informacion local al servidor", null, "Advertencia", "Aceptar");
+		//navigator.notification.alert("Se migro informacion local al servidor", null, "Advertencia", "Aceptar");
 	}
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
 										});

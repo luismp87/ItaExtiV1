@@ -185,6 +185,7 @@ var fn = {
             almacen.leerExt();  
         },
         blanqueaCext1: function(){
+                            $("#txtitaextiV1").text("");
                             $("#pPLANTA").text("");
                             $("#pUBICACION").text("");
                             $("#pCAPACIDAD").text("");
@@ -246,6 +247,7 @@ var fn = {
                             /**************/
                              //navigator.notification.alert("Segun se manda al server.",null,"Advertencia","Aceptar");
                             //server.sincronizar(fn.per,fn.dia,fn.th);//Enviar a servidor
+                                $("#txtitaextiV1").val("");
                                 $("#textPRESION").val("0").change();
                                 $("#textMANOMETRO").val("0").change();
                                 $("#textSEGUROSELLO").val("0").change();
@@ -263,6 +265,7 @@ var fn = {
                         else
                         {
                                 almacen.guardarRegistroEXT(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones,fn.usuario);
+                                 $("#txtitaextiV1").val("");
                                 $("#textPRESION").val("0").change();
                                 $("#textMANOMETRO").val("0").change();
                                 $("#textSEGUROSELLO").val("0").change();
@@ -414,6 +417,7 @@ var fn = {
             }        
         },
         blanqueaChidra1: function(){
+                            $("#txtitahidraV1").text("");
                             $("#pPLANTAHIDRA").text("");
                             $("#pUBICACIONHIDRA").text("");
                             
@@ -460,6 +464,7 @@ var fn = {
                             /**************/
                              //navigator.notification.alert("Segun se manda al server.",null,"Advertencia","Aceptar");
                             //server.sincronizar(fn.per,fn.dia,fn.th);//Enviar a servidor
+                                $("#txtitahidraV1").val("");
                                 $("#texthLLAVE").val("0").change();
                                 $("#texthETIQUETA").val("0").change();
                                 $("#texthMANGUERA").val("0").change();
@@ -475,6 +480,7 @@ var fn = {
                         else
                         {
                                 almacen.guardarRegistroHIDRA(fn.id_hidra,fn.llave,fn.etiqueta,fn.manguera,fn.tuberia,fn.valvula,fn.martillo,fn.micavidrio,fn.gabinete,fn.senalamiento,fn.observaciones,fn.usuario);
+                                 $("#txtitahidraV1").val("");
                                 $("#texthLLAVE").val("0").change();
                                 $("#texthETIQUETA").val("0").change();
                                 $("#texthMANGUERA").val("0").change();
