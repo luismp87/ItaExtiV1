@@ -77,6 +77,9 @@ fechaderegistro: null,
 									CreaSINOExisteHidra: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_hidrantes (id_hidra, ubicacion,planta)");										
 									},
+									CreaSINOExisteRegHIDRA: function(tx){
+										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_reg_hidra (id_hidra,llave,etiqueta,manguera,tuberia,valvula,martillo,micavidrio,gabinete,senalamiento,observaciones,usuario,fechaderegistro)");										
+									},
 									error: function(){
 										//alert("Error al acceder a la Base de Datos");
 										navigator.notification.alert("Error al acceder a la Base de Datos", null, "Error", "Aceptar");
@@ -380,7 +383,64 @@ fechaderegistro: null,
 										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_reg_hidra (id_hidra,llave,etiqueta,manguera,tuberia,valvula,martillo,micavidrio,gabinete,senalamiento,observaciones,usuario,fechaderegistro)");
 										tx.executeSql("INSERT INTO ita_sh_reg_hidra (id_hidra,llave,etiqueta,manguera,tuberia,valvula,martillo,micavidrio,gabinete,senalamiento,observaciones,usuario,fechaderegistro) VALUES ('" + almacen.id_hidra +"','"+almacen.llave +"','"+almacen.etiqueta +"','"+almacen.manguera +"','"+almacen.tuberia +"','"+almacen.valvula +"','"+almacen.martillo +"','"+almacen.micavidrio +"','"+almacen.gabinete +"','"+almacen.senalamiento +"','"+almacen.observaciones +"','"+almacen.usuario +"','"+almacen.fechaderegistro + "')");
 										//alert("- "+ almacen.usuario + " - " + almacen.fechaderegistro);
-									}
+									},
+		/*FUNCION PARA LEER EN BASE DE DATOS LOS REGISTROS CAPTURADOS SOBRE EXTINTORES*/
+		leerinformacionregistradaHIDRA: function(tx){
+			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
+			almacen.db.transaction(almacen.CreaSINOExisteRegHIDRA, almacen.error, null);			
+			almacen.db.transaction(almacen.leerinforegistradaHIDRA, almacen.error, null);
+
+	},
+									leerinforegistradaHIDRA: function(tx){
+										
+									tx.executeSql("SELECT id_hidra,llave,etiqueta,manguera,tuberia,valvula,martillo,micavidrio,gabinete,senalamiento,observaciones,usuario,fechaderegistro FROM ita_sh_reg_hidra", [], function(tx2, t){
+									var encontroEXT = 0;
+											for(i = 0; i < t.rows.length; i++){
+							encontroEXT= 1;
+							/*$("#pPLANTA").text(t.rows.item(i).planta);
+							$("#pUBICACION").text(t.rows.item(i).ubicacion);
+                            $("#pCAPACIDAD").text(t.rows.item(i).capacidad);
+                            $("#pCLASE").text(t.rows.item(i).clase);
+                            $("#pAGENTE").text(t.rows.item(i).agente);
+                            $("#pMARCA").text(t.rows.item(i).marca);
+                            $("#pFRECARGA").text(t.rows.item(i).frecarga);
+                            $("#pFFABRICACION").text(t.rows.item(i).ffabricacion);
+                            $("#pFPROXSERVICIO").text(t.rows.item(i).fproxservicio);  */                 
+										
+
+												/*navigator.notification.confirm("Personas: " + t.rows.item(i).pr + "\n"
+																			   + "Días: " + t.rows.item(i).di + "\n"
+																			   + "Tipo de Habitación: " + t.rows.item(i).th,
+																			  function(btn){
+																				  if(btn == 1) navigator.vibrate(500);
+																				  if(btn == 2) navigator.notification.beep(1);
+																			  }, "Tabla Reservas","Vibrar,Sonar,Cancelar");*/
+												//server.sincronizar(t.rows.item(i).pr,t.rows.item(i).di,t.rows.item(i).th);
+												server.sincronizarRegistradosHIDRA(t.rows.item(i).id_hidra,t.rows.item(i).llave,t.rows.item(i).etiqueta,t.rows.item(i).manguera,t.rows.item(i).tuberia,t.rows.item(i).valvula,t.rows.item(i).martillo,t.rows.item(i).micavidrio,t.rows.item(i).gabinete,t.rows.item(i).senalamiento,t.rows.item(i).observaciones,t.rows.item(i).usuario,t.rows.item(i).fechaderegistro);//Enviar a servidor
+												//alert("id_ext: " + t.rows.item(i).id_ext);
+												//navigator.notification.alert("ubicacion: " + t.rows.item(i).id_ext, null, "Correcto", "Aceptar");
+											}
+
+	if(encontroEXT == 0)
+	{
+		navigator.notification.alert("Sin resultados por migrar", null, "Advertencia", "Aceptar");
+	}
+	else if(encontroEXT == 1)
+	{
+		navigator.notification.alert("Se migro informacion local al servidor", null, "Advertencia", "Aceptar");
+	}
+//navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
+										});
+	
+	},
+	eliminarregistrosHidra: function(tx){
+			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
+			almacen.db.transaction(almacen.CreaSINOExisteRegHIDRA, almacen.error, null);
+			almacen.db.transaction(almacen.eliminarregHidrantes, almacen.error, null);
+		},
+									eliminarregHidrantes: function(tx){
+									tx.executeSql("DELETE FROM ita_sh_reg_hidra");
+	}
 
 
 

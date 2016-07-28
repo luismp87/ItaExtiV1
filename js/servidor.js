@@ -238,6 +238,75 @@ $.ajax({
 			navigator.notification.alert("Hubo un error al intentar sincronizar los datos guardados", null, "Error", "Aceptar");
 		}*/
 		navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta ", null, "Advertencia", "Aceptar");
+	},
+	/*ENVIAR AL SERVER LOS REGISTROS YA CAPTURADOS AL SERVIDOR VARIOS REGISTROS*/
+	sincronizarRegistradosHIDRA: function(id_hidra,llave,etiqueta,manguera,tuberia,valvula,martillo,micavidrio,gabinete,senalamiento,observaciones,usuario,fechaderegistro){
+				server.id_hidra = id_hidra;
+				server.llave = llave;
+				server.etiqueta = etiqueta;
+				server.manguera = manguera;
+				server.tuberia = tuberia;
+				server.valvula = valvula;
+				server.martillo = martillo;
+				server.micavidrio = micavidrio;
+				server.gabinete = gabinete;
+				server.senalamiento = senalamiento;
+				server.observaciones = observaciones;
+				server.usuario = usuario;				
+				server.fechaderegistro = fechaderegistro; 
+
+		
+$.ajax({
+                method: 'POST',
+				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/insertarreghidrantes',				
+                data: { id_hidra: id_hidra,
+						llave: llave,
+						etiqueta: etiqueta,
+						manguera: manguera,
+						tuberia: tuberia,
+						valvula: valvula,
+						martillo: martillo,
+						micavidrio: micavidrio,
+						gabinete: gabinete,
+						senalamiento: senalamiento,
+						observaciones: observaciones,
+						usuario: usuario,
+						fechaderegistro: fechaderegistro},
+                dataType: "json",
+				/*success: function (msg){
+					$.mobile.loading("hide");
+                    $.each(msg,function(i,item){
+                        if(msg[i].valor1 = "correcto")
+                            {                           
+                           navigator.notification.alert("La información se envio al servidor de forma correcta",null,"Advertencia","Aceptar");   
+                            }
+                        else
+                            {
+                            navigator.notification.alert("Error al enviar la información al servidor",null,"Error al Ingresar","Aceptar");   
+                            //alert("Usuario o contraseña incorrectos");
+                            }                        
+                    });					
+                },*/
+				error: function(jq, txt){
+					//alert(jq + txt.responseText);
+                    navigator.notification.alert(jq + txt.responseText,null,"Error","Aceptar");
+				}
+			}).done(server.sincronizadoRegistradosHIDRA);
+
+
+	},
+	sincronizadoRegistradosHIDRA: function(msg){
+		/*if(msg == 1)
+		{
+			navigator.notification.alert("Los datos guardados se han sincronizado satisfactoriamente", null, "Sincronizado", "Aceptar");
+			almacen.gurdarHistorial(server.pr,server.di,server.th);//Guardar en Historial
+		}
+		else
+		{
+			navigator.notification.alert("Hubo un error al intentar sincronizar los datos guardados", null, "Error", "Aceptar");
+		}*/
+		almacen.eliminarregistrosHidra();
+		//navigator.notification.alert("Los datos se guardaron remotamente satisfactoriamente ", null, "Advertencia", "Aceptar");
 	}
 
 
