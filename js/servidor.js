@@ -60,20 +60,20 @@ $.ajax({
 				usuario: usuario,
 				fechaderegistro: fechaderegistro},
                 dataType: "json",
-				/*success: function (msg){
+				success: function (msg){
 					$.mobile.loading("hide");
                     $.each(msg,function(i,item){
                         if(msg[i].valor1 = "correcto")
                             {                           
-                           navigator.notification.alert("La información se envio al servidor de forma correcta",null,"Advertencia","Aceptar");   
+                           navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta",null,"Advertencia","Aceptar");   
                             }
                         else
                             {
-                            navigator.notification.alert("Error al enviar la información al servidor",null,"Error al Ingresar","Aceptar");   
+                            navigator.notification.alert("Verifique la fecha del dispositivo no se guardo la información",null,"Error al Ingresar","Aceptar");   
                             //alert("Usuario o contraseña incorrectos");
                             }                        
                     });					
-                },*/
+                },
 				error: function(jq, txt){
 					//alert(jq + txt.responseText);
                     navigator.notification.alert(jq + txt.responseText,null,"Error","Aceptar");
@@ -92,7 +92,7 @@ $.ajax({
 		{
 			navigator.notification.alert("Hubo un error al intentar sincronizar los datos guardados", null, "Error", "Aceptar");
 		}*/
-		navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta ", null, "Advertencia", "Aceptar");
+		//navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta ", null, "Advertencia", "Aceptar");
 	},
 /*ENVIAR AL SERVER LOS REGISTROS YA CAPTURADOS AL SERVIDOR VARIOS REGISTROS*/
 	sincronizarRegistrados: function(id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario,fechaderegistro){
@@ -205,20 +205,20 @@ $.ajax({
 						usuario: usuario,
 						fechaderegistro: fechaderegistro},
                 dataType: "json",
-				/*success: function (msg){
+				success: function (msg){
 					$.mobile.loading("hide");
                     $.each(msg,function(i,item){
                         if(msg[i].valor1 = "correcto")
                             {                           
-                           navigator.notification.alert("La información se envio al servidor de forma correcta",null,"Advertencia","Aceptar");   
+                           navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta",null,"Advertencia","Aceptar");   
                             }
                         else
                             {
-                            navigator.notification.alert("Error al enviar la información al servidor",null,"Error al Ingresar","Aceptar");   
+                            navigator.notification.alert("Verifique la fecha del dispositivo no se guardo la información",null,"Error al Ingresar","Aceptar");   
                             //alert("Usuario o contraseña incorrectos");
                             }                        
                     });					
-                },*/
+                },
 				error: function(jq, txt){
 					//alert(jq + txt.responseText);
                     navigator.notification.alert(jq + txt.responseText,null,"Error","Aceptar");
@@ -237,7 +237,7 @@ $.ajax({
 		{
 			navigator.notification.alert("Hubo un error al intentar sincronizar los datos guardados", null, "Error", "Aceptar");
 		}*/
-		navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta ", null, "Advertencia", "Aceptar");
+		//navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta ", null, "Advertencia", "Aceptar");
 	},
 	/*ENVIAR AL SERVER LOS REGISTROS YA CAPTURADOS AL SERVIDOR VARIOS REGISTROS*/
 	sincronizarRegistradosHIDRA: function(id_hidra,llave,etiqueta,manguera,tuberia,valvula,martillo,micavidrio,gabinete,senalamiento,observaciones,usuario,fechaderegistro){
