@@ -63,7 +63,7 @@ $.ajax({
 				success: function (msg){
 					$.mobile.loading("hide");
                     $.each(msg,function(i,item){
-                        if(msg[i].valor1 = "correcto")
+                        if(msg[i].valor1 == "encontro")
                             {                           
                            navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta ",null,"Advertencia Gua1" + msg[i].valor1,"Aceptar");   
                             }
@@ -208,7 +208,7 @@ $.ajax({
 				success: function (msg){
 					$.mobile.loading("hide");
                     $.each(msg,function(i,item){
-                        if(msg[i].valor1 = "correcto")
+                        if(msg[i].valor1 == "encontro")
                             {                           
                            navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta",null,"Advertencia Gua1" + msg[i].valor1,"Aceptar");   
                             }
