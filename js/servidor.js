@@ -65,11 +65,11 @@ $.ajax({
                     $.each(msg,function(i,item){
                         if(msg[i].valor1 = "correcto")
                             {                           
-                           navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta",null,"Advertencia","Aceptar");   
+                           navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta ",null,"Advertencia Gua1" + msg[i].valor1,"Aceptar");   
                             }
                         else
                             {
-                            navigator.notification.alert("Verifique la fecha del dispositivo no se guardo la información",null,"Error al Ingresar","Aceptar");   
+                            navigator.notification.alert("Verifique la fecha del dispositivo no se guardo la información",null,"Error al Ingresar Gua1" + msg[i].valor1,"Aceptar");   
                             //alert("Usuario o contraseña incorrectos");
                             }                        
                     });					
@@ -210,11 +210,11 @@ $.ajax({
                     $.each(msg,function(i,item){
                         if(msg[i].valor1 = "correcto")
                             {                           
-                           navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta",null,"Advertencia","Aceptar");   
+                           navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta",null,"Advertencia Gua1" + msg[i].valor1,"Aceptar");   
                             }
                         else
                             {
-                            navigator.notification.alert("Verifique la fecha del dispositivo no se guardo la información",null,"Error al Ingresar","Aceptar");   
+                            navigator.notification.alert("Verifique la fecha del dispositivo no se guardo la información",null,"Error al Ingresar Gua1" + msg[i].valor1,"Aceptar");   
                             //alert("Usuario o contraseña incorrectos");
                             }                        
                     });					
