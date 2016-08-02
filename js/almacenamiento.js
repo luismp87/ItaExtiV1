@@ -198,6 +198,7 @@ fechaderegistro: null,
 		
 		almacen.fechaderegistro = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
+			almacen.db.transaction(almacen.CreaSINOExisteRegEXT, almacen.error, null);
 			almacen.db.transaction(almacen.GuardarRegistroExtintor, almacen.error, almacen.GuardadoCorrectoLocalEXT);
 			
 		},
@@ -245,11 +246,11 @@ fechaderegistro: null,
 
 	if(encontroEXT == 0)
 	{
-		navigator.notification.alert("Sin resultados por migrar", null, "Advertencia", "Aceptar");
+		//navigator.notification.alert("Sin resultados por migrar", null, "Advertencia", "Aceptar");
 	}
 	else if(encontroEXT == 1)
 	{
-		navigator.notification.alert("Se migro informacion local al servidor", null, "Advertencia", "Aceptar");
+		//navigator.notification.alert("Se migro informacion local al servidor", null, "Advertencia", "Aceptar");
 	}
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
 										});
@@ -376,10 +377,10 @@ fechaderegistro: null,
 		
 				almacen.fechaderegistro = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
-			almacen.db.transaction(almacen.GuardarRegistroExtintor, almacen.error, almacen.GuardadoCorrectoLocalHIDRA);
+			almacen.db.transaction(almacen.GuardarRegistroHidrante, almacen.error, almacen.GuardadoCorrectoLocalHIDRA);
 			
 		},
-									GuardarRegistroExtintor: function(tx){
+									GuardarRegistroHidrante: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_reg_hidra (id_hidra,llave,etiqueta,manguera,tuberia,valvula,martillo,micavidrio,gabinete,senalamiento,observaciones,usuario,fechaderegistro)");
 										tx.executeSql("INSERT INTO ita_sh_reg_hidra (id_hidra,llave,etiqueta,manguera,tuberia,valvula,martillo,micavidrio,gabinete,senalamiento,observaciones,usuario,fechaderegistro) VALUES ('" + almacen.id_hidra +"','"+almacen.llave +"','"+almacen.etiqueta +"','"+almacen.manguera +"','"+almacen.tuberia +"','"+almacen.valvula +"','"+almacen.martillo +"','"+almacen.micavidrio +"','"+almacen.gabinete +"','"+almacen.senalamiento +"','"+almacen.observaciones +"','"+almacen.usuario +"','"+almacen.fechaderegistro + "')");
 										//alert("- "+ almacen.usuario + " - " + almacen.fechaderegistro);
