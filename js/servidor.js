@@ -147,7 +147,7 @@ $.ajax({
                 },*/
 				error: function(jq, txt){
 					//alert(jq + txt.responseText);
-                    navigator.notification.alert(jq + txt.responseText,null,"Error","Aceptar");
+                    navigator.notification.alert(jq + txt.responseText,null,"Error ajax","Aceptar");
 				}
 			}).done(server.sincronizadoRegistrados);
 
