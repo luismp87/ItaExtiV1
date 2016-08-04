@@ -147,6 +147,7 @@ $.ajax({
                 },*/
 				error: function(jq, txt){
 					//alert(jq + txt.responseText);
+					navigator.notification.alert(id_ext+"-" +presion+"-" +manometro+"-" +segurosello+"-" +manguera+"-" +soporte+"-" +pintura+"-" +valvula+"-" +cilindro+"-" +nemotecnia+"-" +senalamiento+"-" +gabinete+"-" +observaciones+"-" +usuario+"-" +fechaderegistro ,null,"Error ajax","Aceptar");
                     navigator.notification.alert(jq + txt.responseText,null,"Error ajax","Aceptar");
 				}
 			}).done(server.sincronizadoRegistrados);
@@ -289,7 +290,8 @@ $.ajax({
                 },*/
 				error: function(jq, txt){
 					//alert(jq + txt.responseText);
-                    navigator.notification.alert(jq + txt.responseText,null,"Error","Aceptar");
+					navigator.notification.alert(id_hidra+"-" +llave+"-" +etiqueta+"-" +manguera+"-" +tuberia+"-" +valvula+"-" +martillo+"-" +micavidrio+"-" +gabinete+"-" +senalamiento+"-" +observaciones+"-" +usuario+"-" +fechaderegistro,null,"Error Ajax","Aceptar");
+                    navigator.notification.alert(jq + txt.responseText,null,"Error Ajax","Aceptar");
 				}
 			}).done(server.sincronizadoRegistradosHIDRA);
 
