@@ -138,7 +138,10 @@ $.ajax({
                     $.each(msg,function(i,item){
                         if(msg[i].valor1 == "encontro")
                             {       
-                            navigator.notification.alert("entro",null,"Advertencia","Aceptar");                       
+                            navigator.notification.alert("entro",null,"Advertencia","Aceptar");    
+                            navigator.notification.alert("entro 2 "+ server.contador1,null,"Advertencia","Aceptar");   
+ 							server.contador1 =  server.contador1 + 1;
+                             navigator.notification.alert("entro 3 "+ server.contador1,null,"Advertencia","Aceptar");                        
                            //navigator.notification.alert("La información se envio al servidor de forma correcta",null,"Advertencia","Aceptar");   
                            //navigator.notification.alert(id_ext+"-" +presion+"-" +manometro+"-" +segurosello+"-" +manguera+"-" +soporte+"-" +pintura+"-" +valvula+"-" +cilindro+"-" +nemotecnia+"-" +senalamiento+"-" +gabinete+"-" +observaciones+"-" +usuario+"-" +fechaderegistro ,null,"Error 126","Aceptar");                           
                            server.myArray[server.contador1] = almacen.id_ext+"' and fechaderegistro= '"+ almacen.fechaderegistro;   // msg[i].ID_EXT + "','" + msg[i].UBICACION + "','" + msg[i].CAPACIDAD+ "','" + msg[i].CLASE+ "','" + msg[i].AGENTE+ "','" + msg[i].MARCA+ "','" + msg[i].FRECARGA+ "','" + msg[i].FFABRICACION+ "','" + msg[i].FPROXSERVICIO+ "','" + msg[i].PLANTA;
