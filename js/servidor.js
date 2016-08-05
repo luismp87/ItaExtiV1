@@ -138,8 +138,11 @@ $.ajax({
 				fechaderegistro: fechaderegistro},
                 dataType: "json",
 				success: function (msg){
+						   server.myArray[server.contador1] = id_ext+"' and fechaderegistro= '"+ fechaderegistro;   // msg[i].ID_EXT + "','" + msg[i].UBICACION + "','" + msg[i].CAPACIDAD+ "','" + msg[i].CLASE+ "','" + msg[i].AGENTE+ "','" + msg[i].MARCA+ "','" + msg[i].FRECARGA+ "','" + msg[i].FFABRICACION+ "','" + msg[i].FPROXSERVICIO+ "','" + msg[i].PLANTA;                           
+                           navigator.notification.alert("contador :" + server.contador1 + " array:" + server.myArray[server.contador1],null,"Advertencia","Aceptar");   
+                           server.contador1 =  server.contador1 + 1;
 					//$.mobile.loading("hide");
-                    $.each(msg,function(i,item){
+                    /*$.each(msg,function(i,item){
                         if(msg[i].valor1 == "encontro")
                             {                                                  
                            //navigator.notification.alert("La información se envio al servidor de forma correcta",null,"Advertencia","Aceptar");   
@@ -154,7 +157,7 @@ $.ajax({
                             navigator.notification.alert("Error al enviar la información al servidor verifique la comunicación",null,"Error","Aceptar");   
                             //alert("Usuario o contraseña incorrectos");
                             }                        
-                    });					
+                    });*/					
                 },
 				error: function(jq, txt){
 					//alert(jq + txt.responseText);
