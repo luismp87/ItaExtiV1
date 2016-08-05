@@ -32,7 +32,7 @@ var fn = {
         
         
         document.addEventListener("online", almacen.leerinformacionregistradaEXT, false);
-        //document.addEventListener("online", almacen.leerinformacionregistradaHIDRA, false);
+        document.addEventListener("online", almacen.leerinformacionregistradaHIDRA, false);
 	},
      estaRegistrado: function(){
         var usr = window.localStorage.getItem("user");

@@ -36,6 +36,7 @@ fechaderegistro: null,
 
 
 	myArray: null,
+	myArray2: null,
 
 	numerodefilas : 0,
 
@@ -413,7 +414,7 @@ fechaderegistro: null,
 
 	},
 									leerinforegistradaHIDRA: function(tx){
-										
+									server.iniciarcontador2();
 									tx.executeSql("SELECT id_hidra,llave,etiqueta,manguera,tuberia,valvula,martillo,micavidrio,gabinete,senalamiento,observaciones,usuario,fechaderegistro FROM ita_sh_reg_hidra", [], function(tx2, t){
 									var encontroEXT = 0;
 											for(i = 0; i < t.rows.length; i++){
@@ -454,13 +455,31 @@ fechaderegistro: null,
 										});
 	
 	},
-	eliminarregistrosHidra: function(tx){
+	eliminarregistrosHidra: function(myArray){
+		almacen.myArray2	= myArray;    
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExisteRegHIDRA, almacen.error, null);
 			almacen.db.transaction(almacen.eliminarregHidrantes, almacen.error, null);
 		},
-									eliminarregHidrantes: function(tx){
-									tx.executeSql("DELETE FROM ita_sh_reg_hidra");
+									eliminarregHidrantes: function(tx){									
+									 for(i = 0; i<almacen.myArray2.length; i++) 
+										    {
+										    	if((almacen.myArray2[i] != "") && (almacen.myArray2[i] != undefined) && (almacen.myArray2[i] != "null"))
+										    	{
+										    		tx.executeSql("DELETE FROM ita_sh_reg_hidra where id_hidra = '"+almacen.myArray2[i]+"'" );
+													navigator.notification.alert("DELETE FROM ita_sh_reg_hidra where id_hidra = '"+almacen.myArray2[i] +"'", null, "Correcto", "Aceptar");
+    											}
+        									} 
+
+        									almacen.myArray2.length = 0;    
+        									for(i = 0; i<almacen.myArray2.length; i++) 
+										    {
+										    	if((almacen.myArray2[i] != "") && (almacen.myArray2[i] != undefined) && (almacen.myArray2[i] != "null"))
+										    	{
+										    		//tx.executeSql("DELETE FROM ita_sh_reg_ext where id_ext = '"+almacen.myArray[i]+"'" );
+													navigator.notification.alert("'"+almacen.myArray2[i] +"'", null, "array", "Aceptar");
+    											}
+        									} 
 	}
 
 
