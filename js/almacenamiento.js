@@ -256,13 +256,16 @@ fechaderegistro: null,
 										});
 	
 	},
-	eliminarregistrosExt: function(tx){
+	eliminarregistrosExt: function(tx,id_ext,fechaderegistro){
+		almacen.id_ext = id_ext;
+		almacen.fechaderegistro = fechaderegistro;
+
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExisteRegEXT, almacen.error, null);
 			almacen.db.transaction(almacen.eliminarregExtintores, almacen.error, null);
 		},
 									eliminarregExtintores: function(tx){
-									tx.executeSql("DELETE FROM ita_sh_reg_ext");
+									tx.executeSql("DELETE FROM ita_sh_reg_ext where id_ext = '"+almacen.id_ext+"' and fechaderegistro= '"+ almacen.fechaderegistro +"'" );
 	},
 	/*ALMACENAMIENTO PARA HIDRANTES*/
 		guardarHIDRA: function(myArray){
