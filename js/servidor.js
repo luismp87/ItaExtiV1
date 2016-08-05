@@ -175,7 +175,7 @@ $.ajax({
 		{
 			navigator.notification.alert("Hubo un error al intentar sincronizar los datos guardados", null, "Error", "Aceptar");
 		}*/
-		almacen.eliminarregistrosExt(server.myArray);
+		//almacen.eliminarregistrosExt(server.myArray);
 		//navigator.notification.alert("Los datos se guardaron remotamente satisfactoriamente ", null, "Advertencia", "Aceptar");
 	},
 /*PARA EL MODULO DE HIDRANTES */
