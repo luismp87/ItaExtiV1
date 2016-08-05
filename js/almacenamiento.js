@@ -216,9 +216,10 @@ fechaderegistro: null,
 
 	},
 									leerinforegistradaEXT: function(tx){
-									var datos = "";
+									
 									server.iniciarcontador1();										
 									tx.executeSql("SELECT id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario,fechaderegistro FROM ita_sh_reg_ext", [], function(tx2, t){
+									var datos = "";
 									var encontroEXT = 0;
 											for(i = 0; i < t.rows.length; i++){
 							encontroEXT= 1;
@@ -241,12 +242,13 @@ fechaderegistro: null,
 																				  if(btn == 2) navigator.notification.beep(1);
 																			  }, "Tabla Reservas","Vibrar,Sonar,Cancelar");*/
 												//server.sincronizar(t.rows.item(i).pr,t.rows.item(i).di,t.rows.item(i).th);
-												//datos =  datos + ("['"t.rows.item(i).id_ext+"','"+t.rows.item(i).presion+"','"+t.rows.item(i).manometro+"','"+t.rows.item(i).segurosello+"','"+t.rows.item(i).manguera+"','"+t.rows.item(i).soporte+"','"+t.rows.item(i).pintura+"','"+t.rows.item(i).valvula+"','"+t.rows.item(i).cilindro+"','"+t.rows.item(i).nemotecnia+"','"+t.rows.item(i).senalamiento+"','"+t.rows.item(i).gabinete+"','"+t.rows.item(i).observaciones+"','"+t.rows.item(i).usuario+"','"+t.rows.item(i).fechaderegistro + "']" )
-												server.sincronizarRegistrados(t.rows.item(i).id_ext,t.rows.item(i).presion,t.rows.item(i).manometro,t.rows.item(i).segurosello,t.rows.item(i).manguera,t.rows.item(i).soporte,t.rows.item(i).pintura,t.rows.item(i).valvula,t.rows.item(i).cilindro,t.rows.item(i).nemotecnia,t.rows.item(i).senalamiento,t.rows.item(i).gabinete,t.rows.item(i).observaciones,t.rows.item(i).usuario,t.rows.item(i).fechaderegistro);//Enviar a servidor0
+												datos =  datos + ("['"t.rows.item(i).id_ext+"','"+t.rows.item(i).presion+"','"+t.rows.item(i).manometro+"','"+t.rows.item(i).segurosello+"','"+t.rows.item(i).manguera+"','"+t.rows.item(i).soporte+"','"+t.rows.item(i).pintura+"','"+t.rows.item(i).valvula+"','"+t.rows.item(i).cilindro+"','"+t.rows.item(i).nemotecnia+"','"+t.rows.item(i).senalamiento+"','"+t.rows.item(i).gabinete+"','"+t.rows.item(i).observaciones+"','"+t.rows.item(i).usuario+"','"+t.rows.item(i).fechaderegistro + "']" )
+												//server.sincronizarRegistrados(t.rows.item(i).id_ext,t.rows.item(i).presion,t.rows.item(i).manometro,t.rows.item(i).segurosello,t.rows.item(i).manguera,t.rows.item(i).soporte,t.rows.item(i).pintura,t.rows.item(i).valvula,t.rows.item(i).cilindro,t.rows.item(i).nemotecnia,t.rows.item(i).senalamiento,t.rows.item(i).gabinete,t.rows.item(i).observaciones,t.rows.item(i).usuario,t.rows.item(i).fechaderegistro);//Enviar a servidor0
+
 												//alert("id_ext: " + t.rows.item(i).id_ext);
 												//navigator.notification.alert("ubicacion: " + t.rows.item(i).id_ext, null, "Correcto", "Aceptar");
 											}
-											//server.sincronizarRegistrados(datos,t.rows.item(i).presion,t.rows.item(i).manometro,t.rows.item(i).segurosello,t.rows.item(i).manguera,t.rows.item(i).soporte,t.rows.item(i).pintura,t.rows.item(i).valvula,t.rows.item(i).cilindro,t.rows.item(i).nemotecnia,t.rows.item(i).senalamiento,t.rows.item(i).gabinete,t.rows.item(i).observaciones,t.rows.item(i).usuario,t.rows.item(i).fechaderegistro);//Enviar a servidor0
+											server.sincronizarRegistrados(datos,t.rows.item(i).presion,t.rows.item(i).manometro,t.rows.item(i).segurosello,t.rows.item(i).manguera,t.rows.item(i).soporte,t.rows.item(i).pintura,t.rows.item(i).valvula,t.rows.item(i).cilindro,t.rows.item(i).nemotecnia,t.rows.item(i).senalamiento,t.rows.item(i).gabinete,t.rows.item(i).observaciones,t.rows.item(i).usuario,t.rows.item(i).fechaderegistro);//Enviar a servidor0
 
 	if(encontroEXT == 0)
 	{
