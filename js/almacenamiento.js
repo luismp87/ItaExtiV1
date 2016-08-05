@@ -259,7 +259,7 @@ fechaderegistro: null,
 	eliminarregistrosExt: function(id_ext,fechaderegistro){
 		almacen.id_ext = id_ext;
 		almacen.fechaderegistro = fechaderegistro;
-		navigator.notification.alert("Todo:" + almacen.id_ext +" bien: " +almacen.fechaderegistro, null, "Correcto", "Aceptar");
+		//navigator.notification.alert("Todo:" + almacen.id_ext +" bien: " +almacen.fechaderegistro, null, "Correcto", "Aceptar");
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExisteRegEXT, almacen.error, null);
 			almacen.db.transaction(almacen.eliminarregExtintores, almacen.error, null);
