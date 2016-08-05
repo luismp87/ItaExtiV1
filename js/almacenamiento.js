@@ -215,7 +215,7 @@ fechaderegistro: null,
 
 	},
 									leerinforegistradaEXT: function(tx){
-										
+									server.iniciarcontador1();										
 									tx.executeSql("SELECT id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario,fechaderegistro FROM ita_sh_reg_ext", [], function(tx2, t){
 									var encontroEXT = 0;
 											for(i = 0; i < t.rows.length; i++){
@@ -256,17 +256,25 @@ fechaderegistro: null,
 										});
 	
 	},
-	eliminarregistrosExt: function(id_ext,fechaderegistro){
+	eliminarregistrosExt: function(myArray){
 		almacen.id_ext = id_ext;
 		almacen.fechaderegistro = fechaderegistro;
+		almacen.myArray	= myArray;    
 		//navigator.notification.alert("Todo:" + almacen.id_ext +" bien: " +almacen.fechaderegistro, null, "Correcto", "Aceptar");
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExisteRegEXT, almacen.error, null);
 			almacen.db.transaction(almacen.eliminarregExtintores, almacen.error, null);
 		},
 									eliminarregExtintores: function(tx){
-									tx.executeSql("DELETE FROM ita_sh_reg_ext where id_ext = '"+almacen.id_ext+"' and fechaderegistro= '"+ almacen.fechaderegistro +"'" );
-									navigator.notification.alert("DELETE FROM ita_sh_reg_ext where id_ext = '"+almacen.id_ext+"' and fechaderegistro= '"+ almacen.fechaderegistro +"'", null, "Correcto", "Aceptar");
+									 for(i = 0; i<almacen.myArray.length; i++) 
+										    {
+										    	if((almacen.myArray[i] != "") && (almacen.myArray[i] != undefined))
+										    	{
+										    		tx.executeSql("DELETE FROM ita_sh_reg_ext where id_ext = '"+almacen.myArray[i]+"'" );
+													navigator.notification.alert("DELETE FROM ita_sh_reg_ext where id_ext = '"+almacen.id_ext+"' and fechaderegistro= '"+ almacen.fechaderegistro +"'", null, "Correcto", "Aceptar");
+    											}
+        									}      
+
 	},
 	/*ALMACENAMIENTO PARA HIDRANTES*/
 		guardarHIDRA: function(myArray){

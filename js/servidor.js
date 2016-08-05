@@ -25,6 +25,9 @@ var server = {
 	        myArray: [], 
 	    
 	        contador1: 0,
+	        iniciarcontador1: function{
+				server.contador1= 0;
+	        },
 /*ENVIAR AL SERVER EL CAPTURADO EN LA PANTALLA DE CARACTERISTICAS AL SERVIDOR UN SOLO REGISTRO*/
 sincronizar: function(id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario){
 
@@ -141,9 +144,8 @@ $.ajax({
                             {                                                  
                            //navigator.notification.alert("La información se envio al servidor de forma correcta",null,"Advertencia","Aceptar");   
                            //navigator.notification.alert(id_ext+"-" +presion+"-" +manometro+"-" +segurosello+"-" +manguera+"-" +soporte+"-" +pintura+"-" +valvula+"-" +cilindro+"-" +nemotecnia+"-" +senalamiento+"-" +gabinete+"-" +observaciones+"-" +usuario+"-" +fechaderegistro ,null,"Error 126","Aceptar");                           
-                           server.myArray[server.contador1] = almacen.id_ext+"' and fechaderegistro= '"+ almacen.fechaderegistro;   // msg[i].ID_EXT + "','" + msg[i].UBICACION + "','" + msg[i].CAPACIDAD+ "','" + msg[i].CLASE+ "','" + msg[i].AGENTE+ "','" + msg[i].MARCA+ "','" + msg[i].FRECARGA+ "','" + msg[i].FFABRICACION+ "','" + msg[i].FPROXSERVICIO+ "','" + msg[i].PLANTA;
-                           
-                           navigator.notification.alert("contador 1:" + server.contador1 + " array:" + server.myArray[server.contador1],null,"Advertencia","Aceptar");   
+                           server.myArray[server.contador1] = almacen.id_ext+"' and fechaderegistro= '"+ almacen.fechaderegistro;   // msg[i].ID_EXT + "','" + msg[i].UBICACION + "','" + msg[i].CAPACIDAD+ "','" + msg[i].CLASE+ "','" + msg[i].AGENTE+ "','" + msg[i].MARCA+ "','" + msg[i].FRECARGA+ "','" + msg[i].FFABRICACION+ "','" + msg[i].FPROXSERVICIO+ "','" + msg[i].PLANTA;                           
+                           //navigator.notification.alert("contador 1:" + server.contador1 + " array:" + server.myArray[server.contador1],null,"Advertencia","Aceptar");   
                            server.contador1 =  server.contador1 + 1;
                            //almacen.eliminarregistrosExt(id_ext,fechaderegistro);
                             }
@@ -173,7 +175,7 @@ $.ajax({
 		{
 			navigator.notification.alert("Hubo un error al intentar sincronizar los datos guardados", null, "Error", "Aceptar");
 		}*/
-		//--almacen.eliminarregistrosExt();
+		almacen.eliminarregistrosExt(server.myArray);
 		//navigator.notification.alert("Los datos se guardaron remotamente satisfactoriamente ", null, "Advertencia", "Aceptar");
 	},
 /*PARA EL MODULO DE HIDRANTES */
