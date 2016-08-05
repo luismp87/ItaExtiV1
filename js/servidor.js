@@ -139,7 +139,7 @@ $.ajax({
                 dataType: "json",
 				success: function (msg){
 						   server.myArray[server.contador1] = id_ext+"' and fechaderegistro= '"+ fechaderegistro;   // msg[i].ID_EXT + "','" + msg[i].UBICACION + "','" + msg[i].CAPACIDAD+ "','" + msg[i].CLASE+ "','" + msg[i].AGENTE+ "','" + msg[i].MARCA+ "','" + msg[i].FRECARGA+ "','" + msg[i].FFABRICACION+ "','" + msg[i].FPROXSERVICIO+ "','" + msg[i].PLANTA;                           
-                           navigator.notification.alert("contador :" + server.contador1 + " array:" + server.myArray[server.contador1],null,"Advertencia","Aceptar");   
+                           //navigator.notification.alert("contador :" + server.contador1 + " array:" + server.myArray[server.contador1],null,"Advertencia","Aceptar");   
                            server.contador1 =  server.contador1 + 1;
 					//$.mobile.loading("hide");
                     /*$.each(msg,function(i,item){
@@ -180,7 +180,7 @@ $.ajax({
 			navigator.notification.alert("Hubo un error al intentar sincronizar los datos guardados", null, "Error", "Aceptar");
 		}*/
 		//navigator.notification.alert("contador 1:" + server.contador1 + " array:" + server.myArray[server.contador1 - 1],null,"Advertencia","Aceptar");   
-		//almacen.eliminarregistrosExt(server.myArray);
+		almacen.eliminarregistrosExt(server.myArray);
 		//navigator.notification.alert("Los datos se guardaron remotamente satisfactoriamente ", null, "Advertencia", "Aceptar");
 	},
 /*PARA EL MODULO DE HIDRANTES */

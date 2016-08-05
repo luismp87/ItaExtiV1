@@ -274,6 +274,14 @@ fechaderegistro: null,
         									} 
 
         									almacen.myArray.length = 0;    
+        									for(i = 0; i<almacen.myArray.length; i++) 
+										    {
+										    	if((almacen.myArray[i] != "") && (almacen.myArray[i] != undefined) && (almacen.myArray[i] != "null"))
+										    	{
+										    		//tx.executeSql("DELETE FROM ita_sh_reg_ext where id_ext = '"+almacen.myArray[i]+"'" );
+													navigator.notification.alert("'"+almacen.myArray[i] +"'", null, "array", "Aceptar");
+    											}
+        									} 
 
 	},
 	/*ALMACENAMIENTO PARA HIDRANTES*/
