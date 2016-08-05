@@ -21,18 +21,6 @@ var server = {
 	        tuberia:null,
 	        martillo:null,
 	        micavidrio: null,
-
-	        myArray: [], 
-	        myArray2: [], 
-	    
-	        contador1: 0,
-	        contador2: 0,
-	        iniciarcontador1: function(){
-				server.contador1= 0;
-	        },
-	        iniciarcontador2: function(){
-				server.contador2= 0;
-	        },
 /*ENVIAR AL SERVER EL CAPTURADO EN LA PANTALLA DE CARACTERISTICAS AL SERVIDOR UN SOLO REGISTRO*/
 sincronizar: function(id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario){
 
@@ -88,7 +76,7 @@ $.ajax({
                 },
 				error: function(jq, txt){
 					//alert(jq + txt.responseText);
-                    navigator.notification.alert("Error de comunicación con el servidor.",null,"Error Ext45","Aceptar");
+                    navigator.notification.alert(jq + txt.responseText,null,"Error","Aceptar");
 				}
 			}).done(server.sincronizado);
 
@@ -108,8 +96,8 @@ $.ajax({
 	},
 /*ENVIAR AL SERVER LOS REGISTROS YA CAPTURADOS AL SERVIDOR VARIOS REGISTROS*/
 	sincronizarRegistrados: function(id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario,fechaderegistro){
+
 			server.id_ext =id_ext;
-			navigator.notification.alert(id_ext,null,"Advertencia","Aceptar"); 
 			server.presion = presion;
             server.manometro = manometro;
             server.segurosello = segurosello;
@@ -143,33 +131,24 @@ $.ajax({
 				usuario: usuario,
 				fechaderegistro: fechaderegistro},
                 dataType: "json",
-				success: function (msg){
-						   server.myArray[server.contador1] = id_ext+"' and fechaderegistro= '"+ fechaderegistro;   // msg[i].ID_EXT + "','" + msg[i].UBICACION + "','" + msg[i].CAPACIDAD+ "','" + msg[i].CLASE+ "','" + msg[i].AGENTE+ "','" + msg[i].MARCA+ "','" + msg[i].FRECARGA+ "','" + msg[i].FFABRICACION+ "','" + msg[i].FPROXSERVICIO+ "','" + msg[i].PLANTA;                           
-                           //navigator.notification.alert("contador :" + server.contador1 + " array:" + server.myArray[server.contador1],null,"Advertencia","Aceptar");   
-                           server.contador1 =  server.contador1 + 1;
-					//$.mobile.loading("hide");
-                    /*$.each(msg,function(i,item){
-                        if(msg[i].valor1 == "encontro")
-                            {                                                  
-                           //navigator.notification.alert("La información se envio al servidor de forma correcta",null,"Advertencia","Aceptar");   
-                           //navigator.notification.alert(id_ext+"-" +presion+"-" +manometro+"-" +segurosello+"-" +manguera+"-" +soporte+"-" +pintura+"-" +valvula+"-" +cilindro+"-" +nemotecnia+"-" +senalamiento+"-" +gabinete+"-" +observaciones+"-" +usuario+"-" +fechaderegistro ,null,"Error 126","Aceptar");                           
-                           server.myArray[server.contador1] = id_ext+"' and fechaderegistro= '"+ fechaderegistro;   // msg[i].ID_EXT + "','" + msg[i].UBICACION + "','" + msg[i].CAPACIDAD+ "','" + msg[i].CLASE+ "','" + msg[i].AGENTE+ "','" + msg[i].MARCA+ "','" + msg[i].FRECARGA+ "','" + msg[i].FFABRICACION+ "','" + msg[i].FPROXSERVICIO+ "','" + msg[i].PLANTA;                           
-                           navigator.notification.alert("contador :" + server.contador1 + " array:" + server.myArray[server.contador1],null,"Advertencia","Aceptar");   
-                           server.contador1 =  server.contador1 + 1;
-                           //almacen.eliminarregistrosExt(id_ext,fechaderegistro);
+				/*success: function (msg){
+					$.mobile.loading("hide");
+                    $.each(msg,function(i,item){
+                        if(msg[i].valor1 = "correcto")
+                            {                           
+                           navigator.notification.alert("La información se envio al servidor de forma correcta",null,"Advertencia","Aceptar");   
                             }
                         else
                             {
-                            navigator.notification.alert("Error al enviar la información al servidor verifique la comunicación",null,"Error","Aceptar");   
+                            navigator.notification.alert("Error al enviar la información al servidor",null,"Error al Ingresar","Aceptar");   
                             //alert("Usuario o contraseña incorrectos");
                             }                        
-                    });*/					
-                },
+                    });					
+                },*/
 				error: function(jq, txt){
 					//alert(jq + txt.responseText);
-					//navigator.notification.alert(id_ext+"-" +presion+"-" +manometro+"-" +segurosello+"-" +manguera+"-" +soporte+"-" +pintura+"-" +valvula+"-" +cilindro+"-" +nemotecnia+"-" +senalamiento+"-" +gabinete+"-" +observaciones+"-" +usuario+"-" +fechaderegistro ,null,"Error ajax","Aceptar");
-                    //navigator.notification.alert(jq + txt.responseText,null,"Error ajax","Aceptar");
-                    navigator.notification.alert("Error de comunicación con el servidor.",null,"Error Ext786","Aceptar");
+					navigator.notification.alert(id_ext+"-" +presion+"-" +manometro+"-" +segurosello+"-" +manguera+"-" +soporte+"-" +pintura+"-" +valvula+"-" +cilindro+"-" +nemotecnia+"-" +senalamiento+"-" +gabinete+"-" +observaciones+"-" +usuario+"-" +fechaderegistro ,null,"Error ajax","Aceptar");
+                    navigator.notification.alert(jq + txt.responseText,null,"Error ajax","Aceptar");
 				}
 			}).done(server.sincronizadoRegistrados);
 
@@ -185,8 +164,7 @@ $.ajax({
 		{
 			navigator.notification.alert("Hubo un error al intentar sincronizar los datos guardados", null, "Error", "Aceptar");
 		}*/
-		//navigator.notification.alert("contador 1:" + server.contador1 + " array:" + server.myArray[server.contador1 - 1],null,"Advertencia","Aceptar");   
-		almacen.eliminarregistrosExt(server.myArray);
+		almacen.eliminarregistrosExt();
 		//navigator.notification.alert("Los datos se guardaron remotamente satisfactoriamente ", null, "Advertencia", "Aceptar");
 	},
 /*PARA EL MODULO DE HIDRANTES */
@@ -244,8 +222,7 @@ $.ajax({
                 },
 				error: function(jq, txt){
 					//alert(jq + txt.responseText);
-                    //navigator.notification.alert(jq + txt.responseText,null,"Error","Aceptar");
-                    navigator.notification.alert("Error de comunicación con el servidor.",null,"Error hidra456","Aceptar");
+                    navigator.notification.alert(jq + txt.responseText,null,"Error","Aceptar");
 				}
 			}).done(server.sincronizadoHidra);
 
@@ -297,12 +274,9 @@ $.ajax({
 						usuario: usuario,
 						fechaderegistro: fechaderegistro},
                 dataType: "json",
-				success: function (msg){
-					 	   server.myArray2[server.contador2] = id_hidra+"' and fechaderegistro= '"+ fechaderegistro;   // msg[i].ID_EXT + "','" + msg[i].UBICACION + "','" + msg[i].CAPACIDAD+ "','" + msg[i].CLASE+ "','" + msg[i].AGENTE+ "','" + msg[i].MARCA+ "','" + msg[i].FRECARGA+ "','" + msg[i].FFABRICACION+ "','" + msg[i].FPROXSERVICIO+ "','" + msg[i].PLANTA;                           
-                           //navigator.notification.alert("contador :" + server.contador1 + " array:" + server.myArray[server.contador1],null,"Advertencia","Aceptar");   
-                           server.contador2 =  server.contador2 + 1;
-					//$.mobile.loading("hide");
-                    /*$.each(msg,function(i,item){
+				/*success: function (msg){
+					$.mobile.loading("hide");
+                    $.each(msg,function(i,item){
                         if(msg[i].valor1 = "correcto")
                             {                           
                            navigator.notification.alert("La información se envio al servidor de forma correcta",null,"Advertencia","Aceptar");   
@@ -312,12 +286,12 @@ $.ajax({
                             navigator.notification.alert("Error al enviar la información al servidor",null,"Error al Ingresar","Aceptar");   
                             //alert("Usuario o contraseña incorrectos");
                             }                        
-                    })*/;					
-                },
+                    });					
+                },*/
 				error: function(jq, txt){
 					//alert(jq + txt.responseText);
-					//navigator.notification.alert(id_hidra+"-" +llave+"-" +etiqueta+"-" +manguera+"-" +tuberia+"-" +valvula+"-" +martillo+"-" +micavidrio+"-" +gabinete+"-" +senalamiento+"-" +observaciones+"-" +usuario+"-" +fechaderegistro,null,"Error Ajax","Aceptar");
-                    navigator.notification.alert("Error de comunicación con el servidor.",null,"Error hidra579","Aceptar");
+					navigator.notification.alert(id_hidra+"-" +llave+"-" +etiqueta+"-" +manguera+"-" +tuberia+"-" +valvula+"-" +martillo+"-" +micavidrio+"-" +gabinete+"-" +senalamiento+"-" +observaciones+"-" +usuario+"-" +fechaderegistro,null,"Error Ajax","Aceptar");
+                    navigator.notification.alert(jq + txt.responseText,null,"Error Ajax","Aceptar");
 				}
 			}).done(server.sincronizadoRegistradosHIDRA);
 
@@ -333,7 +307,7 @@ $.ajax({
 		{
 			navigator.notification.alert("Hubo un error al intentar sincronizar los datos guardados", null, "Error", "Aceptar");
 		}*/
-		almacen.eliminarregistrosHidra(server.myArray2);
+		almacen.eliminarregistrosHidra();
 		//navigator.notification.alert("Los datos se guardaron remotamente satisfactoriamente ", null, "Advertencia", "Aceptar");
 	}
 

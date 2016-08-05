@@ -36,7 +36,6 @@ fechaderegistro: null,
 
 
 	myArray: null,
-	myArray2: null,
 
 	numerodefilas : 0,
 
@@ -216,10 +215,8 @@ fechaderegistro: null,
 
 	},
 									leerinforegistradaEXT: function(tx){
-									
-									server.iniciarcontador1();										
+										
 									tx.executeSql("SELECT id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario,fechaderegistro FROM ita_sh_reg_ext", [], function(tx2, t){
-									var datos = "";
 									var encontroEXT = 0;
 											for(i = 0; i < t.rows.length; i++){
 							encontroEXT= 1;
@@ -242,13 +239,10 @@ fechaderegistro: null,
 																				  if(btn == 2) navigator.notification.beep(1);
 																			  }, "Tabla Reservas","Vibrar,Sonar,Cancelar");*/
 												//server.sincronizar(t.rows.item(i).pr,t.rows.item(i).di,t.rows.item(i).th);
-												datos =  datos + ("['"t.rows.item(i).id_ext+"','"+t.rows.item(i).presion+"','"+t.rows.item(i).manometro+"','"+t.rows.item(i).segurosello+"','"+t.rows.item(i).manguera+"','"+t.rows.item(i).soporte+"','"+t.rows.item(i).pintura+"','"+t.rows.item(i).valvula+"','"+t.rows.item(i).cilindro+"','"+t.rows.item(i).nemotecnia+"','"+t.rows.item(i).senalamiento+"','"+t.rows.item(i).gabinete+"','"+t.rows.item(i).observaciones+"','"+t.rows.item(i).usuario+"','"+t.rows.item(i).fechaderegistro + "']" )
-												//server.sincronizarRegistrados(t.rows.item(i).id_ext,t.rows.item(i).presion,t.rows.item(i).manometro,t.rows.item(i).segurosello,t.rows.item(i).manguera,t.rows.item(i).soporte,t.rows.item(i).pintura,t.rows.item(i).valvula,t.rows.item(i).cilindro,t.rows.item(i).nemotecnia,t.rows.item(i).senalamiento,t.rows.item(i).gabinete,t.rows.item(i).observaciones,t.rows.item(i).usuario,t.rows.item(i).fechaderegistro);//Enviar a servidor0
-
+												server.sincronizarRegistrados(t.rows.item(i).id_ext,t.rows.item(i).presion,t.rows.item(i).manometro,t.rows.item(i).segurosello,t.rows.item(i).manguera,t.rows.item(i).soporte,t.rows.item(i).pintura,t.rows.item(i).valvula,t.rows.item(i).cilindro,t.rows.item(i).nemotecnia,t.rows.item(i).senalamiento,t.rows.item(i).gabinete,t.rows.item(i).observaciones,t.rows.item(i).usuario,t.rows.item(i).fechaderegistro);//Enviar a servidor
 												//alert("id_ext: " + t.rows.item(i).id_ext);
 												//navigator.notification.alert("ubicacion: " + t.rows.item(i).id_ext, null, "Correcto", "Aceptar");
 											}
-											server.sincronizarRegistrados(datos,t.rows.item(i).presion,t.rows.item(i).manometro,t.rows.item(i).segurosello,t.rows.item(i).manguera,t.rows.item(i).soporte,t.rows.item(i).pintura,t.rows.item(i).valvula,t.rows.item(i).cilindro,t.rows.item(i).nemotecnia,t.rows.item(i).senalamiento,t.rows.item(i).gabinete,t.rows.item(i).observaciones,t.rows.item(i).usuario,t.rows.item(i).fechaderegistro);//Enviar a servidor0
 
 	if(encontroEXT == 0)
 	{
@@ -262,33 +256,13 @@ fechaderegistro: null,
 										});
 	
 	},
-	eliminarregistrosExt: function(myArray){
-		almacen.myArray	= myArray;    
-		//navigator.notification.alert("Todo:" + almacen.id_ext +" bien: " +almacen.fechaderegistro, null, "Correcto", "Aceptar");
+	eliminarregistrosExt: function(tx){
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExisteRegEXT, almacen.error, null);
 			almacen.db.transaction(almacen.eliminarregExtintores, almacen.error, null);
 		},
 									eliminarregExtintores: function(tx){
-									 for(i = 0; i<almacen.myArray.length; i++) 
-										    {
-										    	if((almacen.myArray[i] != "") && (almacen.myArray[i] != undefined) && (almacen.myArray[i] != "null"))
-										    	{
-										    		tx.executeSql("DELETE FROM ita_sh_reg_ext where id_ext = '"+almacen.myArray[i]+"'" );
-													//navigator.notification.alert("DELETE FROM ita_sh_reg_ext where id_ext = '"+almacen.myArray[i] +"'", null, "Correcto", "Aceptar");
-    											}
-        									} 
-
-        									almacen.myArray.length = 0;    
-        									for(i = 0; i<almacen.myArray.length; i++) 
-										    {
-										    	if((almacen.myArray[i] != "") && (almacen.myArray[i] != undefined) && (almacen.myArray[i] != "null"))
-										    	{
-										    		//tx.executeSql("DELETE FROM ita_sh_reg_ext where id_ext = '"+almacen.myArray[i]+"'" );
-													navigator.notification.alert("'"+almacen.myArray[i] +"'", null, "array", "Aceptar");
-    											}
-        									} 
-
+									tx.executeSql("DELETE FROM ita_sh_reg_ext");
 	},
 	/*ALMACENAMIENTO PARA HIDRANTES*/
 		guardarHIDRA: function(myArray){
@@ -419,7 +393,7 @@ fechaderegistro: null,
 
 	},
 									leerinforegistradaHIDRA: function(tx){
-									server.iniciarcontador2();
+										
 									tx.executeSql("SELECT id_hidra,llave,etiqueta,manguera,tuberia,valvula,martillo,micavidrio,gabinete,senalamiento,observaciones,usuario,fechaderegistro FROM ita_sh_reg_hidra", [], function(tx2, t){
 									var encontroEXT = 0;
 											for(i = 0; i < t.rows.length; i++){
@@ -460,31 +434,13 @@ fechaderegistro: null,
 										});
 	
 	},
-	eliminarregistrosHidra: function(myArray){
-		almacen.myArray2	= myArray;    
+	eliminarregistrosHidra: function(tx){
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExisteRegHIDRA, almacen.error, null);
 			almacen.db.transaction(almacen.eliminarregHidrantes, almacen.error, null);
 		},
-									eliminarregHidrantes: function(tx){									
-									 for(i = 0; i<almacen.myArray2.length; i++) 
-										    {
-										    	if((almacen.myArray2[i] != "") && (almacen.myArray2[i] != undefined) && (almacen.myArray2[i] != "null"))
-										    	{
-										    		tx.executeSql("DELETE FROM ita_sh_reg_hidra where id_hidra = '"+almacen.myArray2[i]+"'" );
-													//navigator.notification.alert("DELETE FROM ita_sh_reg_hidra where id_hidra = '"+almacen.myArray2[i] +"'", null, "Correcto", "Aceptar");
-    											}
-        									} 
-
-        									almacen.myArray2.length = 0;    
-        									for(i = 0; i<almacen.myArray2.length; i++) 
-										    {
-										    	if((almacen.myArray2[i] != "") && (almacen.myArray2[i] != undefined) && (almacen.myArray2[i] != "null"))
-										    	{
-										    		//tx.executeSql("DELETE FROM ita_sh_reg_ext where id_ext = '"+almacen.myArray[i]+"'" );
-													navigator.notification.alert("'"+almacen.myArray2[i] +"'", null, "array", "Aceptar");
-    											}
-        									} 
+									eliminarregHidrantes: function(tx){
+									tx.executeSql("DELETE FROM ita_sh_reg_hidra");
 	}
 
 
