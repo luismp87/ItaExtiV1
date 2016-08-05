@@ -131,20 +131,22 @@ $.ajax({
 				usuario: usuario,
 				fechaderegistro: fechaderegistro},
                 dataType: "json",
-				/*success: function (msg){
+				success: function (msg){
 					$.mobile.loading("hide");
                     $.each(msg,function(i,item){
-                        if(msg[i].valor1 = "correcto")
+                        if(msg[i].valor1 == "encontro")
                             {                           
-                           navigator.notification.alert("La información se envio al servidor de forma correcta",null,"Advertencia","Aceptar");   
+                           //navigator.notification.alert("La información se envio al servidor de forma correcta",null,"Advertencia","Aceptar");   
+                           navigator.notification.alert(id_ext+"-" +presion+"-" +manometro+"-" +segurosello+"-" +manguera+"-" +soporte+"-" +pintura+"-" +valvula+"-" +cilindro+"-" +nemotecnia+"-" +senalamiento+"-" +gabinete+"-" +observaciones+"-" +usuario+"-" +fechaderegistro ,null,"Error ajax","Aceptar");
+                           almacen.eliminarregistrosExt(id_ext,fechaderegistro);
                             }
                         else
                             {
-                            navigator.notification.alert("Error al enviar la información al servidor",null,"Error al Ingresar","Aceptar");   
+                            navigator.notification.alert("Error al enviar la información al servidor verifique la comunicación",null,"Error","Aceptar");   
                             //alert("Usuario o contraseña incorrectos");
                             }                        
                     });					
-                },*/
+                },
 				error: function(jq, txt){
 					//alert(jq + txt.responseText);
 					navigator.notification.alert(id_ext+"-" +presion+"-" +manometro+"-" +segurosello+"-" +manguera+"-" +soporte+"-" +pintura+"-" +valvula+"-" +cilindro+"-" +nemotecnia+"-" +senalamiento+"-" +gabinete+"-" +observaciones+"-" +usuario+"-" +fechaderegistro ,null,"Error ajax","Aceptar");
@@ -164,7 +166,7 @@ $.ajax({
 		{
 			navigator.notification.alert("Hubo un error al intentar sincronizar los datos guardados", null, "Error", "Aceptar");
 		}*/
-		almacen.eliminarregistrosExt();
+		//--almacen.eliminarregistrosExt();
 		//navigator.notification.alert("Los datos se guardaron remotamente satisfactoriamente ", null, "Advertencia", "Aceptar");
 	},
 /*PARA EL MODULO DE HIDRANTES */
