@@ -270,7 +270,7 @@ fechaderegistro: null,
 										    	if((almacen.myArray[i] != "") && (almacen.myArray[i] != undefined) && (almacen.myArray[i] != "null"))
 										    	{
 										    		tx.executeSql("DELETE FROM ita_sh_reg_ext where id_ext = '"+almacen.myArray[i]+"'" );
-													navigator.notification.alert("DELETE FROM ita_sh_reg_ext where id_ext = '"+almacen.myArray[i] +"'", null, "Correcto", "Aceptar");
+													//navigator.notification.alert("DELETE FROM ita_sh_reg_ext where id_ext = '"+almacen.myArray[i] +"'", null, "Correcto", "Aceptar");
     											}
         									} 
 
@@ -467,7 +467,7 @@ fechaderegistro: null,
 										    	if((almacen.myArray2[i] != "") && (almacen.myArray2[i] != undefined) && (almacen.myArray2[i] != "null"))
 										    	{
 										    		tx.executeSql("DELETE FROM ita_sh_reg_hidra where id_hidra = '"+almacen.myArray2[i]+"'" );
-													navigator.notification.alert("DELETE FROM ita_sh_reg_hidra where id_hidra = '"+almacen.myArray2[i] +"'", null, "Correcto", "Aceptar");
+													//navigator.notification.alert("DELETE FROM ita_sh_reg_hidra where id_hidra = '"+almacen.myArray2[i] +"'", null, "Correcto", "Aceptar");
     											}
         									} 
 
