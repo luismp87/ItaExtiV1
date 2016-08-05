@@ -159,7 +159,8 @@ $.ajax({
 				error: function(jq, txt){
 					//alert(jq + txt.responseText);
 					//navigator.notification.alert(id_ext+"-" +presion+"-" +manometro+"-" +segurosello+"-" +manguera+"-" +soporte+"-" +pintura+"-" +valvula+"-" +cilindro+"-" +nemotecnia+"-" +senalamiento+"-" +gabinete+"-" +observaciones+"-" +usuario+"-" +fechaderegistro ,null,"Error ajax","Aceptar");
-                    navigator.notification.alert(jq + txt.responseText,null,"Error ajax","Aceptar");
+                    //navigator.notification.alert(jq + txt.responseText,null,"Error ajax","Aceptar");
+                    navigator.notification.alert("Error de comunicación con el server.",null,"Error ajax","Aceptar");
 				}
 			}).done(server.sincronizadoRegistrados);
 
