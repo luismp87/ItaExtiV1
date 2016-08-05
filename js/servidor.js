@@ -21,6 +21,9 @@ var server = {
 	        tuberia:null,
 	        martillo:null,
 	        micavidrio: null,
+
+	        myArray: null,
+	        contador1: 0,
 /*ENVIAR AL SERVER EL CAPTURADO EN LA PANTALLA DE CARACTERISTICAS AL SERVIDOR UN SOLO REGISTRO*/
 sincronizar: function(id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario){
 
@@ -96,7 +99,6 @@ $.ajax({
 	},
 /*ENVIAR AL SERVER LOS REGISTROS YA CAPTURADOS AL SERVIDOR VARIOS REGISTROS*/
 	sincronizarRegistrados: function(id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario,fechaderegistro){
-
 			server.id_ext =id_ext;
 			server.presion = presion;
             server.manometro = manometro;
@@ -137,8 +139,11 @@ $.ajax({
                         if(msg[i].valor1 == "encontro")
                             {                           
                            //navigator.notification.alert("La información se envio al servidor de forma correcta",null,"Advertencia","Aceptar");   
-                           //navigator.notification.alert(id_ext+"-" +presion+"-" +manometro+"-" +segurosello+"-" +manguera+"-" +soporte+"-" +pintura+"-" +valvula+"-" +cilindro+"-" +nemotecnia+"-" +senalamiento+"-" +gabinete+"-" +observaciones+"-" +usuario+"-" +fechaderegistro ,null,"Error 126","Aceptar");
-                           almacen.eliminarregistrosExt(id_ext,fechaderegistro);
+                           //navigator.notification.alert(id_ext+"-" +presion+"-" +manometro+"-" +segurosello+"-" +manguera+"-" +soporte+"-" +pintura+"-" +valvula+"-" +cilindro+"-" +nemotecnia+"-" +senalamiento+"-" +gabinete+"-" +observaciones+"-" +usuario+"-" +fechaderegistro ,null,"Error 126","Aceptar");                           
+                           server.myArray[server.contador1] = almacen.id_ext+"' and fechaderegistro= '"+ almacen.fechaderegistro;   // msg[i].ID_EXT + "','" + msg[i].UBICACION + "','" + msg[i].CAPACIDAD+ "','" + msg[i].CLASE+ "','" + msg[i].AGENTE+ "','" + msg[i].MARCA+ "','" + msg[i].FRECARGA+ "','" + msg[i].FFABRICACION+ "','" + msg[i].FPROXSERVICIO+ "','" + msg[i].PLANTA;
+                           server.contador1 =  server.contador1 + 1;
+                           navigator.notification.alert("contador 1:" + server.contador1 + " array:" + server.myArray[server.contador1],null,"Advertencia","Aceptar");   
+                           //almacen.eliminarregistrosExt(id_ext,fechaderegistro);
                             }
                         else
                             {
