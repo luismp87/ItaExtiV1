@@ -25,9 +25,9 @@ var server = {
 	        myArray: [], 
 	    
 	        contador1: 0,
-	        iniciarcontador1: function(){
+	        /*iniciarcontador1: function(){
 				server.contador1= 0;
-	        },
+	        },*/
 /*ENVIAR AL SERVER EL CAPTURADO EN LA PANTALLA DE CARACTERISTICAS AL SERVIDOR UN SOLO REGISTRO*/
 sincronizar: function(id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario){
 
