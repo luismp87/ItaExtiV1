@@ -257,8 +257,6 @@ fechaderegistro: null,
 	
 	},
 	eliminarregistrosExt: function(myArray){
-		almacen.id_ext = id_ext;
-		almacen.fechaderegistro = fechaderegistro;
 		almacen.myArray	= myArray;    
 		//navigator.notification.alert("Todo:" + almacen.id_ext +" bien: " +almacen.fechaderegistro, null, "Correcto", "Aceptar");
 			almacen.db = window.openDatabase("ItaExtiV1DB","1.0","ItaExtiV1 Storage",20000);
@@ -271,7 +269,7 @@ fechaderegistro: null,
 										    	if((almacen.myArray[i] != "") && (almacen.myArray[i] != undefined))
 										    	{
 										    		tx.executeSql("DELETE FROM ita_sh_reg_ext where id_ext = '"+almacen.myArray[i]+"'" );
-													navigator.notification.alert("DELETE FROM ita_sh_reg_ext where id_ext = '"+almacen.id_ext+"' and fechaderegistro= '"+ almacen.fechaderegistro +"'", null, "Correcto", "Aceptar");
+													navigator.notification.alert("DELETE FROM ita_sh_reg_ext where id_ext = '"+almacen.myArray[i] +"'", null, "Correcto", "Aceptar");
     											}
         									}      
 
