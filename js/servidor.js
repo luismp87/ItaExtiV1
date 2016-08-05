@@ -137,7 +137,7 @@ $.ajax({
                         if(msg[i].valor1 == "encontro")
                             {                           
                            //navigator.notification.alert("La información se envio al servidor de forma correcta",null,"Advertencia","Aceptar");   
-                           navigator.notification.alert(id_ext+"-" +presion+"-" +manometro+"-" +segurosello+"-" +manguera+"-" +soporte+"-" +pintura+"-" +valvula+"-" +cilindro+"-" +nemotecnia+"-" +senalamiento+"-" +gabinete+"-" +observaciones+"-" +usuario+"-" +fechaderegistro ,null,"Error ajax","Aceptar");
+                           navigator.notification.alert(id_ext+"-" +presion+"-" +manometro+"-" +segurosello+"-" +manguera+"-" +soporte+"-" +pintura+"-" +valvula+"-" +cilindro+"-" +nemotecnia+"-" +senalamiento+"-" +gabinete+"-" +observaciones+"-" +usuario+"-" +fechaderegistro ,null,"Error 126","Aceptar");
                            almacen.eliminarregistrosExt(id_ext,fechaderegistro);
                             }
                         else

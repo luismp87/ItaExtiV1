@@ -256,7 +256,7 @@ fechaderegistro: null,
 										});
 	
 	},
-	eliminarregistrosExt: function(tx,id_ext,fechaderegistro){
+	eliminarregistrosExt: function(id_ext,fechaderegistro){
 		almacen.id_ext = id_ext;
 		almacen.fechaderegistro = fechaderegistro;
 		navigator.notification.alert("Todo:" + almacen.id_ext +" bien: " +almacen.fechaderegistro, null, "Correcto", "Aceptar");
