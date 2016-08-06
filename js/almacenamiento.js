@@ -399,6 +399,7 @@ fechaderegistro: null,
 									leerinforegistradaHIDRA: function(tx){
 										
 									tx.executeSql("SELECT id_hidra,llave,etiqueta,manguera,tuberia,valvula,martillo,micavidrio,gabinete,senalamiento,observaciones,usuario,fechaderegistro FROM ita_sh_reg_hidra", [], function(tx2, t){
+										var campos = "";
 									var encontroEXT = 0;
 											for(i = 0; i < t.rows.length; i++){
 							encontroEXT= 1;
@@ -420,8 +421,9 @@ fechaderegistro: null,
 																				  if(btn == 1) navigator.vibrate(500);
 																				  if(btn == 2) navigator.notification.beep(1);
 																			  }, "Tabla Reservas","Vibrar,Sonar,Cancelar");*/
+												campos = campos + "['"+ t.rows.item(i).id_hidra+"','"+t.rows.item(i).llave+"','"+t.rows.item(i).etiqueta+"','"+t.rows.item(i).manguera+"','"+t.rows.item(i).tuberia+"','"+t.rows.item(i).valvula+"','"+t.rows.item(i).martillo+"','"+t.rows.item(i).micavidrio+"','"+t.rows.item(i).gabinete+"','"+t.rows.item(i).senalamiento+"','"+t.rows.item(i).observaciones.replace(/[^a-zA-Z 0-9.]+/g,' ')+"','"+t.rows.item(i).usuario+"','"+t.rows.item(i).fechaderegistro+ "']";
 												//server.sincronizar(t.rows.item(i).pr,t.rows.item(i).di,t.rows.item(i).th);
-												server.sincronizarRegistradosHIDRA(t.rows.item(i).id_hidra,t.rows.item(i).llave,t.rows.item(i).etiqueta,t.rows.item(i).manguera,t.rows.item(i).tuberia,t.rows.item(i).valvula,t.rows.item(i).martillo,t.rows.item(i).micavidrio,t.rows.item(i).gabinete,t.rows.item(i).senalamiento,t.rows.item(i).observaciones,t.rows.item(i).usuario,t.rows.item(i).fechaderegistro);//Enviar a servidor
+												//server.sincronizarRegistradosHIDRA(t.rows.item(i).id_hidra,t.rows.item(i).llave,t.rows.item(i).etiqueta,t.rows.item(i).manguera,t.rows.item(i).tuberia,t.rows.item(i).valvula,t.rows.item(i).martillo,t.rows.item(i).micavidrio,t.rows.item(i).gabinete,t.rows.item(i).senalamiento,t.rows.item(i).observaciones,t.rows.item(i).usuario,t.rows.item(i).fechaderegistro);//Enviar a servidor
 												//alert("id_ext: " + t.rows.item(i).id_ext);
 												//navigator.notification.alert("ubicacion: " + t.rows.item(i).id_ext, null, "Correcto", "Aceptar");
 											}
@@ -432,6 +434,7 @@ fechaderegistro: null,
 	}
 	else if(encontroEXT == 1)
 	{
+		server.sincronizarRegistradosHIDRA(campos);//Enviar a servidor
 		//navigator.notification.alert("Se migro informacion local al servidor", null, "Advertencia", "Aceptar");
 	}
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");

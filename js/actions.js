@@ -147,7 +147,7 @@ var fn = {
         }
     },
     MigrarExtintoresRM : function(){ 
-        var myArray = new Array(500); 
+        var myArray = new Array(700); 
         var registros = $('#NumDeExtintores').val();  
         if(registros == 0)
             {
@@ -335,7 +335,7 @@ var fn = {
 
         },         
         MigrarHidrantesRM : function(){ 
-        var myArray = new Array(500); 
+        var myArray = new Array(700); 
         var registros = $('#NumDeHidrantes').val();  
         if(registros == 0)
             {
