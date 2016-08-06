@@ -98,7 +98,7 @@ $.ajax({
 	sincronizarRegistrados: function(id_ext){
 
 			server.id_ext =id_ext;
-			navigator.notification.alert("Datos: " + id_ext,null,"mensaje 2","Aceptar");   			
+			//navigator.notification.alert("Datos: " + id_ext,null,"mensaje 2","Aceptar");   			
 $.ajax({
                 method: 'POST',
 				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/insertarregextintoresV2',				
