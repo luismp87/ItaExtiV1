@@ -105,18 +105,19 @@ $.ajax({
                 data: { id_ext: id_ext},
                 dataType: "json",
 				success: function (msg){
-					$.mobile.loading("hide");
-                    $.each(msg,function(i,item){
-                        if(msg[i].valor1 == "encontro")
-                            {                           
+					//$.mobile.loading("hide");
+                    //$.each(msg,function(i,item){
+                        //if(msg[i].valor1 == "encontro")
+                            //{                           
                            navigator.notification.alert("La información se envio al servidor de forma correcta",null,"Advertencia","Aceptar");   
-                            }
-                        else
-                            {
-                            navigator.notification.alert("Error al enviar la información al servidor",null,"Error 458","Aceptar");   
+                           almacen.eliminarregistrosExt();
+                           // }
+                        //else
+                           /// {
+                           // navigator.notification.alert("Error al enviar la información al servidor",null,"Error 458","Aceptar");   
                             //alert("Usuario o contraseña incorrectos");
-                            }                        
-                    });					
+                           /// }                        
+                   // });					
                 },
 				error: function(jq, txt){
 					//alert(jq + txt.responseText);
@@ -137,7 +138,7 @@ $.ajax({
 		{
 			navigator.notification.alert("Hubo un error al intentar sincronizar los datos guardados", null, "Error", "Aceptar");
 		}*/
-		almacen.eliminarregistrosExt();
+		//almacen.eliminarregistrosExt();
 		//navigator.notification.alert("Los datos se guardaron remotamente satisfactoriamente ", null, "Advertencia", "Aceptar");
 	},
 /*PARA EL MODULO DE HIDRANTES */

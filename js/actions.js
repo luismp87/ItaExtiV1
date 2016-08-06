@@ -243,7 +243,7 @@ var fn = {
                         {
                              
                             /******GUARDAMOS EN EL SERVIDOR SI SE TIENE SEÑAL******/
-                            server.sincronizar(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones,fn.usuario);//Enviar a servidor
+                            server.sincronizar(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),fn.usuario);//Enviar a servidor
                             /**************/
                              //navigator.notification.alert("Segun se manda al server.",null,"Advertencia","Aceptar");
                             //server.sincronizar(fn.per,fn.dia,fn.th);//Enviar a servidor
@@ -264,7 +264,7 @@ var fn = {
                         }
                         else
                         {
-                                almacen.guardarRegistroEXT(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones,fn.usuario);
+                                almacen.guardarRegistroEXT(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),fn.usuario);
                                  $("#txtitaextiV1").val("");
                                 $("#textPRESION").val("0").change();
                                 $("#textMANOMETRO").val("0").change();
@@ -462,7 +462,7 @@ var fn = {
                         {
                              
                             /******GUARDAMOS EN EL SERVIDOR SI SE TIENE SEÑAL******/
-                            server.sincronizarhidra(fn.id_hidra,fn.llave,fn.etiqueta,fn.manguera,fn.tuberia,fn.valvula,fn.martillo,fn.micavidrio,fn.gabinete,fn.senalamiento,fn.observaciones,fn.usuario);//Enviar a servidor
+                            server.sincronizarhidra(fn.id_hidra,fn.llave,fn.etiqueta,fn.manguera,fn.tuberia,fn.valvula,fn.martillo,fn.micavidrio,fn.gabinete,fn.senalamiento,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),fn.usuario);//Enviar a servidor
                             /**************/
                              //navigator.notification.alert("Segun se manda al server.",null,"Advertencia","Aceptar");
                             //server.sincronizar(fn.per,fn.dia,fn.th);//Enviar a servidor
@@ -481,7 +481,7 @@ var fn = {
                         }
                         else
                         {
-                                almacen.guardarRegistroHIDRA(fn.id_hidra,fn.llave,fn.etiqueta,fn.manguera,fn.tuberia,fn.valvula,fn.martillo,fn.micavidrio,fn.gabinete,fn.senalamiento,fn.observaciones,fn.usuario);
+                                almacen.guardarRegistroHIDRA(fn.id_hidra,fn.llave,fn.etiqueta,fn.manguera,fn.tuberia,fn.valvula,fn.martillo,fn.micavidrio,fn.gabinete,fn.senalamiento,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),fn.usuario);
                                  $("#txtitahidraV1").val("");
                                 $("#texthLLAVE").val("0").change();
                                 $("#texthETIQUETA").val("0").change();
