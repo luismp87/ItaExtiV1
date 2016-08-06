@@ -95,7 +95,7 @@ $.ajax({
 		//navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta ", null, "Advertencia", "Aceptar");
 	},
 /*ENVIAR AL SERVER LOS REGISTROS YA CAPTURADOS AL SERVIDOR VARIOS REGISTROS*/
-	sincronizarRegistrados: function(campos){
+	sincronizarRegistrados: function(id_ext){
 
 			server.id_ext =id_ext;
 			navigator.notification.alert("Datos: " + id_ext,null,"mensaje 2","Aceptar");   			
