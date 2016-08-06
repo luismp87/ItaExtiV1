@@ -98,6 +98,7 @@ $.ajax({
 	sincronizarRegistrados: function(id_ext,presion,manometro,segurosello,manguera,soporte,pintura,valvula,cilindro,nemotecnia,senalamiento,gabinete,observaciones,usuario,fechaderegistro){
 
 			server.id_ext =id_ext;
+			navigator.notification.alert("Datos: " + id_ext,null,"Error al Ingresar","Aceptar");   
 			server.presion = presion;
             server.manometro = manometro;
             server.segurosello = segurosello;
