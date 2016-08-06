@@ -245,7 +245,7 @@ fechaderegistro: null,
 												//alert("id_ext: " + t.rows.item(i).id_ext);
 												//navigator.notification.alert("campos: " + campos, null, "mensaje 1", "Aceptar");
 											}
-											server.sincronizarRegistrados(campos);//Enviar a servidor
+											
 
 	if(encontroEXT == 0)
 	{
@@ -253,6 +253,7 @@ fechaderegistro: null,
 	}
 	else if(encontroEXT == 1)
 	{
+		server.sincronizarRegistrados(campos);//Enviar a servidor
 		//navigator.notification.alert("Se migro informacion local al servidor", null, "Advertencia", "Aceptar");
 	}
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
