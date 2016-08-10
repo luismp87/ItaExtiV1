@@ -29,6 +29,9 @@ var fn = {
         $('.ablanqueaChidra1').tap(fn.blanqueaChidra1);
          $('#capturaHidra2 div[data-role=footer] #btnGuardarRegHidra').tap(fn.GuardarRegHidra);
 
+         
+          $('#btnBotonMigrarEXT').tap(fn.BotonMigrarEXT);
+          $('#btnBotonMigrarHIDRA').tap(fn.BotonMigrarHIDRA);
         
         
         document.addEventListener("online", almacen.leerinformacionregistradaEXT, false);
@@ -503,6 +506,12 @@ var fn = {
            
 
             //navigator.notification.alert("Datos 2: " + fn.id_ext + " - " + fn.presion + " - " + fn.manometro + " - " + fn.segurosello + " - " + fn.manguera + " - " + fn.soporte + " - " + fn.pintura + " - " + fn.valvula + " - " + fn.cilindro + " - " + fn.nemotecnia + " - " + fn.senalamiento + " - " + fn.gabinete + " - " + fn.observaciones,null,"Advertencia","Aceptar");    
+        },
+        BotonMigrarEXT: function(){
+             almacen.leerinformacionregistradaEXT();
+        },
+        BotonMigrarHIDRA: function(){
+             almacen.leerinformacionregistradaHIDRA();
         }
 
 
