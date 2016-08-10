@@ -34,8 +34,8 @@ var fn = {
           $('#btnBotonMigrarHIDRA').tap(fn.BotonMigrarHIDRA);
         
         
-        document.addEventListener("online", almacen.leerinformacionregistradaEXT, false);
-        document.addEventListener("online", almacen.leerinformacionregistradaHIDRA, false);
+        document.addEventListener("online", almacen.leerinformacionregistradaEXTV3, false);
+        document.addEventListener("online", almacen.leerinformacionregistradaHIDRAV3, false);
 	},
      estaRegistrado: function(){
         var usr = window.localStorage.getItem("user");

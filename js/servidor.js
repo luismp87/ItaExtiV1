@@ -145,6 +145,39 @@ $.ajax({
 
 
 	},
+		sincronizarRegistradosV3: function(id_ext){
+
+			server.id_ext =id_ext;
+			//navigator.notification.alert("Datos: " + id_ext,null,"mensaje 2","Aceptar");   			
+$.ajax({
+                method: 'POST',
+				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/insertarregextintoresV2',				
+                data: { id_ext: id_ext},
+                dataType: "json",
+				success: function (msg){
+					//$.mobile.loading("hide");
+                    //$.each(msg,function(i,item){
+                        //if(msg[i].valor1 == "encontro")
+                            //{                           
+                           //navigator.notification.alert("La información se envio al servidor de forma correcta",null,"Advertencia","Aceptar");   
+                           almacen.eliminarregistrosExt();
+                           // }
+                        //else
+                           /// {
+                           // navigator.notification.alert("Error al enviar la información al servidor",null,"Error 458","Aceptar");   
+                            //alert("Usuario o contraseña incorrectos");
+                           /// }                        
+                   // });					
+                },
+				error: function(jq, txt){
+					//alert(jq + txt.responseText);
+					//navigator.notification.alert(id_ext+"-" +presion+"-" +manometro+"-" +segurosello+"-" +manguera+"-" +soporte+"-" +pintura+"-" +valvula+"-" +cilindro+"-" +nemotecnia+"-" +senalamiento+"-" +gabinete+"-" +observaciones+"-" +usuario+"-" +fechaderegistro ,null,"Error ajax","Aceptar");
+                    //navigator.notification.alert("Error de comunicación para poder migrar la información almacenada en el dispositivo.",null,"Error - 456","Aceptar");
+				}
+			}).done(server.sincronizadoRegistrados);
+
+
+	},
 	sincronizadoRegistrados: function(msg){
 		/*if(msg == 1)
 		{
@@ -216,7 +249,7 @@ $.ajax({
                      navigator.notification.alert("Error de comunicación, se guarda la información en el dispositivo",null,"Error 689","Aceptar");
 
                      almacen.guardarRegistroHIDRA(server.id_hidra,server.llave,server.etiqueta,server.manguera,server.tuberia,server.valvula,server.martillo,server.micavidrio,server.gabinete,server.senalamiento,server.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),server.usuario);
-                     
+
                                  $("#txtitahidraV1").val("");
                                 $("#texthLLAVE").val("0").change();
                                 $("#texthETIQUETA").val("0").change();
@@ -245,6 +278,41 @@ $.ajax({
 			navigator.notification.alert("Hubo un error al intentar sincronizar los datos guardados", null, "Error", "Aceptar");
 		}*/
 		//navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta ", null, "Advertencia", "Aceptar");
+	},
+		/*ENVIAR AL SERVER LOS REGISTROS YA CAPTURADOS AL SERVIDOR VARIOS REGISTROS*/
+	sincronizarRegistradosHIDRAV3: function(id_hidra){
+				server.id_hidra = id_hidra;
+				
+
+		
+$.ajax({
+                method: 'POST',
+				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/insertarreghidrantesV2',				
+                data: { id_hidra: id_hidra},
+                dataType: "json",
+				success: function (msg){
+					//$.mobile.loading("hide");
+                    //$.each(msg,function(i,item){
+                        //if(msg[i].valor1 = "correcto")
+                            //{                           
+                           //navigator.notification.alert("La información se envio al servidor de forma correcta",null,"Advertencia","Aceptar");   
+                           almacen.eliminarregistrosHidra();
+                            //}
+                        //else
+                            //{
+                            //navigator.notification.alert("Error al enviar la información al servidor",null,"Error al Ingresar","Aceptar");   
+                            //alert("Usuario o contraseña incorrectos");
+                            //}                        
+                    //});					
+                },
+				error: function(jq, txt){
+					//alert(jq + txt.responseText);
+					//navigator.notification.alert(id_hidra+"-" +llave+"-" +etiqueta+"-" +manguera+"-" +tuberia+"-" +valvula+"-" +martillo+"-" +micavidrio+"-" +gabinete+"-" +senalamiento+"-" +observaciones+"-" +usuario+"-" +fechaderegistro,null,"Error Ajax","Aceptar");
+                   //navigator.notification.alert("Error de comunicación para poder migrar la información almacenada en el dispositivo.",null,"Error - 259","Aceptar");
+				}
+			}).done(server.sincronizadoRegistradosHIDRA);
+
+
 	},
 	/*ENVIAR AL SERVER LOS REGISTROS YA CAPTURADOS AL SERVIDOR VARIOS REGISTROS*/
 	sincronizarRegistradosHIDRA: function(id_hidra){
