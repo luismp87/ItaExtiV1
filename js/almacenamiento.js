@@ -249,7 +249,7 @@ fechaderegistro: null,
 
 	if(encontroEXT == 0)
 	{
-		//navigator.notification.alert("Sin resultados por migrar", null, "Advertencia", "Aceptar");
+		navigator.notification.alert("Sin información registrada por migrar al servidor", null, "Advertencia", "Aceptar");
 	}
 	else if(encontroEXT == 1)
 	{
@@ -430,7 +430,7 @@ fechaderegistro: null,
 
 	if(encontroEXT == 0)
 	{
-		//navigator.notification.alert("Sin resultados por migrar", null, "Advertencia", "Aceptar");
+		navigator.notification.alert("Sin información registrada por migrar al servidor", null, "Advertencia", "Aceptar");
 	}
 	else if(encontroEXT == 1)
 	{
