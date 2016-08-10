@@ -251,17 +251,17 @@ var fn = {
                              //navigator.notification.alert("Segun se manda al server.",null,"Advertencia","Aceptar");
                             //server.sincronizar(fn.per,fn.dia,fn.th);//Enviar a servidor
                                 $("#txtitaextiV1").val("");
-                                $("#textPRESION").val("0").change();
-                                $("#textMANOMETRO").val("0").change();
-                                $("#textSEGUROSELLO").val("0").change();
-                                $("#textMANGUERA").val("0").change();
-                                $("#textSOPORTE").val("0").change();
-                                $("#textPINTURA").val("0").change();
-                                $("#textVALVULA").val("0").change();
-                                $("#textCILINDRO").val("0").change();
-                                $("#textNEMOTECNIA").val("0").change();
-                                $("#textSENALAMIENTO").val("0").change();
-                                $("#textGABINETE").val("0").change();
+                                $("#textPRESION").val("OK").change();
+                                $("#textMANOMETRO").val("OK").change();
+                                $("#textSEGUROSELLO").val("OK").change();
+                                $("#textMANGUERA").val("OK").change();
+                                $("#textSOPORTE").val("OK").change();
+                                $("#textPINTURA").val("OK").change();
+                                $("#textVALVULA").val("OK").change();
+                                $("#textCILINDRO").val("OK").change();
+                                $("#textNEMOTECNIA").val("OK").change();
+                                $("#textSENALAMIENTO").val("OK").change();
+                                $("#textGABINETE").val("OK").change();
                                 $("#textOBSERVACIONES").val("");
                                 window.location.href = '#TiposDeCaptura';
                         }
@@ -269,17 +269,17 @@ var fn = {
                         {
                                 almacen.guardarRegistroEXT(fn.id_ext,fn.presion,fn.manometro,fn.segurosello,fn.manguera,fn.soporte,fn.pintura,fn.valvula,fn.cilindro,fn.nemotecnia,fn.senalamiento,fn.gabinete,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),fn.usuario);
                                  $("#txtitaextiV1").val("");
-                                $("#textPRESION").val("0").change();
-                                $("#textMANOMETRO").val("0").change();
-                                $("#textSEGUROSELLO").val("0").change();
-                                $("#textMANGUERA").val("0").change();
-                                $("#textSOPORTE").val("0").change();
-                                $("#textPINTURA").val("0").change();
-                                $("#textVALVULA").val("0").change();
-                                $("#textCILINDRO").val("0").change();
-                                $("#textNEMOTECNIA").val("0").change();
-                                $("#textSENALAMIENTO").val("0").change();
-                                $("#textGABINETE").val("0").change();
+                                $("#textPRESION").val("OK").change();
+                                $("#textMANOMETRO").val("OK").change();
+                                $("#textSEGUROSELLO").val("OK").change();
+                                $("#textMANGUERA").val("OK").change();
+                                $("#textSOPORTE").val("OK").change();
+                                $("#textPINTURA").val("OK").change();
+                                $("#textVALVULA").val("OK").change();
+                                $("#textCILINDRO").val("OK").change();
+                                $("#textNEMOTECNIA").val("OK").change();
+                                $("#textSENALAMIENTO").val("OK").change();
+                                $("#textGABINETE").val("OK").change();
                                 $("#textOBSERVACIONES").val("");
                                 window.location.href = '#TiposDeCaptura';
                         }
@@ -301,17 +301,17 @@ var fn = {
             } 
             else
             {
-                $("#textPRESION").val("0").change();
-                $("#textMANOMETRO").val("0").change();
-                $("#textSEGUROSELLO").val("0").change();
-                $("#textMANGUERA").val("0").change();
-                $("#textSOPORTE").val("0").change();
-                $("#textPINTURA").val("0").change();
-                $("#textVALVULA").val("0").change();
-                $("#textCILINDRO").val("0").change();
-                $("#textNEMOTECNIA").val("0").change();
-                $("#textSENALAMIENTO").val("0").change();
-                $("#textGABINETE").val("0").change();
+                $("#textPRESION").val("OK").change();
+                $("#textMANOMETRO").val("OK").change();
+                $("#textSEGUROSELLO").val("OK").change();
+                $("#textMANGUERA").val("OK").change();
+                $("#textSOPORTE").val("OK").change();
+                $("#textPINTURA").val("OK").change();
+                $("#textVALVULA").val("OK").change();
+                $("#textCILINDRO").val("OK").change();
+                $("#textNEMOTECNIA").val("OK").change();
+                $("#textSENALAMIENTO").val("OK").change();
+                $("#textGABINETE").val("OK").change();
                 $("#textOBSERVACIONES").val("");
                 window.location.href = '#capturaExt2';
             }        
@@ -408,15 +408,15 @@ var fn = {
             } 
             else
             {
-                $("#texthLLAVE").val("0").change();
-                $("#texthETIQUETA").val("0").change();
-                $("#texthMANGUERA").val("0").change();
-                $("#texthTUBERIA").val("0").change();
-                $("#texthVALVULA").val("0").change();
-                $("#texthMARTILLO").val("0").change();
-                $("#texthMICAVIDRIO").val("0").change();
-                $("#texthGABINETE").val("0").change();
-                $("#texthSENALAMIENTO").val("0").change();               
+                $("#texthLLAVE").val("OK").change();
+                $("#texthETIQUETA").val("OK").change();
+                $("#texthMANGUERA").val("OK").change();
+                $("#texthTUBERIA").val("OK").change();
+                $("#texthVALVULA").val("OK").change();
+                $("#texthMARTILLO").val("OK").change();
+                $("#texthMICAVIDRIO").val("OK").change();
+                $("#texthGABINETE").val("OK").change();
+                $("#texthSENALAMIENTO").val("OK").change();               
                 $("#texthOBSERVACIONES").val("");
                 window.location.href = '#capturaHidra2';
             }        
@@ -470,15 +470,15 @@ var fn = {
                              //navigator.notification.alert("Segun se manda al server.",null,"Advertencia","Aceptar");
                             //server.sincronizar(fn.per,fn.dia,fn.th);//Enviar a servidor
                                 $("#txtitahidraV1").val("");
-                                $("#texthLLAVE").val("0").change();
-                                $("#texthETIQUETA").val("0").change();
-                                $("#texthMANGUERA").val("0").change();
-                                $("#texthTUBERIA").val("0").change();
-                                $("#texthVALVULA").val("0").change();
-                                $("#texthMARTILLO").val("0").change();
-                                $("#texthMICAVIDRIO").val("0").change();
-                                $("#texthGABINETE").val("0").change();
-                                $("#texthSENALAMIENTO").val("0").change();                                
+                                $("#texthLLAVE").val("OK").change();
+                                $("#texthETIQUETA").val("OK").change();
+                                $("#texthMANGUERA").val("OK").change();
+                                $("#texthTUBERIA").val("OK").change();
+                                $("#texthVALVULA").val("OK").change();
+                                $("#texthMARTILLO").val("OK").change();
+                                $("#texthMICAVIDRIO").val("OK").change();
+                                $("#texthGABINETE").val("OK").change();
+                                $("#texthSENALAMIENTO").val("OK").change();                                
                                 $("#texthOBSERVACIONES").val("");
                                 window.location.href = '#TiposDeCaptura';
                         }
@@ -486,15 +486,15 @@ var fn = {
                         {
                                 almacen.guardarRegistroHIDRA(fn.id_hidra,fn.llave,fn.etiqueta,fn.manguera,fn.tuberia,fn.valvula,fn.martillo,fn.micavidrio,fn.gabinete,fn.senalamiento,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),fn.usuario);
                                  $("#txtitahidraV1").val("");
-                                $("#texthLLAVE").val("0").change();
-                                $("#texthETIQUETA").val("0").change();
-                                $("#texthMANGUERA").val("0").change();
-                                $("#texthTUBERIA").val("0").change();
-                                $("#texthVALVULA").val("0").change();
-                                $("#texthMARTILLO").val("0").change();
-                                $("#texthMICAVIDRIO").val("0").change();
-                                $("#texthGABINETE").val("0").change();
-                                $("#texthSENALAMIENTO").val("0").change();                                
+                                $("#texthLLAVE").val("OK").change();
+                                $("#texthETIQUETA").val("OK").change();
+                                $("#texthMANGUERA").val("OK").change();
+                                $("#texthTUBERIA").val("OK").change();
+                                $("#texthVALVULA").val("OK").change();
+                                $("#texthMARTILLO").val("OK").change();
+                                $("#texthMICAVIDRIO").val("OK").change();
+                                $("#texthGABINETE").val("OK").change();
+                                $("#texthSENALAMIENTO").val("OK").change();                                
                                 $("#texthOBSERVACIONES").val("");
                                 window.location.href = '#TiposDeCaptura';
                         }
