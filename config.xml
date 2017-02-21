@@ -19,10 +19,19 @@
 		
 
 		<preference name="orientation" value="portrait"></preference>		
-		<gap:plugin name="org.apache.cordova.dialogs"></gap:plugin>
-		<gap:plugin name="org.apache.cordova.vibration"></gap:plugin>
-		<gap:plugin name="org.apache.cordova.device"></gap:plugin>
-		<gap:plugin name="com.phonegap.plugins.barcodescanner"></gap:plugin>
-		<gap:plugin name="org.apache.cordova.network-information" />
-		
+		<!--<gap:plugin name="org.apache.cordova.dialogs"></gap:plugin>-->
+		<!--<gap:plugin name="org.apache.cordova.vibration"></gap:plugin>-->
+		<!--<gap:plugin name="org.apache.cordova.device"></gap:plugin>-->
+		<!--<gap:plugin name="com.phonegap.plugins.barcodescanner"></gap:plugin>-->
+		<!--<gap:plugin name="org.apache.cordova.network-information" />-->
+
+		<gap:plugin name="cordova-plugin-whitelist" source="npm" />		
+		<gap:plugin name="cordova-plugin-dialogs" source="npm" />		
+		<gap:plugin name="cordova-plugin-vibration" source="npm" />
+		<gap:plugin name="cordova-plugin-device" source="npm" />
+		<gap:plugin name="phonegap-plugin-barcodescanner" source="npm" />
+		<gap:plugin name="cordova-plugin-network-information" source="npm" />
+		<access origin="*" />
+        <allow-intent href="*" />
+        <allow-navigation href="*" />
 	</widget>
