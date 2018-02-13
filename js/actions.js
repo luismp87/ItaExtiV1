@@ -88,11 +88,7 @@ var fn = {
 		  function (error) {
               navigator.notification.alert("Scanning failed: " + error,null,"Error","Aceptar");
 			  //alert("Scanning failed: " + error);
-		  },
-          {
-              prompt : "Place a barcode inside the scan area", // Android
-          }
-
+		  }
 	   );
 	},
     buscar_info_extintor : function(){         
