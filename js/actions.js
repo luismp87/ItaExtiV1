@@ -84,6 +84,16 @@ var fn = {
 		  function (result) {			  
 			                 //***navigator.notification.alert("Resultado: " + result.text,null,"Felicidades","Aceptar");
                             $("#txtitaextiV1").val("" + result.text); 
+                            var id = $('#txtitaextiV1').val();  
+                            if(id != ''){   
+            $.mobile.loading("show",{theme: 'b'});
+            almacen.leerinformacionEXT();
+            $.mobile.loading("hide");
+        }
+        else{
+            navigator.notification.alert("Ingrese el ID del extintor",null,"Error al Ingresar","Aceptar");
+            //alert("Ingrese el ID del extintor");
+        }   
 		  }, 
 		  function (error) {
               navigator.notification.alert("Scanning failed: " + error,null,"Error","Aceptar");
@@ -380,6 +390,16 @@ var fn = {
           function (result) {             
                              //***navigator.notification.alert("Resultado: " + result.text,null,"Felicidades","Aceptar");
                             $("#txtitahidraV1").val("" + result.text); 
+                                    var id = $('#txtitahidraV1').val();      
+        if(id != ''){   
+            $.mobile.loading("show",{theme: 'b'});
+            almacen.leerinformacionHIDRA();
+            $.mobile.loading("hide");
+        }
+        else{
+            navigator.notification.alert("Ingrese el ID del hidrante",null,"Error al Ingresar","Aceptar");
+            //alert("Ingrese el ID del extintor");
+        } 
           }, 
           function (error) {
               navigator.notification.alert("Scanning failed: " + error,null,"Error","Aceptar");
