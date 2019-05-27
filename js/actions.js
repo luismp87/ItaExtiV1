@@ -9,7 +9,8 @@ var fn = {
 		// LOGIO EN EL SERVIDOR --> $('#btnautentificar').tap(fn.autentificar);
         $('#btnautentificar').tap(fn.autentificarJSON);
         $('#btnleercodigo').tap(fn.leerCodigoDeBarras);
-        $('#btnbuscar_info_extintor').tap(fn.buscar_info_extintor);	        
+        /*este boton se escondio a solicitud del ing fredy*/
+        /*$('#btnbuscar_info_extintor').tap(fn.buscar_info_extintor);*/	        
 		//$('#btnprueba').tap(fn.myFunction);
         $('#btnActualizarBDDesdeServer').tap(fn.ActualizarBDDesdeServer);
         $('#btnMigrarExtintoresRM').tap(fn.MigrarExtintoresRM);
@@ -24,7 +25,8 @@ var fn = {
         $('#btnMigrarHidrantesRM').tap(fn.MigrarHidrantesRM);
         $('#btnEliminarHidrantes').tap(fn.EliminarHidrantes);
         $('#btnleercodigohidra').tap(fn.leerCodigoDeBarrashidra);
-        $('#btnbuscar_info_hidrante').tap(fn.buscar_info_hidrante);    
+        /*este boton se escondio a solicitud del ing fredy*/
+        /*$('#btnbuscar_info_hidrante').tap(fn.buscar_info_hidrante); */   
         $('#btniraRegistrarHIDRA').tap(fn.iraRegistrarHIDRA);
         $('.ablanqueaChidra1').tap(fn.blanqueaChidra1);
          $('#capturaHidra2 div[data-role=footer] #btnGuardarRegHidra').tap(fn.GuardarRegHidra);
