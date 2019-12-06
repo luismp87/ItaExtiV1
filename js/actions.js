@@ -6,8 +6,9 @@ var fn = {
         if(!fn.estaRegistrado())
             window.location.href = '#inicio';
 		//window.location.href = '#inicio';
-		// LOGIO EN EL SERVIDOR --> $('#btnautentificar').tap(fn.autentificar);
-        $('#btnautentificar').tap(fn.autentificarJSON);
+		// LOGIO EN EL SERVIDOR --> 
+        $('#btnautentificar').tap(fn.autentificarSERVER);
+        //$('#btnautentificar').tap(fn.autentificarJSON);        
         $('#btnleercodigo').tap(fn.leerCodigoDeBarras);
         /*este boton se escondio a solicitud del ing fredy*/
         /*$('#btnbuscar_info_extintor').tap(fn.buscar_info_extintor);*/	        
@@ -46,7 +47,7 @@ var fn = {
         else
             return true;
     },
-	autentificar: function(){         
+	autentificarSERVER: function(){         
 		var nom = $('#txtusuario').val();
 		var passw = $('#txtcontrasena').val();
 		if(nom != '' && passw != ''){	
