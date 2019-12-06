@@ -61,7 +61,8 @@ var fn = {
 					$.mobile.loading("hide");
                     $.each(msg,function(i,item){
                         if(msg[i].valor1 = "correcto")
-                            {                           
+                            {   
+                            window.localStorage.setItem("user",nom);                        
                             window.location.href = '#TiposDeCaptura';
                             }
                         else
