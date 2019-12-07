@@ -65,13 +65,13 @@ var fn = {
                             window.localStorage.setItem("user",nom);                        
                             window.location.href = '#TiposDeCaptura';
                             //navigator.notification.alert("Usuario o contraseña autentificado: " + msg[i].valor2,null,"Error al Ingresar","Aceptar");
-                            
+                            return;
                             }
-                            /*else if(msg[i].valor2 = "El_usuario_no_es_de_SEGURIDAD_E_HIGIENE")
+                            else if(msg[i].valor2 = "El_usuario_no_es_de_SEGURIDAD_E_HIGIENE")
                             {
                             navigator.notification.alert("El usuario no pertenece a SEGURIDAD E HIGIENE",null,"Error al Ingresar","Aceptar");
-                            break;                        
-                            }*/
+                            return;                        
+                            }
                             else
                             {
                             navigator.notification.alert("Usuario o contraseña incorrectos",null,"Error al Ingresar","Aceptar");   
