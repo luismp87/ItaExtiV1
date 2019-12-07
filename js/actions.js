@@ -64,6 +64,14 @@ var fn = {
                             {   
                             window.localStorage.setItem("user",nom);                        
                             window.location.href = '#TiposDeCaptura';
+                            navigator.notification.alert("Usuario o contraseña autentificado: " + msg[i].valor2,null,"Error al Ingresar","Aceptar");
+                            break;
+                            }
+                            else f(msg[i].valor2 = "El_usuario_no_es_de_SEGURIDAD_E_HIGIENE")
+                            {
+                            navigator.notification.alert("El usuario no pertenece a SEGURIDAD E HIGIENE",null,"Error al Ingresar","Aceptar");
+                            break;
+                                break;
                             }
                         else
                             {
@@ -152,7 +160,7 @@ var fn = {
     ffabricacion: '',
     fproxservicio: '',
     ActualizarBDDesdeServer :function(){
-        if(window.localStorage.getItem("user") == "sistemas")
+        if(window.localStorage.getItem("user") == "root")
         {
         almacen.leerExt();  
         window.location.href = '#RemotaALocal';
@@ -339,7 +347,7 @@ var fn = {
         },
 /*FUNCIONES DE HIDRANTES*/
         ActualizarBDDesdeServerHidra: function(){
-            if(window.localStorage.getItem("user") == "sistemas")
+            if(window.localStorage.getItem("user") == "root")
         {
         almacen.leerHidra();  
         window.location.href = '#RemotaALocalHidra';
