@@ -65,7 +65,7 @@ var fn = {
                             window.localStorage.setItem("user",nom);                        
                             window.location.href = '#TiposDeCaptura';
                             //navigator.notification.alert("Usuario o contraseña autentificado: " + msg[i].valor2,null,"Error al Ingresar","Aceptar");
-                            break;
+                            
                             }
                             /*else if(msg[i].valor2 = "El_usuario_no_es_de_SEGURIDAD_E_HIGIENE")
                             {
