@@ -60,14 +60,14 @@ var fn = {
 				success: function (msg){
 					$.mobile.loading("hide");
                     $.each(msg,function(i,item){
-                        if(msg[i].valor1 = "correcto")
+                        if(msg[i].valor1 == "correcto")
                             {   
                             window.localStorage.setItem("user",nom);                        
                             window.location.href = '#TiposDeCaptura';
                             navigator.notification.alert("Usuario o contraseña autentificado: " + msg[i].valor2,null,"Error al Ingresar","Aceptar");
                             return;
                             }
-                            else if(msg[i].valor2 = "El_usuario_no_es_de_SEGURIDAD_E_HIGIENE")
+                            else if(msg[i].valor2 == "El_usuario_no_es_de_SEGURIDAD_E_HIGIENE")
                             {
                             navigator.notification.alert("El usuario no pertenece a SEGURIDAD E HIGIENE",null,"Error al Ingresar","Aceptar");
                             return;                        
