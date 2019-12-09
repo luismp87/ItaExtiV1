@@ -167,16 +167,16 @@ var fn = {
     ffabricacion: '',
     fproxservicio: '',
     ActualizarBDDesdeServer :function(){
-        if(window.localStorage.getItem("user") == "root")
-        {
+        /*if(window.localStorage.getItem("user") == "root")
+        {*/
         almacen.leerExt();  
         window.location.href = '#RemotaALocal';
-        }
+        /*}
         else
         {
           navigator.notification.alert("Su usuario no esta autorizado para ingresar a esta opción",null,"Advertencia","Aceptar");    
         window.location.href = '#TiposDeCaptura';
-        }
+        }*/
     },
     MigrarExtintoresRM : function(){ 
         var myArray = new Array(700); 
@@ -354,16 +354,16 @@ var fn = {
         },
 /*FUNCIONES DE HIDRANTES*/
         ActualizarBDDesdeServerHidra: function(){
-            if(window.localStorage.getItem("user") == "root")
-        {
+            /*if(window.localStorage.getItem("user") == "root")
+        {*/
         almacen.leerHidra();  
         window.location.href = '#RemotaALocalHidra';
-        }
+        /*}
         else
         {
           navigator.notification.alert("Su usuario no esta autorizado para ingresar a esta opción",null,"Advertencia","Aceptar");    
         window.location.href = '#TiposDeCaptura';
-        }
+        }*/
 
         },         
         MigrarHidrantesRM : function(){ 
