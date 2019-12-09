@@ -48,7 +48,7 @@ var fn = {
             return true;
     },
 	autentificarSERVER: function(){         
-		var nom = $('#txtusuario').val();
+		var nom = $('#txtusuario').val().toLowerCase();
 		var passw = $('#txtcontrasena').val();
 		if(nom != '' && passw != ''){	
 			$.mobile.loading("show",{theme: 'b'});
