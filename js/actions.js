@@ -47,7 +47,15 @@ var fn = {
         else
             return true;
     },
-	autentificarSERVER: function(){         
+	autentificarSERVER: function(){
+
+    if($('#origen').val() == "")
+{
+    navigator.notification.alert("Seleccione un origen",null,"Seleccione un origen","Aceptar");
+    return;
+}
+
+         
 		var nom = $('#txtusuario').val().toLowerCase();
 		var passw = $('#txtcontrasena').val();
 		if(nom != '' && passw != ''){	
