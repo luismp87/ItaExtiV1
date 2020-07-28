@@ -43,7 +43,7 @@ sincronizar: function(id_ext,presion,manometro,segurosello,manguera,soporte,pint
             var fechaderegistro = server.fechaderegistro;
 $.ajax({
                 method: 'POST',
-				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/insertarregextintores',				
+				url: 'https://wsgili.laitaliana.com.mx:8081/wsitaextiv1/Service1.asmx/insertarregextintores',				
                 data: { id_ext: id_ext, 
 				presion: presion, 
 				manometro: manometro, 
@@ -118,7 +118,7 @@ $.ajax({
 			//navigator.notification.alert("Datos: " + id_ext,null,"mensaje 2","Aceptar");   			
 $.ajax({
                 method: 'POST',
-				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/insertarregextintoresV2',				
+				url: 'https://wsgili.laitaliana.com.mx:8081/wsitaextiv1/Service1.asmx/insertarregextintoresV2',				
                 data: { id_ext: id_ext},
                 dataType: "json",
 				success: function (msg){
@@ -151,7 +151,7 @@ $.ajax({
 			//navigator.notification.alert("Datos: " + id_ext,null,"mensaje 2","Aceptar");   			
 $.ajax({
                 method: 'POST',
-				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/insertarregextintoresV2',				
+				url: 'https://wsgili.laitaliana.com.mx:8081/wsitaextiv1/Service1.asmx/Service1.asmx/insertarregextintoresV2',				
                 data: { id_ext: id_ext},
                 dataType: "json",
 				success: function (msg){
@@ -215,7 +215,7 @@ sincronizarhidra: function(id_hidra,llave,etiqueta,manguera,tuberia,valvula,mart
 
 $.ajax({
                 method: 'POST',
-				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/insertarreghidrantes',				
+				url: 'https://wsgili.laitaliana.com.mx:8081/wsitaextiv1/Service1.asmx/insertarreghidrantes',				
                 data: { id_hidra: id_hidra,
 						llave: llave,
 						etiqueta: etiqueta,
@@ -287,7 +287,7 @@ $.ajax({
 		
 $.ajax({
                 method: 'POST',
-				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/insertarreghidrantesV2',				
+				url: 'https://wsgili.laitaliana.com.mx:8081/wsitaextiv1/Service1.asmx/insertarreghidrantesV2',				
                 data: { id_hidra: id_hidra},
                 dataType: "json",
 				success: function (msg){
@@ -322,7 +322,7 @@ $.ajax({
 		
 $.ajax({
                 method: 'POST',
-				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/insertarreghidrantesV2',				
+				url: 'https://wsgili.laitaliana.com.mx:8081/wsitaextiv1/Service1.asmx/insertarreghidrantesV2',				
                 data: { id_hidra: id_hidra},
                 dataType: "json",
 				success: function (msg){
