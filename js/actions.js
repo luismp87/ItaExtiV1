@@ -62,7 +62,7 @@ var fn = {
 			$.mobile.loading("show",{theme: 'b'});
 			$.ajax({
                 method: 'POST',
-				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/autentificar',				
+				url: 'https://wsgili.laitaliana.com.mx:8081/wsitaextiv1/Service1.asmx/autentificar',				
                 data: {usuario: nom, contrasena: passw},
                 dataType: "json",
 				success: function (msg){
@@ -186,7 +186,7 @@ var fn = {
                 $.mobile.loading("show",{theme: 'b'});
                 $.ajax({
                 method: 'POST',
-                url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/enviarcatalogocompletodeextintores',              
+                url: 'https://wsgili.laitaliana.com.mx:8081/wsitaextiv1/Service1.asmx/enviarcatalogocompletodeextintores',              
                 //data: {usuario: nom, contrasena: passw},
                 dataType: "json",
                 success: function (msg){
@@ -374,7 +374,7 @@ var fn = {
                 $.mobile.loading("show",{theme: 'b'});
                 $.ajax({
                 method: 'POST',
-                url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/enviarcatalogocompletodehidrantes',              
+                url: 'https://wsgili.laitaliana.com.mx:8081/wsitaextiv1/Service1.asmx/enviarcatalogocompletodehidrantes',              
                 //data: {usuario: nom, contrasena: passw},
                 dataType: "json",
                 success: function (msg){
